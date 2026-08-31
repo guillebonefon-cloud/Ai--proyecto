@@ -1144,39 +1144,59 @@ function submitOrder(e) {
     estado: 'Confirmado'
   };
 
+  // 1. CORRECCIÓN FLUJO ENCADENADO: Registro interno PRIMERO
   orders.push(order);
   localStorage.setItem('barcelonesa_orders', JSON.stringify(orders));
+  renderOrders();
 
-  // Construir mensaje WhatsApp formateado
-  const productosTexto = cart.map(c => `• ${c.qty}x ${c.name} - $${(c.price*c.qty).toLocaleString('es-UY')} (${c.desc})`).join('%0A');
-  const mensaje = `*¡Nuevo Pedido - La Nueva Barcelonesa!* 🎉%0A%0A` +
-    `*ID:* ${orderId}%0A` +
-    `*Cliente:* ${nombre}%0A` +
-    `*Tel:* ${telefono}%0A` +
-    `*Email:* ${email || 'No proporcionado'}%0A` +
-    `*Entrega:* ${tipoEntrega === 'envio' ? '🚚 Envío a domicilio' : '🏪 Retiro en local'}%0A` +
-    `*Dirección:* ${order.direccion}%0A` +
-    `*Fecha:* ${fecha}%0A` +
-    `*Hora:* ${franja}%0A%0A` +
-    `*Productos:*%0A${productosTexto}%0A%0A` +
-    `*Subtotal:* $${subtotal.toLocaleString('es-UY')}%0A` +
-    `*Envío:* ${tipoEntrega === 'envio' ? '$350' : 'Gratis'}%0A` +
-    `*Total a pagar:* *$${total.toLocaleString('es-UY')}*%0A%0A` +
-    `_Pedido registrado en planilla interna_ ✅`;
+  // Guardar copia de productos antes de limpiar carrito para mensaje WhatsApp
+  const productosParaMensaje = [...cart];
 
-  const whatsappUrl = `https://wa.me/59829012672?text=${mensaje}`;
-  window.open(whatsappUrl, '_blank');
-
+  // Limpiar carrito y cerrar checkout
   cart = [];
   saveCart();
   updateCartUI();
   closeCheckout();
 
+  // Mostrar pantalla de éxito INMEDIATAMENTE después del guardado interno en planilla
   document.getElementById('success-name').textContent = nombre.split(' ')[0];
   document.getElementById('success-id').textContent = orderId;
-  document.getElementById('success-summary').innerHTML = `<div>${order.productos}</div><div class="mt-2 font-bold">Total: $${total.toLocaleString('es-UY')} • ${fecha} ${franja} • ${tipoEntrega}</div><div class="mt-2 text-[11px] text-emerald-600 font-bold">✓ Mensaje WhatsApp abierto con el pedido formateado</div>`;
+  document.getElementById('success-summary').innerHTML = `
+    <div>${order.productos}</div>
+    <div class="mt-2 font-bold">Total: $${total.toLocaleString('es-UY')} • ${fecha} ${franja} • ${tipoEntrega}</div>
+    <div class="mt-2 text-[11px] text-navy-muted">Planilla actualizada: ${orders.length} pedidos registrados</div>
+    <div class="mt-2 text-[11px] text-emerald-600 font-bold">✓ Pedido asentado en planilla interna. Abriendo WhatsApp...</div>
+  `;
   document.getElementById('success-modal').classList.remove('hidden');
-  renderOrders();
+
+  // 2. EJECUCIÓN POSTERIOR DE WHATSAPP: Una vez asentado en planilla y mostrada pantalla de éxito
+  const productosTexto = productosParaMensaje.map(c => `• ${c.qty}x ${c.name} - $${(c.price*c.qty).toLocaleString('es-UY')} (${c.desc})`).join('%0A');
+  const mensaje = `*¡Nuevo Pedido - La Nueva Barcelonesa!* 🎉%0A%0A` +
+    `*ID Pedido:* ${orderId}%0A` +
+    `*Cliente:* ${nombre}%0A` +
+    `*Teléfono:* ${telefono}%0A` +
+    `*Email:* ${email || 'No proporcionado'}%0A` +
+    `*Tipo Entrega:* ${tipoEntrega === 'envio' ? '🚚 Envío a domicilio' : '🏪 Retiro en local - Ejido 1400'}%0A` +
+    `*Dirección:* ${order.direccion}%0A` +
+    `*Fecha Entrega:* ${fecha}%0A` +
+    `*Hora Entrega:* ${franja}%0A%0A` +
+    `*Detalle del Lunch / Productos:*%0A${productosTexto}%0A%0A` +
+    `*Subtotal:* $${subtotal.toLocaleString('es-UY')}%0A` +
+    `*Costo Envío:* ${tipoEntrega === 'envio' ? '$350' : 'Gratis (Retiro)'}%0A` +
+    `*TOTAL A PAGAR:* *$${total.toLocaleString('es-UY')}*%0A%0A` +
+    `*Método Pago:* Simulación pasarela segura (Visa, Mastercard, Oca, Mercado Pago)%0A%0A` +
+    `_Pedido registrado automáticamente en Planilla de Pedidos de la Empresa_ ✅%0A` +
+    `_ID Interno: ${orderId} - ${new Date().toLocaleString('es-UY')}_`;
+
+  const whatsappUrl = `https://wa.me/59829012672?text=${mensaje}`;
+  
+  setTimeout(() => {
+    window.open(whatsappUrl, '_blank');
+    const summaryEl = document.getElementById('success-summary');
+    if (summaryEl) {
+      summaryEl.innerHTML += `<div class="mt-3 p-2 bg-emerald-50 border border-emerald-200 rounded-[8px] text-[11px] text-emerald-700 font-bold">✓ WhatsApp abierto con mensaje formateado listo para enviar al 2901 2672</div>`;
+    }
+  }, 800);
 }
 
 function closeSuccess() { document.getElementById('success-modal').classList.add('hidden'); }
