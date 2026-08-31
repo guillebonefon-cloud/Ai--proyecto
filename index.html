@@ -1010,15 +1010,19 @@ function switchCotizadorTab(tab) {
 function renderCustomItems() {
   const container = document.getElementById('custom-items');
   container.innerHTML = SUELTOS.map(item => `
-    <div class="flex items-center gap-4 p-3 border border-ink/10 rounded-[14px] bg-paper">
+    <div class="group flex items-center gap-4 p-4 border border-ink/10 rounded-[16px] bg-paper hover:border-ink/20 transition">
       <div class="flex-1 min-w-0">
-        <div class="font-medium text-[13px]">${item.name}</div>
-        <div class="text-[11px] opacity-60">${item.desc} • $${item.price} c/u</div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <div class="font-medium text-[13px]">${item.name}</div>
+          <span class="text-[10px] px-2 py-0.5 bg-cream border border-ink/10 rounded-full font-medium">$${item.price} c/u</span>
+        </div>
+        <div class="text-[11px] opacity-60 mt-1">${item.desc}</div>
+        <div class="mt-1.5 text-[11px] font-medium text-ink/50 group-hover:text-ink/80 transition">Subtotal: <span id="subtotal-${item.id}" class="font-bold">$0</span></div>
       </div>
       <div class="flex items-center gap-2">
-        <button onclick="updateCustomQty('${item.id}', -1)" class="w-8 h-8 rounded-full border border-ink/10 flex items-center justify-center hover:bg-ink hover:text-cream transition">−</button>
-        <span id="qty-${item.id}" class="w-8 text-center font-medium text-[14px]">${customQuantities[item.id]}</span>
-        <button onclick="updateCustomQty('${item.id}', 1)" class="w-8 h-8 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-navy-light transition">+</button>
+        <button type="button" data-bocado="${item.id}" data-action="minus" onclick="updateCustomQty('${item.id}', -1)" aria-label="Disminuir ${item.name}" class="w-9 h-9 rounded-full border border-ink/10 flex items-center justify-center hover:bg-ink hover:text-cream transition active:scale-95">−</button>
+        <input id="qty-input-${item.id}" data-bocado="${item.id}" type="number" min="0" value="${customQuantities[item.id]}" oninput="handleCustomInput('${item.id}')" onchange="handleCustomInput('${item.id}')" class="w-[64px] h-9 text-center border border-ink/15 rounded-full bg-cream text-[14px] font-bold focus:border-ink focus:ring-0 outline-none">
+        <button type="button" data-bocado="${item.id}" data-action="plus" onclick="updateCustomQty('${item.id}', 1)" aria-label="Aumentar ${item.name}" class="w-9 h-9 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-navy-light transition active:scale-95">+</button>
       </div>
     </div>
   `).join('');
@@ -1026,23 +1030,42 @@ function renderCustomItems() {
 }
 
 function updateCustomQty(id, delta) {
-  customQuantities[id] = Math.max(0, (customQuantities[id] || 0) + delta);
-  document.getElementById(`qty-${id}`).textContent = customQuantities[id];
+  const current = customQuantities[id] || 0;
+  const next = Math.max(0, current + delta);
+  customQuantities[id] = next;
+  const input = document.getElementById(`qty-input-${id}`);
+  if (input) input.value = next;
+  updateCustomTotals();
+}
+
+function handleCustomInput(id) {
+  const input = document.getElementById(`qty-input-${id}`);
+  if (!input) return;
+  let val = parseInt(input.value, 10);
+  if (isNaN(val) || val < 0) val = 0;
+  customQuantities[id] = val;
+  input.value = val;
   updateCustomTotals();
 }
 
 function updateCustomTotals() {
   let totalBocados = 0;
   let totalPrice = 0;
+
   SUELTOS.forEach(s => {
-    totalBocados += customQuantities[s.id];
-    totalPrice += customQuantities[s.id] * s.price;
+    const qty = customQuantities[s.id] || 0;
+    const sub = qty * s.price;
+    totalBocados += qty;
+    totalPrice += sub;
+    const subEl = document.getElementById(`subtotal-${s.id}`);
+    if (subEl) subEl.textContent = `$${sub.toLocaleString('es-UY')}`;
   });
+
   document.getElementById('custom-total-bocados').textContent = `${totalBocados} unidades`;
   document.getElementById('custom-total-price').textContent = `$${totalPrice.toLocaleString('es-UY')}`;
   document.getElementById('btn-add-custom').disabled = totalBocados === 0;
 
-  // Smart logic
+  // Inteligencia de precios - alerta dinámica
   const alertBox = document.getElementById('smart-alert');
   const alertText = document.getElementById('smart-alert-text');
   const alertBtn = document.getElementById('smart-alert-btn');
@@ -1052,43 +1075,35 @@ function updateCustomTotals() {
     return;
   }
 
-  // Find best package suggestion
+  // Lógica: si el costo personalizado supera o se acerca al de un paquete cerrado
+  // Ordenamos paquetes por precio ascendente para sugerir el más conveniente
+  const sortedPackages = [...PACKAGES].sort((a,b) => a.price - b.price);
   let suggestion = null;
-  for (let pkg of PACKAGES) {
-    const priceThreshold = pkg.price * 0.85; // if within 85% or exceeds
-    const bocadosThreshold = pkg.bocados * 0.8;
-    if (totalPrice >= priceThreshold && totalBocados >= bocadosThreshold) {
-      // suggest if custom is more expensive or close
-      if (totalPrice >= pkg.price * 0.9) {
-        suggestion = pkg;
-        break;
-      }
-    }
-    // also if bocados exceed package but price still high
-    if (totalBocados >= pkg.bocados && totalPrice >= pkg.price * 0.75) {
+  let saving = 0;
+
+  for (let pkg of sortedPackages) {
+    // Caso 1: precio personalizado supera directamente el paquete
+    if (totalPrice >= pkg.price) {
       suggestion = pkg;
+      saving = totalPrice - pkg.price;
       break;
     }
-  }
-
-  // Additional: if totalPrice alone exceeds any package price, suggest smallest package that is cheaper
-  if (!suggestion) {
-    for (let pkg of PACKAGES) {
-      if (totalPrice >= pkg.price && totalBocados <= pkg.bocados * 1.2) {
-        suggestion = pkg;
-        break;
-      }
+    // Caso 2: precio se acerca al 85% del paquete Y bocados similares (80% del paquete)
+    if (totalPrice >= pkg.price * 0.85 && totalBocados >= pkg.bocados * 0.7) {
+      suggestion = pkg;
+      saving = totalPrice - pkg.price;
+      break;
     }
   }
 
   if (suggestion) {
     alertBox.classList.remove('hidden');
-    alertText.textContent = `¡Te conviene más nuestro paquete cerrado para ${suggestion.people} personas por $${suggestion.price.toLocaleString('es-UY')}! Incluye ${suggestion.bocados} bocados y te ahorrás $${(totalPrice - suggestion.price) > 0 ? (totalPrice - suggestion.price).toLocaleString('es-UY') : 'hasta un 20%'} vs tu armado actual.`;
-    alertBtn.textContent = `Ver paquete ${suggestion.people} pers →`;
+    alertBox.classList.add('animate-fade-in');
+    const savingText = saving > 0 ? `te ahorrás $${saving.toLocaleString('es-UY')}` : `te llevás ${suggestion.bocados - totalBocados > 0 ? (suggestion.bocados - totalBocados) + ' bocados extra' : 'hasta un 20% más por el mismo precio'}`;
+    alertText.textContent = `¡Te conviene más nuestro paquete cerrado para ${suggestion.people} personas por $${suggestion.price.toLocaleString('es-UY')}! Incluye ${suggestion.bocados} bocados (${suggestion.items}) y ${savingText} vs tu armado actual de $${totalPrice.toLocaleString('es-UY')}.`;
+    alertBtn.textContent = `Agregar paquete ${suggestion.people} pers por $${suggestion.price.toLocaleString('es-UY')} →`;
     alertBtn.onclick = () => {
       addPackageToCart(String(suggestion.people));
-      switchCotizadorTab('paquetes');
-      document.getElementById('cotizador').scrollIntoView({ behavior: 'smooth' });
     };
   } else {
     alertBox.classList.add('hidden');
@@ -1442,6 +1457,7 @@ window.addPackageToCart = addPackageToCart;
 window.filterProducts = filterProducts;
 window.switchCotizadorTab = switchCotizadorTab;
 window.updateCustomQty = updateCustomQty;
+window.handleCustomInput = handleCustomInput;
 window.addCustomToCart = addCustomToCart;
 window.openCart = openCart;
 window.closeCart = closeCart;
