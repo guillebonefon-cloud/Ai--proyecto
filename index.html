@@ -7,7 +7,7 @@
     <meta name="description" content="La Nueva Barcelonesa - Panadería artesanal y catering premium en Montevideo desde 1930. Lunch, tortas, salados y dulces artesanales. Ejido 1400.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,1,400;9..144,0,600;9..144,0,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,1,400;9..144,0,600;9..144,0,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -18,19 +18,23 @@
                         'sans': ['Instrument Sans', 'sans-serif'],
                     },
                     colors: {
-                        'ink': '#0A0A0B',
-                        'navy': '#10131A',
-                        'navy-light': '#171C28',
-                        'paper': '#FDFCF8',
-                        'cream': '#F5F1E8',
+                        'paper': '#FFFFFF',
+                        'ink': '#0F2D52',
+                        'navy': '#0A1F3A',
+                        'navy-light': '#1B3A5F',
+                        'navy-soft': '#E8EEF6',
+                        'navy-muted': '#5A7A9A',
+                        'cream': '#FFFBF0',
+                        'cream-dark': '#F5EFE0',
                         'gold': '#C9A86A',
-                        'gold-light': '#E8D5B5',
+                        'gold-light': '#F6E8C3',
                         'gold-dark': '#8C6D3F',
+                        'amber': '#E8A532',
+                        'amber-light': '#FFF3D6',
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.6s ease-out',
                         'slide-up': 'slideUp 0.5s ease-out',
-                        'marquee': 'marquee 25s linear infinite',
                     }
                 }
             }
@@ -38,86 +42,77 @@
     </script>
     <style>
         * { -webkit-font-smoothing: antialiased; }
-        body { background: #FDFCF8; }
+        body { background: #FFFFFF; color: #0F2D52; }
         .text-balance { text-wrap: balance; }
-        .gold-gradient { background: linear-gradient(135deg, #C9A86A 0%, #E8D5B5 50%, #C9A86A 100%); }
-        .nav-blur { backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
         .card-hover { transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
-        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.18); }
-        .shimmer { position: relative; overflow: hidden; }
-        .shimmer::after {
-            content: ''; position: absolute; inset:0;
-            background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,0.2) 50%, transparent 80%);
-            transform: translateX(-100%); animation: shimmer 2.5s infinite;
-        }
-        @keyframes shimmer { 100% { transform: translateX(100%); } }
-        @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
-        @keyframes slideUp { from { opacity:0; transform: translateY(20px) } to { opacity:1; transform: translateY(0) } }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(15,45,82,0.15); }
+        .gold-gradient { background: linear-gradient(135deg, #C9A86A 0%, #E8C99A 50%, #C9A86A 100%); }
+        .navy-gradient { background: linear-gradient(135deg, #0A1F3A 0%, #1B3A5F 100%); }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #C9A86A; border-radius: 999px; }
-        .slot-active { background:#0A0A0B !important; color:#FDFCF8 !important; border-color:#0A0A0B !important; }
-        .tab-active { background:#0A0A0B; color:#FDFCF8; }
-        .tab-inactive { background: transparent; color:#6B7280; }
-        .tab-inactive:hover { color:#0A0A0B; }
+        .slot-active { background:#0F2D52 !important; color:#FFFFFF !important; border-color:#0F2D52 !important; }
+        .tab-active { background:#0F2D52; color:#FFFFFF; }
+        .tab-inactive { background: transparent; color:#5A7A9A; }
+        .tab-inactive:hover { color:#0F2D52; }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type=number] { -moz-appearance: textfield; }
     </style>
 </head>
-<body class="font-sans text-ink antialiased selection:bg-gold selection:text-ink">
+<body class="font-sans antialiased selection:bg-gold selection:text-navy">
 
-    <!-- TOP BAR -->
-    <div class="bg-ink text-cream text-[11px] tracking-[0.18em] uppercase py-2.5 px-4 text-center font-medium">
+    <!-- TOP BAR - Azul Marino Institucional -->
+    <div class="bg-navy text-white text-[11px] tracking-[0.18em] uppercase py-2.5 px-4 text-center font-medium">
         <div class="flex items-center justify-center gap-6 flex-wrap">
-            <span class="flex items-center gap-2"><span class="w-1 h-1 bg-gold rounded-full"></span> Pedidos con 24h de anticipación</span>
-            <span class="hidden md:flex items-center gap-2"><span class="w-1 h-1 bg-gold rounded-full"></span> Envíos a todo Montevideo</span>
-            <span class="hidden md:flex items-center gap-2"><span class="w-1 h-1 bg-gold rounded-full"></span> Ejido 1400, Montevideo</span>
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></span> Pedidos con 24h de anticipación</span>
+            <span class="hidden md:flex items-center gap-2"><span class="w-1 h-1 bg-white/40 rounded-full"></span> Envíos a todo Montevideo</span>
+            <span class="hidden md:flex items-center gap-2"><span class="w-1 h-1 bg-white/40 rounded-full"></span> Ejido 1400, Montevideo • Tel 2901 2672</span>
         </div>
     </div>
 
-    <!-- NAV -->
-    <nav id="navbar" class="sticky top-0 z-40 bg-paper/80 nav-blur border-b border-ink/[0.06]">
+    <!-- NAV - Fondo Blanco Luminoso -->
+    <nav id="navbar" class="sticky top-0 z-40 bg-white/85 nav-blur border-b border-navy-soft">
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-[72px]">
-                <!-- Logo -->
+            <div class="flex items-center justify-between h-[76px]">
                 <a href="#" class="flex items-center gap-3">
-                    <div class="w-9 h-9 bg-ink text-cream flex items-center justify-center font-display font-bold text-[18px] tracking-tighter">B</div>
+                    <div class="w-10 h-10 bg-navy text-white flex items-center justify-center font-display font-bold text-[20px] tracking-tighter rounded-[10px]">B</div>
                     <div class="leading-[0.9]">
-                        <div class="font-display font-semibold text-[17px] tracking-[-0.02em]">La Nueva</div>
-                        <div class="font-display font-light text-[17px] tracking-[-0.02em] -mt-1">Barcelonesa</div>
+                        <div class="font-display font-bold text-[18px] tracking-[-0.02em] text-navy">La Nueva</div>
+                        <div class="font-display font-light text-[18px] tracking-[-0.02em] -mt-1 text-navy">Barcelonesa</div>
                     </div>
-                    <div class="hidden md:block ml-4 pl-4 border-l border-ink/10">
-                        <div class="text-[10px] tracking-[0.2em] uppercase opacity-60">Desde 1930</div>
-                        <div class="text-[11px] font-medium -mt-0.5">Montevideo</div>
+                    <div class="hidden md:block ml-4 pl-4 border-l border-navy-soft">
+                        <div class="text-[10px] tracking-[0.2em] uppercase text-navy-muted font-medium">Desde 1930</div>
+                        <div class="text-[11px] font-bold text-navy -mt-0.5">Montevideo</div>
                     </div>
                 </a>
 
-                <!-- Links Desktop -->
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="#tienda" class="text-[13px] tracking-[0.08em] uppercase font-medium hover:text-gold-dark transition">Tienda</a>
-                    <a href="#cotizador" class="text-[13px] tracking-[0.08em] uppercase font-medium hover:text-gold-dark transition">Cotizador</a>
-                    <a href="#nosotros" class="text-[13px] tracking-[0.08em] uppercase font-medium hover:text-gold-dark transition">Herencia</a>
-                    <a href="#contacto" class="text-[13px] tracking-[0.08em] uppercase font-medium hover:text-gold-dark transition">Contacto</a>
+                    <a href="#tienda" class="text-[13px] tracking-[0.08em] uppercase font-semibold text-navy hover:text-gold-dark transition">Tienda</a>
+                    <a href="#cotizador" class="text-[13px] tracking-[0.08em] uppercase font-semibold text-navy hover:text-gold-dark transition">Cotizador</a>
+                    <a href="#nosotros" class="text-[13px] tracking-[0.08em] uppercase font-semibold text-navy hover:text-gold-dark transition">Herencia</a>
+                    <a href="#contacto" class="text-[13px] tracking-[0.08em] uppercase font-semibold text-navy hover:text-gold-dark transition">Contacto</a>
                 </div>
 
-                <!-- Actions -->
                 <div class="flex items-center gap-3">
-                    <button onclick="toggleAdmin()" class="hidden md:flex text-[11px] tracking-widest uppercase border border-ink/10 px-3 py-2 hover:bg-ink hover:text-cream transition">Planilla</button>
-                    <button onclick="openCart()" class="relative flex items-center gap-3 bg-ink text-cream pl-4 pr-1.5 py-1.5 rounded-full group">
-                        <span class="text-[12px] tracking-[0.12em] uppercase font-medium">Carrito</span>
-                        <span id="cart-count" class="bg-gold text-ink w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-bold">0</span>
+                    <button onclick="toggleAdmin()" class="hidden md:flex text-[11px] tracking-widest uppercase border border-navy-soft px-4 py-2.5 rounded-full hover:bg-navy hover:text-white transition font-medium">Planilla</button>
+                    <button onclick="openCart()" class="relative flex items-center gap-3 bg-navy text-white pl-5 pr-1.5 py-1.5 rounded-full group hover:bg-navy-light transition">
+                        <span class="text-[12px] tracking-[0.12em] uppercase font-bold">Carrito</span>
+                        <span id="cart-count" class="bg-gold text-navy w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-bold">0</span>
                     </button>
-                    <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center border border-ink/10 rounded-full">
+                    <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center border border-navy-soft rounded-full text-navy">
                         <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M0 0H18V2H0V0ZM0 5H18V7H0V5ZM0 10H18V12H0V10Z" fill="currentColor"/></svg>
                     </button>
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden border-t border-ink/10 bg-paper">
+        <div id="mobile-menu" class="lg:hidden hidden border-t border-navy-soft bg-white">
             <div class="px-6 py-6 flex flex-col gap-5">
-                <a href="#tienda" class="font-display text-2xl">Tienda</a>
-                <a href="#cotizador" class="font-display text-2xl">Cotizador de Lunch</a>
-                <a href="#nosotros" class="font-display text-2xl">Herencia</a>
-                <a href="#contacto" class="font-display text-2xl">Contacto</a>
-                <div class="pt-4 border-t border-ink/10 text-sm opacity-60">
+                <a href="#tienda" class="font-display text-2xl text-navy">Tienda</a>
+                <a href="#cotizador" class="font-display text-2xl text-navy">Cotizador de Lunch</a>
+                <a href="#nosotros" class="font-display text-2xl text-navy">Herencia</a>
+                <a href="#contacto" class="font-display text-2xl text-navy">Contacto</a>
+                <div class="pt-4 border-t border-navy-soft text-sm text-navy-muted">
                     <p>Ejido 1400, Montevideo</p>
                     <p>Tel: 2901 2672</p>
                 </div>
@@ -125,81 +120,78 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="relative overflow-hidden">
-        <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <!-- HERO - Fondo Blanco Luminoso -->
+    <section class="relative overflow-hidden bg-white">
+        <div class="absolute top-0 right-0 w-[800px] h-[600px] bg-navy-soft/50 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3"></div>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 relative">
             <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-0 min-h-[86vh] items-stretch">
-                <!-- Left Content -->
                 <div class="py-14 lg:py-24 flex flex-col justify-center relative z-10">
-                    <div class="inline-flex items-center gap-2 border border-ink/10 rounded-full px-3 py-1 w-fit mb-8">
+                    <div class="inline-flex items-center gap-2 border border-navy-soft bg-navy-soft/30 rounded-full px-4 py-1.5 w-fit mb-8">
                         <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                        <span class="text-[11px] tracking-[0.14em] uppercase font-medium">Abierto hoy • Retiros y envíos</span>
+                        <span class="text-[11px] tracking-[0.14em] uppercase font-bold text-navy">Abierto hoy • Retiros y envíos</span>
                     </div>
 
-                    <h1 class="font-display text-[52px] lg:text-[84px] leading-[0.85] tracking-[-0.04em] text-balance">
+                    <h1 class="font-display text-[52px] lg:text-[84px] leading-[0.85] tracking-[-0.04em] text-balance text-navy">
                         Panadería<br>
-                        <span class="font-light italic">artesanal</span><br>
+                        <span class="font-light italic text-gold-dark">artesanal</span><br>
                         de alta gama.
                     </h1>
 
-                    <p class="mt-8 text-[17px] leading-[1.6] text-ink/70 max-w-[44ch] text-balance">
+                    <p class="mt-8 text-[17px] leading-[1.6] text-navy-muted max-w-[44ch] text-balance">
                         Desde 1930 en Ejido 1400, elaboramos a mano cada pieza. Hoy transformamos la tradición en una experiencia de catering premium para tus eventos.
                     </p>
 
                     <div class="mt-10 flex flex-wrap gap-3">
-                        <a href="#tienda" class="bg-ink text-cream px-8 h-[52px] inline-flex items-center gap-3 rounded-full text-[13px] tracking-[0.12em] uppercase font-medium hover:bg-navy-light transition group">
+                        <a href="#tienda" class="bg-gold text-navy px-8 h-[52px] inline-flex items-center gap-3 rounded-full text-[13px] tracking-[0.12em] uppercase font-bold hover:bg-amber transition group shadow-[0_8px_20px_rgba(201,168,106,0.3)]">
                             Explorar tienda
-                            <span class="w-7 h-7 bg-cream text-ink rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform">→</span>
+                            <span class="w-7 h-7 bg-navy text-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform">→</span>
                         </a>
-                        <a href="#cotizador" class="border border-ink/15 px-8 h-[52px] inline-flex items-center rounded-full text-[13px] tracking-[0.12em] uppercase font-medium hover:bg-ink hover:text-cream hover:border-ink transition">
+                        <a href="#cotizador" class="border border-navy/15 bg-white px-8 h-[52px] inline-flex items-center rounded-full text-[13px] tracking-[0.12em] uppercase font-bold text-navy hover:bg-navy hover:text-white hover:border-navy transition">
                             Cotizar lunch
                         </a>
                     </div>
 
-                    <div class="mt-14 grid grid-cols-3 gap-6 max-w-[420px] border-t border-ink/10 pt-8">
+                    <div class="mt-14 grid grid-cols-3 gap-6 max-w-[420px] border-t border-navy-soft pt-8">
                         <div>
-                            <div class="font-display text-3xl leading-none">+94</div>
-                            <div class="text-[11px] tracking-[0.1em] uppercase mt-2 opacity-60 leading-[1.3]">Años de<br>tradición</div>
+                            <div class="font-display text-3xl leading-none text-navy">+94</div>
+                            <div class="text-[11px] tracking-[0.1em] uppercase mt-2 text-navy-muted font-medium leading-[1.3]">Años de<br>tradición</div>
                         </div>
                         <div>
-                            <div class="font-display text-3xl leading-none">4.9</div>
-                            <div class="text-[11px] tracking-[0.1em] uppercase mt-2 opacity-60 leading-[1.3]">Rating de<br>clientes</div>
+                            <div class="font-display text-3xl leading-none text-navy">4.9</div>
+                            <div class="text-[11px] tracking-[0.1em] uppercase mt-2 text-navy-muted font-medium leading-[1.3]">Rating de<br>clientes</div>
                         </div>
                         <div>
-                            <div class="font-display text-3xl leading-none">+12k</div>
-                            <div class="text-[11px] tracking-[0.1em] uppercase mt-2 opacity-60 leading-[1.3]">Eventos<br>realizados</div>
+                            <div class="font-display text-3xl leading-none text-navy">+12k</div>
+                            <div class="text-[11px] tracking-[0.1em] uppercase mt-2 text-navy-muted font-medium leading-[1.3]">Eventos<br>realizados</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Visual -->
                 <div class="relative lg:ml-8 min-h-[520px] lg:min-h-auto">
-                    <div class="absolute inset-0 lg:inset-y-8 bg-navy rounded-[32px] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000&auto=format&fit=crop" alt="Panadería artesanal premium" class="w-full h-full object-cover opacity-[0.88]">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent"></div>
+                    <div class="absolute inset-0 lg:inset-y-8 bg-navy rounded-[32px] overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000&auto=format&fit=crop" alt="Panadería artesanal premium" class="w-full h-full object-cover opacity-[0.9]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
                         <div class="absolute inset-0 bg-gradient-to-br from-gold/20 via-transparent to-transparent mix-blend-overlay"></div>
                         
-                        <!-- Floating Card -->
-                        <div class="absolute bottom-6 left-6 right-6 bg-paper rounded-[20px] p-5 flex gap-4 shadow-2xl">
+                        <div class="absolute bottom-6 left-6 right-6 bg-white rounded-[20px] p-5 flex gap-4 shadow-2xl">
                             <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=200&auto=format&fit=crop" class="w-[72px] h-[72px] rounded-[14px] object-cover">
                             <div class="flex-1 min-w-0">
                                 <div class="flex items-center gap-2">
-                                    <span class="text-[10px] tracking-[0.15em] uppercase bg-ink text-cream px-2 py-0.5 rounded-full">Más vendido</span>
-                                    <span class="text-[11px] opacity-60">★★★★★ 4.9</span>
+                                    <span class="text-[10px] tracking-[0.15em] uppercase bg-navy text-white px-2 py-0.5 rounded-full font-bold">Más vendido</span>
+                                    <span class="text-[11px] text-navy-muted">★★★★★ 4.9</span>
                                 </div>
-                                <div class="font-display font-medium text-[16px] mt-1">Lunch Premium 15 personas</div>
-                                <div class="text-[13px] opacity-60 leading-[1.3] mt-0.5">50 J&Q, 50 surtidos, 50 saladitos, postre obsequio</div>
+                                <div class="font-display font-bold text-[16px] mt-1 text-navy">Lunch Premium 15 personas</div>
+                                <div class="text-[13px] text-navy-muted leading-[1.3] mt-0.5">50 J&Q, 50 surtidos, 50 saladitos, postre obsequio</div>
                                 <div class="mt-2 flex items-center justify-between">
-                                    <span class="font-medium">$9.290</span>
-                                    <button onclick="addPackageToCart('15')" class="text-[11px] tracking-[0.1em] uppercase bg-ink text-cream px-3 py-1.5 rounded-full">Agregar +</button>
+                                    <span class="font-bold text-navy">$9.290</span>
+                                    <button onclick="addPackageToCart('15')" class="text-[11px] tracking-[0.1em] uppercase bg-gold text-navy px-3 py-1.5 rounded-full font-bold hover:bg-amber transition">Agregar +</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Gold Detail -->
-                        <div class="absolute top-8 right-8 w-[84px] h-[84px] border border-gold/30 rounded-full flex items-center justify-center">
-                            <div class="w-[64px] h-[64px] border border-gold/50 rounded-full flex items-center justify-center">
-                                <span class="font-display italic text-gold-light text-[11px] tracking-[0.2em] uppercase text-center leading-[1.1]">Artesanal<br>desde<br>1930</span>
+                        <div class="absolute top-8 right-8 w-[84px] h-[84px] border border-gold/40 rounded-full flex items-center justify-center backdrop-blur">
+                            <div class="w-[64px] h-[64px] border border-gold/60 rounded-full flex items-center justify-center bg-white/10">
+                                <span class="font-display italic text-gold-light text-[11px] tracking-[0.2em] uppercase text-center leading-[1.1] font-bold">Artesanal<br>desde<br>1930</span>
                             </div>
                         </div>
                     </div>
@@ -208,60 +200,60 @@
         </div>
     </section>
 
-    <!-- CATEGORIES -->
-    <section class="py-16 border-y border-ink/[0.06] bg-cream/50">
+    <!-- CATEGORIES - Azul Marino -->
+    <section class="py-16 bg-navy-soft/30 border-y border-navy-soft">
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
             <div class="flex items-end justify-between gap-8 flex-wrap mb-10">
-                <h2 class="font-display text-[36px] lg:text-[48px] leading-[0.9] tracking-[-0.03em]">Tres universos,<br>una misma artesanía.</h2>
-                <p class="max-w-[32ch] text-[15px] leading-[1.6] opacity-60">Selección curada de salados, dulces y catering para eventos. Todo horneado hoy.</p>
+                <h2 class="font-display text-[36px] lg:text-[48px] leading-[0.9] tracking-[-0.03em] text-navy">Tres universos,<br>una misma artesanía.</h2>
+                <p class="max-w-[32ch] text-[15px] leading-[1.6] text-navy-muted">Selección curada de salados, dulces y catering para eventos. Todo horneado hoy.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-4">
-                <a href="#tienda" onclick="filterProducts('salados')" class="group relative h-[320px] bg-ink rounded-[24px] overflow-hidden p-7 flex flex-col justify-end">
+                <a href="#tienda" onclick="filterProducts('salados')" class="group relative h-[320px] bg-navy rounded-[24px] overflow-hidden p-7 flex flex-col justify-end shadow-lg">
                     <img src="https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
-                    <div class="relative">
-                        <div class="w-8 h-8 bg-paper rounded-full flex items-center justify-center mb-4 text-ink">↗</div>
-                        <div class="text-cream font-display text-[28px] leading-[0.9]">Salados</div>
-                        <div class="text-cream/70 text-[13px] mt-2">Medialunas, olímpicos, saladitos, empanadas</div>
-                    </div>
-                </a>
-                <a href="#tienda" onclick="filterProducts('dulces')" class="group relative h-[320px] bg-[#2A1F1A] rounded-[24px] overflow-hidden p-7 flex flex-col justify-end">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent"></div>
-                    <div class="relative">
-                        <div class="w-8 h-8 bg-paper rounded-full flex items-center justify-center mb-4 text-ink">↗</div>
-                        <div class="text-cream font-display text-[28px] leading-[0.9]">Dulces</div>
-                        <div class="text-cream/70 text-[13px] mt-2">Tortas, postres, masitas, alfajores</div>
-                    </div>
-                </a>
-                <a href="#cotizador" class="group relative h-[320px] bg-navy-light rounded-[24px] overflow-hidden p-7 flex flex-col justify-end border border-gold/20">
-                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent"></div>
                     <div class="relative">
-                        <div class="inline-flex items-center gap-2 bg-gold text-ink px-2.5 py-1 rounded-full text-[10px] tracking-[0.12em] uppercase font-bold mb-4">Nuevo • Cotizador inteligente</div>
-                        <div class="text-cream font-display text-[28px] leading-[0.9]">Eventos &<br>Catering</div>
-                        <div class="text-cream/70 text-[13px] mt-2">Paquetes para 5 a 100 personas</div>
+                        <div class="w-8 h-8 bg-gold rounded-full flex items-center justify-center mb-4 text-navy font-bold">↗</div>
+                        <div class="text-white font-display text-[28px] leading-[0.9]">Salados</div>
+                        <div class="text-white/70 text-[13px] mt-2">Medialunas, olímpicos, saladitos, empanadas</div>
+                    </div>
+                </a>
+                <a href="#tienda" onclick="filterProducts('dulces')" class="group relative h-[320px] bg-[#2A1F1A] rounded-[24px] overflow-hidden p-7 flex flex-col justify-end shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent"></div>
+                    <div class="relative">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mb-4 text-navy font-bold">↗</div>
+                        <div class="text-white font-display text-[28px] leading-[0.9]">Dulces</div>
+                        <div class="text-white/70 text-[13px] mt-2">Tortas, postres, masitas, alfajores</div>
+                    </div>
+                </a>
+                <a href="#cotizador" class="group relative h-[320px] bg-navy-light rounded-[24px] overflow-hidden p-7 flex flex-col justify-end border border-gold/30 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-transparent"></div>
+                    <div class="relative">
+                        <div class="inline-flex items-center gap-2 bg-gold text-navy px-2.5 py-1 rounded-full text-[10px] tracking-[0.12em] uppercase font-bold mb-4">Nuevo • Cotizador inteligente</div>
+                        <div class="text-white font-display text-[28px] leading-[0.9]">Eventos &<br>Catering</div>
+                        <div class="text-white/70 text-[13px] mt-2">Paquetes para 5 a 100 personas</div>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- TIENDA -->
-    <section id="tienda" class="py-20 lg:py-28">
+    <!-- TIENDA - Fondo Blanco -->
+    <section id="tienda" class="py-20 lg:py-28 bg-white">
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
             <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
                 <div>
-                    <div class="inline-flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase font-medium border border-ink/10 rounded-full px-3 py-1">
-                        <span class="w-1.5 h-1.5 bg-gold rounded-full"></span> Catálogo en vivo
+                    <div class="inline-flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase font-bold border border-navy-soft bg-navy-soft/30 rounded-full px-4 py-1.5 text-navy">
+                        <span class="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></span> Catálogo en vivo
                     </div>
-                    <h2 class="font-display text-[42px] lg:text-[64px] leading-[0.9] tracking-[-0.04em] mt-6">Tienda<br>artesanal.</h2>
+                    <h2 class="font-display text-[42px] lg:text-[64px] leading-[0.9] tracking-[-0.04em] mt-6 text-navy">Tienda<br>artesanal.</h2>
                 </div>
-                <div class="flex items-center gap-2 p-1 bg-ink/[0.04] rounded-full">
-                    <button onclick="filterProducts('todos')" data-filter="todos" class="filter-btn tab-active px-5 h-9 rounded-full text-[13px] font-medium tracking-wide transition">Todos</button>
-                    <button onclick="filterProducts('salados')" data-filter="salados" class="filter-btn tab-inactive px-5 h-9 rounded-full text-[13px] font-medium tracking-wide transition">Salados</button>
-                    <button onclick="filterProducts('dulces')" data-filter="dulces" class="filter-btn tab-inactive px-5 h-9 rounded-full text-[13px] font-medium tracking-wide transition">Dulces</button>
-                    <button onclick="filterProducts('eventos')" data-filter="eventos" class="filter-btn tab-inactive px-5 h-9 rounded-full text-[13px] font-medium tracking-wide transition">Eventos</button>
+                <div class="flex items-center gap-2 p-1.5 bg-navy-soft/50 rounded-full">
+                    <button onclick="filterProducts('todos')" data-filter="todos" class="filter-btn tab-active px-5 h-9 rounded-full text-[13px] font-bold tracking-wide transition">Todos</button>
+                    <button onclick="filterProducts('salados')" data-filter="salados" class="filter-btn tab-inactive px-5 h-9 rounded-full text-[13px] font-bold tracking-wide transition">Salados</button>
+                    <button onclick="filterProducts('dulces')" data-filter="dulces" class="filter-btn tab-inactive px-5 h-9 rounded-full text-[13px] font-bold tracking-wide transition">Dulces</button>
+                    <button onclick="filterProducts('eventos')" data-filter="eventos" class="filter-btn tab-inactive px-5 h-9 rounded-full text-[13px] font-bold tracking-wide transition">Eventos</button>
                 </div>
             </div>
 
@@ -271,111 +263,104 @@
         </div>
     </section>
 
-    <!-- COTIZADOR -->
-    <section id="cotizador" class="py-20 lg:py-28 bg-ink text-cream relative overflow-hidden">
+    <!-- COTIZADOR - Azul Marino Institucional -->
+    <section id="cotizador" class="py-20 lg:py-28 bg-navy text-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
         <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-navy-light rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
 
         <div class="relative max-w-[1280px] mx-auto px-6 lg:px-8">
             <div class="max-w-[760px]">
-                <div class="inline-flex items-center gap-2 border border-cream/15 rounded-full px-3 py-1">
+                <div class="inline-flex items-center gap-2 border border-white/15 bg-white/5 rounded-full px-4 py-1.5">
                     <span class="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></span>
-                    <span class="text-[11px] tracking-[0.18em] uppercase">Cotizador inteligente con IA de precios</span>
+                    <span class="text-[11px] tracking-[0.18em] uppercase font-bold">Cotizador inteligente con IA de precios</span>
                 </div>
                 <h2 class="font-display text-[40px] lg:text-[64px] leading-[0.9] tracking-[-0.04em] mt-6">Armá tu lunch.<br><span class="font-light italic text-gold-light">Nosotros optimizamos el precio.</span></h2>
-                <p class="mt-6 text-[16px] leading-[1.6] text-cream/60 max-w-[52ch]">Elegí entre nuestros paquetes cerrados o personalizá bocado por bocado. Nuestro sistema te avisa automáticamente cuando te conviene un paquete.</p>
+                <p class="mt-6 text-[16px] leading-[1.6] text-white/60 max-w-[52ch]">Elegí entre nuestros paquetes cerrados o personalizá bocado por bocado con cantidad exacta. Nuestro sistema recalcula al instante y te avisa cuando te conviene un paquete.</p>
             </div>
 
             <div class="mt-12 grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-start">
-                <!-- Tabs & Content -->
-                <div class="bg-paper text-ink rounded-[28px] p-2">
-                    <div class="flex gap-1 p-1 bg-ink/[0.06] rounded-[18px] w-fit">
-                        <button id="tab-paquetes" onclick="switchCotizadorTab('paquetes')" class="px-6 h-10 rounded-[12px] text-[13px] font-medium tracking-wide bg-ink text-cream transition">Paquetes Sugeridos</button>
-                        <button id="tab-medida" onclick="switchCotizadorTab('medida')" class="px-6 h-10 rounded-[12px] text-[13px] font-medium tracking-wide text-ink/60 hover:text-ink transition">Armá a Medida</button>
+                <div class="bg-white text-navy rounded-[28px] p-2 shadow-2xl">
+                    <div class="flex gap-1 p-1 bg-navy-soft rounded-[18px] w-fit">
+                        <button id="tab-paquetes" onclick="switchCotizadorTab('paquetes')" class="px-6 h-10 rounded-[12px] text-[13px] font-bold tracking-wide bg-navy text-white transition">Paquetes Sugeridos</button>
+                        <button id="tab-medida" onclick="switchCotizadorTab('medida')" class="px-6 h-10 rounded-[12px] text-[13px] font-bold tracking-wide text-navy-muted hover:text-navy transition">Armá a Medida</button>
                     </div>
 
-                    <!-- Paquetes -->
                     <div id="cotizador-paquetes" class="p-4 lg:p-6">
-                        <div id="packages-grid" class="grid gap-4">
-                            <!-- JS Render -->
-                        </div>
+                        <div id="packages-grid" class="grid gap-4"></div>
                     </div>
 
-                    <!-- A medida -->
                     <div id="cotizador-medida" class="hidden p-4 lg:p-6">
                         <div class="flex items-center justify-between mb-6">
-                            <h3 class="font-display text-[22px]">Seleccioná cantidades</h3>
-                            <div class="text-[12px] opacity-60">Precio por unidad</div>
+                            <h3 class="font-display text-[22px] font-bold text-navy">Seleccioná cantidades exactas</h3>
+                            <div class="text-[11px] font-bold tracking-[0.1em] uppercase text-navy-muted bg-navy-soft px-3 py-1 rounded-full">Input directo: escribí 150</div>
                         </div>
-                        <div id="custom-items" class="space-y-3">
-                            <!-- JS Render -->
-                        </div>
+                        <div id="custom-items" class="space-y-3"></div>
 
-                        <div class="mt-8 p-5 bg-cream rounded-[18px] border border-ink/10">
+                        <div class="mt-8 p-5 bg-cream rounded-[18px] border border-navy-soft">
                             <div class="flex items-center justify-between">
                                 <div>
-                                    <div class="text-[11px] tracking-[0.12em] uppercase opacity-60">Total bocados</div>
-                                    <div id="custom-total-bocados" class="font-display text-2xl leading-none mt-1">0 unidades</div>
+                                    <div class="text-[11px] tracking-[0.12em] uppercase font-bold text-navy-muted">Total bocados</div>
+                                    <div id="custom-total-bocados" class="font-display text-2xl leading-none mt-1 font-bold text-navy">0 unidades</div>
                                 </div>
                                 <div class="text-right">
-                                    <div class="text-[11px] tracking-[0.12em] uppercase opacity-60">Total estimado</div>
-                                    <div id="custom-total-price" class="font-display text-2xl leading-none mt-1">$0</div>
+                                    <div class="text-[11px] tracking-[0.12em] uppercase font-bold text-navy-muted">Total estimado</div>
+                                    <div id="custom-total-price" class="font-display text-2xl leading-none mt-1 font-bold text-navy">$0</div>
                                 </div>
                             </div>
 
-                            <div id="smart-alert" class="hidden mt-4 p-4 bg-amber-50 border border-amber-200 rounded-[14px] flex gap-3">
-                                <div class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center flex-shrink-0">!</div>
-                                <div>
-                                    <div class="font-medium text-[13px] text-amber-900" id="smart-alert-text"></div>
-                                    <button id="smart-alert-btn" class="mt-2 text-[11px] tracking-[0.1em] uppercase bg-amber-900 text-amber-50 px-3 py-1.5 rounded-full"></button>
+                            <div id="smart-alert" class="hidden mt-4 p-4 bg-amber-light border border-amber/30 rounded-[14px] flex gap-3">
+                                <div class="w-8 h-8 bg-amber text-navy rounded-full flex items-center justify-center flex-shrink-0 font-bold">!</div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-[13px] text-navy" id="smart-alert-text"></div>
+                                    <button id="smart-alert-btn" class="mt-3 text-[11px] tracking-[0.1em] uppercase bg-navy text-white px-4 py-2 rounded-full font-bold hover:bg-navy-light transition"></button>
                                 </div>
                             </div>
 
-                            <button onclick="addCustomToCart()" id="btn-add-custom" class="mt-5 w-full h-[48px] bg-ink text-cream rounded-full text-[13px] tracking-[0.12em] uppercase font-medium hover:bg-navy-light transition disabled:opacity-30 disabled:cursor-not-allowed" disabled>
-                                Añadir cotización al carrito
+                            <button onclick="addCustomToCart()" id="btn-add-custom" class="mt-5 w-full h-[48px] bg-navy text-white rounded-full text-[13px] tracking-[0.12em] uppercase font-bold hover:bg-navy-light transition disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-2" disabled>
+                                <span>Añadir cotización al carrito</span>
+                                <span class="w-6 h-6 bg-gold text-navy rounded-full flex items-center justify-center font-bold">→</span>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Side Info -->
                 <div class="space-y-4">
-                    <div class="bg-navy-light border border-cream/10 rounded-[24px] p-7">
-                        <h3 class="font-display text-[20px] leading-[1.1]">¿Cómo funciona la<br>inteligencia de precios?</h3>
+                    <div class="bg-navy-light border border-white/10 rounded-[24px] p-7">
+                        <h3 class="font-display text-[20px] leading-[1.1] font-bold">¿Cómo funciona la<br>inteligencia de precios?</h3>
                         <div class="mt-6 space-y-4">
                             <div class="flex gap-3">
-                                <div class="w-7 h-7 rounded-full bg-cream/10 flex items-center justify-center text-[12px] flex-shrink-0 mt-0.5">1</div>
-                                <p class="text-[13px] leading-[1.5] text-cream/70">Ingresás las cantidades de cada bocado que necesitás para tu evento.</p>
+                                <div class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[12px] font-bold flex-shrink-0 mt-0.5">1</div>
+                                <p class="text-[13px] leading-[1.5] text-white/70">Ingresá la cantidad exacta de cada bocado (podés escribir 150 directamente).</p>
                             </div>
                             <div class="flex gap-3">
-                                <div class="w-7 h-7 rounded-full bg-cream/10 flex items-center justify-center text-[12px] flex-shrink-0 mt-0.5">2</div>
-                                <p class="text-[13px] leading-[1.5] text-cream/70">El sistema calcula en tiempo real y compara con nuestros paquetes cerrados.</p>
+                                <div class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[12px] font-bold flex-shrink-0 mt-0.5">2</div>
+                                <p class="text-[13px] leading-[1.5] text-white/70">El sistema recalcula al instante el total y compara con paquetes cerrados.</p>
                             </div>
                             <div class="flex gap-3">
-                                <div class="w-7 h-7 rounded-full bg-gold text-ink flex items-center justify-center text-[12px] font-bold flex-shrink-0 mt-0.5">3</div>
-                                <p class="text-[13px] leading-[1.5] text-cream">Si tu armado supera el valor de un paquete, te sugerimos automáticamente la mejor opción para ahorrar.</p>
+                                <div class="w-7 h-7 rounded-full bg-gold text-navy flex items-center justify-center text-[12px] font-bold flex-shrink-0 mt-0.5">3</div>
+                                <p class="text-[13px] leading-[1.5] text-white">Si superás el valor de un paquete, te sugerimos automáticamente la mejor opción.</p>
                             </div>
                         </div>
-                        <div class="mt-7 pt-6 border-t border-cream/10 flex items-center gap-3">
+                        <div class="mt-7 pt-6 border-t border-white/10 flex items-center gap-3">
                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" class="w-9 h-9 rounded-full object-cover">
                             <div>
-                                <div class="text-[12px] font-medium">Atención personalizada</div>
-                                <div class="text-[11px] text-cream/60">presupuesto.barcelonesa@gmail.com</div>
+                                <div class="text-[12px] font-bold">Atención personalizada</div>
+                                <div class="text-[11px] text-white/60">presupuesto.barcelonesa@gmail.com</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-gold rounded-[24px] p-7 text-ink">
+                    <div class="bg-gold rounded-[24px] p-7 text-navy">
                         <div class="text-[11px] tracking-[0.18em] uppercase font-bold opacity-60">Beneficio exclusivo</div>
-                        <div class="font-display text-[22px] leading-[1.1] mt-3">En paquetes de 15 personas o más, postre de obsequio.</div>
-                        <div class="mt-4 text-[13px] leading-[1.5] opacity-80">Incluye torta artesanal o masa fina a elección para cerrar tu evento con broche de oro.</div>
+                        <div class="font-display text-[22px] leading-[1.1] mt-3 font-bold">En paquetes de 15 personas o más, postre de obsequio.</div>
+                        <div class="mt-4 text-[13px] leading-[1.5] opacity-80 font-medium">Incluye torta artesanal o masa fina a elección para cerrar tu evento con broche de oro.</div>
                     </div>
 
-                    <div class="border border-cream/10 rounded-[24px] p-5 flex items-center gap-4">
-                        <div class="w-12 h-12 bg-cream/10 rounded-full flex items-center justify-center">🕒</div>
+                    <div class="border border-white/10 rounded-[24px] p-5 flex items-center gap-4 bg-white/5">
+                        <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold">🕒</div>
                         <div>
-                            <div class="text-[13px] font-medium">Entrega express en el día</div>
-                            <div class="text-[12px] text-cream/60">Para pedidos confirmados antes de las 11:00</div>
+                            <div class="text-[13px] font-bold">Entrega express en el día</div>
+                            <div class="text-[12px] text-white/60">Para pedidos confirmados antes de las 11:00</div>
                         </div>
                     </div>
                 </div>
@@ -383,34 +368,34 @@
         </div>
     </section>
 
-    <!-- NOSOTROS -->
-    <section id="nosotros" class="py-20 lg:py-28 bg-cream">
+    <!-- NOSOTROS - Blanco -->
+    <section id="nosotros" class="py-20 lg:py-28 bg-white">
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div class="relative">
-                    <div class="rounded-[28px] overflow-hidden aspect-[4/5] bg-ink">
-                        <img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-90">
+                    <div class="rounded-[28px] overflow-hidden aspect-[4/5] bg-navy-soft">
+                        <img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
                     </div>
-                    <div class="absolute -bottom-8 -right-8 bg-paper rounded-[20px] p-6 shadow-2xl border border-ink/5 max-w-[260px] hidden lg:block">
+                    <div class="absolute -bottom-8 -right-8 bg-navy text-white rounded-[20px] p-6 shadow-2xl max-w-[260px] hidden lg:block">
                         <div class="font-display text-[15px] leading-[1.3]">“No vendemos pan. Vendemos el momento en que tu familia se sienta a la mesa.”</div>
                         <div class="mt-3 text-[11px] tracking-[0.12em] uppercase opacity-60">— Familia Barcelonesa, 1930</div>
                     </div>
                 </div>
                 <div>
-                    <div class="text-[11px] tracking-[0.2em] uppercase font-medium border border-ink/10 inline-flex px-3 py-1 rounded-full">Herencia & Artesanía</div>
-                    <h2 class="font-display text-[42px] lg:text-[56px] leading-[0.9] tracking-[-0.04em] mt-6">Noventa y cuatro años haciendo lo mismo: <span class="italic font-light">hacerlo bien.</span></h2>
-                    <div class="mt-8 space-y-5 text-[16px] leading-[1.7] opacity-70">
+                    <div class="text-[11px] tracking-[0.2em] uppercase font-bold border border-navy-soft bg-navy-soft/50 inline-flex px-4 py-1.5 rounded-full text-navy">Herencia & Artesanía</div>
+                    <h2 class="font-display text-[42px] lg:text-[56px] leading-[0.9] tracking-[-0.04em] mt-6 text-navy">Noventa y cuatro años haciendo lo mismo: <span class="italic font-light text-gold-dark">hacerlo bien.</span></h2>
+                    <div class="mt-8 space-y-5 text-[16px] leading-[1.7] text-navy-muted">
                         <p>La Nueva Barcelonesa nació en 1930 en Ejido 1400, Montevideo. Una esquina, un horno a leña y la convicción de que la calidad no se negocia.</p>
                         <p>Hoy seguimos amasando a mano, seleccionando la misma harina y manteniendo las recetas que pasaron de generación en generación. Solo cambiamos una cosa: ahora podés pedirlo desde tu celular.</p>
                     </div>
                     <div class="mt-10 grid grid-cols-2 gap-6">
-                        <div class="border-t border-ink/10 pt-4">
-                            <div class="font-display text-[28px]">100%</div>
-                            <div class="text-[12px] uppercase tracking-[0.1em] opacity-60 mt-1">Artesanal, sin conservantes</div>
+                        <div class="border-t border-navy-soft pt-4">
+                            <div class="font-display text-[28px] font-bold text-navy">100%</div>
+                            <div class="text-[12px] uppercase tracking-[0.1em] text-navy-muted font-medium mt-1">Artesanal, sin conservantes</div>
                         </div>
-                        <div class="border-t border-ink/10 pt-4">
-                            <div class="font-display text-[28px]">24h</div>
-                            <div class="text-[12px] uppercase tracking-[0.1em] opacity-60 mt-1">Fermentación lenta</div>
+                        <div class="border-t border-navy-soft pt-4">
+                            <div class="font-display text-[28px] font-bold text-navy">24h</div>
+                            <div class="text-[12px] uppercase tracking-[0.1em] text-navy-muted font-medium mt-1">Fermentación lenta</div>
                         </div>
                     </div>
                 </div>
@@ -418,31 +403,31 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer id="contacto" class="bg-ink text-cream pt-16 pb-8">
+    <!-- FOOTER - Azul Marino -->
+    <footer id="contacto" class="bg-navy text-white pt-16 pb-8">
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-[1.2fr_0.8fr_0.8fr] gap-12 pb-14 border-b border-cream/10">
+            <div class="grid lg:grid-cols-[1.2fr_0.8fr_0.8fr] gap-12 pb-14 border-b border-white/10">
                 <div>
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-cream text-ink flex items-center justify-center font-display font-bold text-[20px]">B</div>
+                        <div class="w-10 h-10 bg-gold text-navy flex items-center justify-center font-display font-bold text-[20px] rounded-[10px]">B</div>
                         <div class="leading-[0.9]">
-                            <div class="font-display font-semibold text-[18px]">La Nueva Barcelonesa</div>
+                            <div class="font-display font-bold text-[18px]">La Nueva Barcelonesa</div>
                             <div class="text-[11px] tracking-[0.18em] uppercase opacity-60 mt-1">Panadería premium • Montevideo</div>
                         </div>
                     </div>
-                    <p class="mt-6 text-[14px] leading-[1.6] text-cream/60 max-w-[36ch]">Panadería artesanal y servicio de catering de alta gama. Tradición familiar desde 1930, ahora con experiencia digital premium.</p>
+                    <p class="mt-6 text-[14px] leading-[1.6] text-white/60 max-w-[36ch]">Panadería artesanal y servicio de catering de alta gama. Tradición familiar desde 1930, ahora con experiencia digital premium luminosa.</p>
                     <div class="mt-8 flex gap-3">
-                        <a href="#" class="w-9 h-9 rounded-full border border-cream/15 flex items-center justify-center hover:bg-cream hover:text-ink transition">IG</a>
-                        <a href="#" class="w-9 h-9 rounded-full border border-cream/15 flex items-center justify-center hover:bg-cream hover:text-ink transition">FB</a>
-                        <a href="mailto:presupuesto.barcelonesa@gmail.com" class="w-9 h-9 rounded-full border border-cream/15 flex items-center justify-center hover:bg-cream hover:text-ink transition">@</a>
+                        <a href="#" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition font-bold text-[12px]">IG</a>
+                        <a href="#" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition font-bold text-[12px]">FB</a>
+                        <a href="mailto:presupuesto.barcelonesa@gmail.com" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition font-bold text-[12px]">@</a>
                     </div>
                 </div>
                 <div>
-                    <div class="text-[11px] tracking-[0.18em] uppercase font-medium opacity-40 mb-6">Contacto real</div>
+                    <div class="text-[11px] tracking-[0.18em] uppercase font-bold opacity-40 mb-6">Contacto real</div>
                     <div class="space-y-4">
                         <div>
                             <div class="text-[12px] uppercase tracking-[0.1em] opacity-50">Teléfono</div>
-                            <div class="font-display text-[18px] mt-1">2901 2672</div>
+                            <div class="font-display text-[18px] mt-1 font-bold">2901 2672</div>
                         </div>
                         <div>
                             <div class="text-[12px] uppercase tracking-[0.1em] opacity-50">Dirección</div>
@@ -455,12 +440,12 @@
                     </div>
                 </div>
                 <div>
-                    <div class="text-[11px] tracking-[0.18em] uppercase font-medium opacity-40 mb-6">Horarios & envíos</div>
-                    <div class="space-y-3 text-[13px] leading-[1.5] text-cream/70">
-                        <p><span class="text-cream">Lun a Sáb:</span> 7:00 – 20:30</p>
-                        <p><span class="text-cream">Domingos:</span> 8:00 – 13:00</p>
-                        <p class="pt-3 border-t border-cream/10 mt-4">Envíos a todo Montevideo.<br>Retiro en local sin costo.</p>
-                        <p class="text-[12px] mt-4 p-3 bg-cream/5 rounded-[12px] border border-cream/10">Pedidos de catering con 24h de anticipación mínima.</p>
+                    <div class="text-[11px] tracking-[0.18em] uppercase font-bold opacity-40 mb-6">Horarios & envíos</div>
+                    <div class="space-y-3 text-[13px] leading-[1.5] text-white/70">
+                        <p><span class="text-white font-bold">Lun a Sáb:</span> 7:00 – 20:30</p>
+                        <p><span class="text-white font-bold">Domingos:</span> 8:00 – 13:00</p>
+                        <p class="pt-3 border-t border-white/10 mt-4">Envíos a todo Montevideo.<br>Retiro en local sin costo.</p>
+                        <p class="text-[12px] mt-4 p-3 bg-white/5 rounded-[12px] border border-white/10">Pedidos de catering con 24h de anticipación mínima.</p>
                     </div>
                 </div>
             </div>
@@ -473,94 +458,91 @@
         </div>
     </footer>
 
-    <!-- CART DRAWER -->
-    <div id="cart-backdrop" onclick="closeCart()" class="fixed inset-0 bg-ink/40 backdrop-blur-[2px] z-[60] hidden opacity-0 transition-opacity duration-300"></div>
-    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[440px] bg-paper z-[61] translate-x-full transition-transform duration-[0.5s] cubic-bezier(0.16,1,0.3,1) flex flex-col shadow-2xl">
-        <div class="p-7 border-b border-ink/10 flex items-center justify-between">
+    <!-- CART DRAWER - Blanco -->
+    <div id="cart-backdrop" onclick="closeCart()" class="fixed inset-0 bg-navy/40 backdrop-blur-[2px] z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[440px] bg-white z-[61] translate-x-full transition-transform duration-[0.5s] cubic-bezier(0.16,1,0.3,1) flex flex-col shadow-2xl border-l border-navy-soft">
+        <div class="p-7 border-b border-navy-soft flex items-center justify-between bg-navy-soft/20">
             <div>
-                <h3 class="font-display text-[26px] leading-none">Tu pedido</h3>
-                <div class="text-[12px] opacity-60 mt-1"><span id="cart-items-count">0</span> productos</div>
+                <h3 class="font-display text-[26px] leading-none font-bold text-navy">Tu pedido</h3>
+                <div class="text-[12px] text-navy-muted mt-1 font-medium"><span id="cart-items-count">0</span> productos</div>
             </div>
-            <button onclick="closeCart()" class="w-9 h-9 rounded-full border border-ink/10 flex items-center justify-center hover:bg-ink hover:text-cream transition">✕</button>
+            <button onclick="closeCart()" class="w-9 h-9 rounded-full border border-navy-soft bg-white flex items-center justify-center hover:bg-navy hover:text-white transition text-navy">✕</button>
         </div>
 
-        <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar">
+        <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar bg-white">
             <div id="empty-cart" class="h-full flex flex-col items-center justify-center text-center p-8">
-                <div class="w-20 h-20 bg-ink/[0.04] rounded-full flex items-center justify-center text-2xl">🛒</div>
-                <div class="font-display text-[20px] mt-5">Tu carrito está vacío</div>
-                <div class="text-[13px] opacity-60 mt-2 max-w-[24ch]">Agregá productos de nuestra tienda o armá un lunch a medida.</div>
-                <a href="#tienda" onclick="closeCart()" class="mt-6 border border-ink/15 px-5 h-10 inline-flex items-center rounded-full text-[12px] tracking-[0.1em] uppercase">Ir a la tienda</a>
+                <div class="w-20 h-20 bg-navy-soft rounded-full flex items-center justify-center text-2xl">🛒</div>
+                <div class="font-display text-[20px] mt-5 font-bold text-navy">Tu carrito está vacío</div>
+                <div class="text-[13px] text-navy-muted mt-2 max-w-[24ch]">Agregá productos de nuestra tienda o armá un lunch a medida con cantidad exacta.</div>
+                <a href="#tienda" onclick="closeCart()" class="mt-6 border border-navy-soft px-5 h-10 inline-flex items-center rounded-full text-[12px] tracking-[0.1em] uppercase font-bold text-navy hover:bg-navy hover:text-white transition">Ir a la tienda</a>
             </div>
         </div>
 
-        <div id="cart-footer" class="p-6 border-t border-ink/10 bg-cream/50 hidden">
-            <div class="space-y-2 text-[13px]">
-                <div class="flex justify-between opacity-60"><span>Subtotal</span><span id="cart-subtotal">$0</span></div>
-                <div class="flex justify-between opacity-60"><span>Envío</span><span>Calculado en checkout</span></div>
-                <div class="flex justify-between font-medium text-[16px] pt-3 border-t border-ink/10"><span>Total a pagar</span><span id="cart-total">$0</span></div>
+        <div id="cart-footer" class="p-6 border-t border-navy-soft bg-cream hidden">
+            <div class="space-y-2 text-[13px] text-navy">
+                <div class="flex justify-between text-navy-muted"><span>Subtotal</span><span id="cart-subtotal" class="font-bold text-navy">$0</span></div>
+                <div class="flex justify-between text-navy-muted"><span>Envío</span><span>Calculado en checkout</span></div>
+                <div class="flex justify-between font-bold text-[16px] pt-3 border-t border-navy-soft"><span>Total a pagar</span><span id="cart-total">$0</span></div>
             </div>
-            <button onclick="openCheckout()" class="mt-5 w-full h-[52px] bg-ink text-cream rounded-full text-[13px] tracking-[0.12em] uppercase font-medium flex items-center justify-center gap-2 hover:bg-navy-light transition">
+            <button onclick="openCheckout()" class="mt-5 w-full h-[52px] bg-navy text-white rounded-full text-[13px] tracking-[0.12em] uppercase font-bold flex items-center justify-center gap-2 hover:bg-navy-light transition">
                 Finalizar compra
-                <span class="w-6 h-6 bg-cream text-ink rounded-full flex items-center justify-center text-[14px]">→</span>
+                <span class="w-6 h-6 bg-gold text-navy rounded-full flex items-center justify-center text-[14px] font-bold">→</span>
             </button>
-            <div class="mt-4 flex items-center justify-center gap-2 text-[10px] tracking-[0.08em] uppercase opacity-40">
+            <div class="mt-4 flex items-center justify-center gap-2 text-[10px] tracking-[0.08em] uppercase text-navy-muted font-medium">
                 <span>🔒</span> Pago seguro • Visa • Mastercard • Mercado Pago
             </div>
         </div>
     </div>
 
-    <!-- CHECKOUT MODAL -->
+    <!-- CHECKOUT MODAL - Blanco -->
     <div id="checkout-modal" class="fixed inset-0 z-[70] hidden">
-        <div class="absolute inset-0 bg-ink/70 backdrop-blur-[8px]" onclick="closeCheckout()"></div>
+        <div class="absolute inset-0 bg-navy/70 backdrop-blur-[8px]" onclick="closeCheckout()"></div>
         <div class="relative h-full overflow-y-auto">
             <div class="min-h-full flex items-start justify-center p-4 lg:p-8">
-                <div class="bg-paper w-full max-w-[1060px] rounded-[28px] overflow-hidden shadow-2xl animate-slide-up my-8">
+                <div class="bg-white w-full max-w-[1060px] rounded-[28px] overflow-hidden shadow-2xl animate-slide-up my-8 border border-navy-soft">
                     <div class="grid lg:grid-cols-[1.1fr_0.9fr]">
-                        <!-- Form -->
                         <div class="p-7 lg:p-10">
                             <div class="flex items-center justify-between">
-                                <h2 class="font-display text-[28px] leading-[0.9]">Finalizar pedido</h2>
-                                <button onclick="closeCheckout()" class="w-9 h-9 rounded-full border border-ink/10 flex items-center justify-center hover:bg-ink hover:text-cream transition">✕</button>
+                                <h2 class="font-display text-[28px] leading-[0.9] font-bold text-navy">Finalizar pedido</h2>
+                                <button onclick="closeCheckout()" class="w-9 h-9 rounded-full border border-navy-soft flex items-center justify-center hover:bg-navy hover:text-white transition text-navy">✕</button>
                             </div>
 
                             <form id="checkout-form" class="mt-8 space-y-8" onsubmit="submitOrder(event)">
-                                <!-- Cliente -->
                                 <div>
-                                    <div class="text-[11px] tracking-[0.15em] uppercase font-bold opacity-60 mb-4 flex items-center gap-2">
-                                        <span class="w-5 h-5 bg-ink text-cream rounded-full flex items-center justify-center text-[11px]">1</span> Datos del cliente
+                                    <div class="text-[11px] tracking-[0.15em] uppercase font-bold text-navy-muted mb-4 flex items-center gap-2">
+                                        <span class="w-5 h-5 bg-navy text-white rounded-full flex items-center justify-center text-[11px] font-bold">1</span> Datos del cliente
                                     </div>
                                     <div class="grid sm:grid-cols-2 gap-4">
                                         <label class="block">
-                                            <span class="text-[12px] font-medium">Nombre completo *</span>
-                                            <input required name="nombre" class="mt-1.5 w-full h-[44px] px-4 bg-cream border border-ink/10 rounded-[12px] outline-none focus:border-ink focus:ring-0 text-[14px]" placeholder="Ej: María García">
+                                            <span class="text-[12px] font-bold text-navy">Nombre completo *</span>
+                                            <input required name="nombre" class="mt-1.5 w-full h-[44px] px-4 bg-navy-soft/30 border border-navy-soft rounded-[12px] outline-none focus:border-navy focus:ring-0 text-[14px] text-navy" placeholder="Ej: María García">
                                         </label>
                                         <label class="block">
-                                            <span class="text-[12px] font-medium">Teléfono *</span>
-                                            <input required name="telefono" class="mt-1.5 w-full h-[44px] px-4 bg-cream border border-ink/10 rounded-[12px] outline-none focus:border-ink text-[14px]" placeholder="099 123 456">
+                                            <span class="text-[12px] font-bold text-navy">Teléfono *</span>
+                                            <input required name="telefono" class="mt-1.5 w-full h-[44px] px-4 bg-navy-soft/30 border border-navy-soft rounded-[12px] outline-none focus:border-navy text-[14px] text-navy" placeholder="099 123 456">
                                         </label>
                                         <label class="block sm:col-span-2">
-                                            <span class="text-[12px] font-medium">Email</span>
-                                            <input name="email" type="email" class="mt-1.5 w-full h-[44px] px-4 bg-cream border border-ink/10 rounded-[12px] outline-none focus:border-ink text-[14px]" placeholder="tu@email.com">
+                                            <span class="text-[12px] font-bold text-navy">Email</span>
+                                            <input name="email" type="email" class="mt-1.5 w-full h-[44px] px-4 bg-navy-soft/30 border border-navy-soft rounded-[12px] outline-none focus:border-navy text-[14px] text-navy" placeholder="tu@email.com">
                                         </label>
                                     </div>
                                 </div>
 
-                                <!-- Logística -->
                                 <div>
-                                    <div class="text-[11px] tracking-[0.15em] uppercase font-bold opacity-60 mb-4 flex items-center gap-2">
-                                        <span class="w-5 h-5 bg-ink text-cream rounded-full flex items-center justify-center text-[11px]">2</span> Logística de entrega
+                                    <div class="text-[11px] tracking-[0.15em] uppercase font-bold text-navy-muted mb-4 flex items-center gap-2">
+                                        <span class="w-5 h-5 bg-navy text-white rounded-full flex items-center justify-center text-[11px] font-bold">2</span> Logística de entrega
                                     </div>
 
                                     <div class="flex gap-2 mb-5">
                                         <label class="flex-1 cursor-pointer">
                                             <input type="radio" name="tipoEntrega" value="retiro" checked class="peer sr-only" onchange="toggleEntrega()">
-                                            <div class="h-[52px] border border-ink/10 rounded-[12px] flex items-center justify-center gap-2 text-[13px] font-medium peer-checked:bg-ink peer-checked:text-cream peer-checked:border-ink transition">
+                                            <div class="h-[52px] border border-navy-soft rounded-[12px] flex items-center justify-center gap-2 text-[13px] font-bold peer-checked:bg-navy peer-checked:text-white peer-checked:border-navy transition bg-white text-navy">
                                                 🏪 Retiro en local
                                             </div>
                                         </label>
                                         <label class="flex-1 cursor-pointer">
                                             <input type="radio" name="tipoEntrega" value="envio" class="peer sr-only" onchange="toggleEntrega()">
-                                            <div class="h-[52px] border border-ink/10 rounded-[12px] flex items-center justify-center gap-2 text-[13px] font-medium peer-checked:bg-ink peer-checked:text-cream peer-checked:border-ink transition">
+                                            <div class="h-[52px] border border-navy-soft rounded-[12px] flex items-center justify-center gap-2 text-[13px] font-bold peer-checked:bg-navy peer-checked:text-white peer-checked:border-navy transition bg-white text-navy">
                                                 🚚 Envío a domicilio
                                             </div>
                                         </label>
@@ -568,41 +550,40 @@
 
                                     <div id="direccion-field" class="hidden">
                                         <label class="block mb-4">
-                                            <span class="text-[12px] font-medium">Dirección de entrega *</span>
-                                            <input name="direccion" class="mt-1.5 w-full h-[44px] px-4 bg-cream border border-ink/10 rounded-[12px] outline-none focus:border-ink text-[14px]" placeholder="Calle, número, apto, barrio">
+                                            <span class="text-[12px] font-bold text-navy">Dirección de entrega *</span>
+                                            <input name="direccion" class="mt-1.5 w-full h-[44px] px-4 bg-navy-soft/30 border border-navy-soft rounded-[12px] outline-none focus:border-navy text-[14px] text-navy" placeholder="Calle, número, apto, barrio">
                                         </label>
                                     </div>
 
                                     <div class="grid sm:grid-cols-2 gap-4">
                                         <label class="block">
-                                            <span class="text-[12px] font-medium">Fecha de entrega / retiro *</span>
-                                            <input required name="fecha" type="date" id="fecha-input" class="mt-1.5 w-full h-[44px] px-4 bg-cream border border-ink/10 rounded-[12px] outline-none focus:border-ink text-[14px]">
+                                            <span class="text-[12px] font-bold text-navy">Fecha de entrega / retiro *</span>
+                                            <input required name="fecha" type="date" id="fecha-input" class="mt-1.5 w-full h-[44px] px-4 bg-navy-soft/30 border border-navy-soft rounded-[12px] outline-none focus:border-navy text-[14px] text-navy">
                                         </label>
                                         <div>
-                                            <span class="text-[12px] font-medium">Franja horaria *</span>
+                                            <span class="text-[12px] font-bold text-navy">Franja horaria *</span>
                                             <div class="mt-1.5 grid grid-cols-2 gap-2">
-                                                <button type="button" data-slot="09:00-11:00" onclick="selectSlot(this)" class="slot-btn h-[36px] border border-ink/10 rounded-[10px] text-[12px] font-medium hover:border-ink transition">09:00 - 11:00</button>
-                                                <button type="button" data-slot="11:00-13:00" onclick="selectSlot(this)" class="slot-btn h-[36px] border border-ink/10 rounded-[10px] text-[12px] font-medium hover:border-ink transition">11:00 - 13:00</button>
-                                                <button type="button" data-slot="14:00-16:00" onclick="selectSlot(this)" class="slot-btn h-[36px] border border-ink/10 rounded-[10px] text-[12px] font-medium hover:border-ink transition">14:00 - 16:00</button>
-                                                <button type="button" data-slot="16:00-18:00" onclick="selectSlot(this)" class="slot-btn h-[36px] border border-ink/10 rounded-[10px] text-[12px] font-medium hover:border-ink transition">16:00 - 18:00</button>
-                                                <button type="button" data-slot="18:00-20:00" onclick="selectSlot(this)" class="slot-btn col-span-2 h-[36px] border border-ink/10 rounded-[10px] text-[12px] font-medium hover:border-ink transition">18:00 - 20:00</button>
+                                                <button type="button" data-slot="09:00-11:00" onclick="selectSlot(this)" class="slot-btn h-[36px] border border-navy-soft rounded-[10px] text-[12px] font-bold hover:border-navy transition bg-white text-navy">09:00 - 11:00</button>
+                                                <button type="button" data-slot="11:00-13:00" onclick="selectSlot(this)" class="slot-btn h-[36px] border border-navy-soft rounded-[10px] text-[12px] font-bold hover:border-navy transition bg-white text-navy">11:00 - 13:00</button>
+                                                <button type="button" data-slot="14:00-16:00" onclick="selectSlot(this)" class="slot-btn h-[36px] border border-navy-soft rounded-[10px] text-[12px] font-bold hover:border-navy transition bg-white text-navy">14:00 - 16:00</button>
+                                                <button type="button" data-slot="16:00-18:00" onclick="selectSlot(this)" class="slot-btn h-[36px] border border-navy-soft rounded-[10px] text-[12px] font-bold hover:border-navy transition bg-white text-navy">16:00 - 18:00</button>
+                                                <button type="button" data-slot="18:00-20:00" onclick="selectSlot(this)" class="slot-btn col-span-2 h-[36px] border border-navy-soft rounded-[10px] text-[12px] font-bold hover:border-navy transition bg-white text-navy">18:00 - 20:00</button>
                                             </div>
                                             <input type="hidden" name="franja" id="franja-input" required>
                                         </div>
                                     </div>
-                                    <p class="text-[11px] opacity-60 mt-3">* Pedidos con 24h de anticipación mínima. Coordinamos por WhatsApp.</p>
+                                    <p class="text-[11px] text-navy-muted mt-3">* Pedidos con 24h de anticipación mínima. Coordinamos por WhatsApp automáticamente.</p>
                                 </div>
 
-                                <!-- Pago -->
                                 <div>
-                                    <div class="text-[11px] tracking-[0.15em] uppercase font-bold opacity-60 mb-4 flex items-center gap-2">
-                                        <span class="w-5 h-5 bg-ink text-cream rounded-full flex items-center justify-center text-[11px]">3</span> Pasarela de pago segura
+                                    <div class="text-[11px] tracking-[0.15em] uppercase font-bold text-navy-muted mb-4 flex items-center gap-2">
+                                        <span class="w-5 h-5 bg-navy text-white rounded-full flex items-center justify-center text-[11px] font-bold">3</span> Pasarela de pago segura + WhatsApp
                                     </div>
 
-                                    <div class="bg-ink rounded-[16px] p-5 text-cream">
+                                    <div class="bg-navy rounded-[16px] p-5 text-white">
                                         <div class="flex items-center justify-between">
-                                            <div class="text-[12px] tracking-[0.1em] uppercase opacity-60">Tarjetas aceptadas</div>
-                                            <div class="text-[11px] bg-emerald-500 text-white px-2 py-1 rounded-full">🔒 SSL Seguro</div>
+                                            <div class="text-[12px] tracking-[0.1em] uppercase opacity-60 font-bold">Tarjetas aceptadas</div>
+                                            <div class="text-[11px] bg-emerald-500 text-white px-2 py-1 rounded-full font-bold">🔒 SSL Seguro</div>
                                         </div>
                                         <div class="mt-4 grid grid-cols-4 sm:grid-cols-7 gap-2">
                                             <div class="h-[36px] bg-white rounded-[8px] flex items-center justify-center text-[11px] font-bold text-[#1A1F71] tracking-tight">VISA</div>
@@ -618,45 +599,44 @@
                                         <div class="mt-5 grid grid-cols-2 gap-3">
                                             <label class="col-span-2">
                                                 <span class="text-[11px] opacity-60">Número de tarjeta (simulado)</span>
-                                                <input class="mt-1 w-full h-[42px] px-4 bg-cream/10 border border-cream/10 rounded-[10px] text-[14px] placeholder:text-cream/30 outline-none focus:border-gold" placeholder="•••• •••• •••• ••••">
+                                                <input class="mt-1 w-full h-[42px] px-4 bg-white/10 border border-white/10 rounded-[10px] text-[14px] placeholder:text-white/30 outline-none focus:border-gold text-white" placeholder="•••• •••• •••• ••••">
                                             </label>
                                             <label>
                                                 <span class="text-[11px] opacity-60">Vencimiento</span>
-                                                <input class="mt-1 w-full h-[42px] px-4 bg-cream/10 border border-cream/10 rounded-[10px] text-[14px] placeholder:text-cream/30 outline-none focus:border-gold" placeholder="MM/AA">
+                                                <input class="mt-1 w-full h-[42px] px-4 bg-white/10 border border-white/10 rounded-[10px] text-[14px] placeholder:text-white/30 outline-none focus:border-gold text-white" placeholder="MM/AA">
                                             </label>
                                             <label>
                                                 <span class="text-[11px] opacity-60">CVV</span>
-                                                <input class="mt-1 w-full h-[42px] px-4 bg-cream/10 border border-cream/10 rounded-[10px] text-[14px] placeholder:text-cream/30 outline-none focus:border-gold" placeholder="123">
+                                                <input class="mt-1 w-full h-[42px] px-4 bg-white/10 border border-white/10 rounded-[10px] text-[14px] placeholder:text-white/30 outline-none focus:border-gold text-white" placeholder="123">
                                             </label>
                                         </div>
-                                        <div class="mt-4 flex items-center gap-2 text-[11px] text-cream/50">
-                                            <span>🔐</span> Simulación de pasarela. No se realiza cobro real. Pedido se confirma por WhatsApp.
+                                        <div class="mt-4 flex items-center gap-2 text-[11px] text-white/60 bg-white/5 p-3 rounded-[10px] border border-white/10">
+                                            <span>💬</span> Al confirmar, se abrirá WhatsApp automáticamente con tu pedido formateado para enviar al 2901 2672.
                                         </div>
                                     </div>
                                 </div>
 
-                                <button type="submit" class="w-full h-[52px] bg-ink text-cream rounded-full font-medium tracking-[0.1em] uppercase text-[13px] hover:bg-navy-light transition flex items-center justify-center gap-2">
-                                    Confirmar pedido
-                                    <span class="w-6 h-6 bg-gold text-ink rounded-full flex items-center justify-center">→</span>
+                                <button type="submit" class="w-full h-[52px] bg-gold text-navy rounded-full font-bold tracking-[0.1em] uppercase text-[13px] hover:bg-amber transition flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(201,168,106,0.3)]">
+                                    Confirmar pedido y enviar por WhatsApp
+                                    <span class="w-6 h-6 bg-navy text-white rounded-full flex items-center justify-center">→</span>
                                 </button>
                             </form>
                         </div>
 
-                        <!-- Resumen -->
-                        <div class="bg-cream border-l border-ink/5 p-7 lg:p-10">
-                            <h3 class="font-display text-[20px]">Resumen</h3>
+                        <div class="bg-cream border-l border-navy-soft p-7 lg:p-10">
+                            <h3 class="font-display text-[20px] font-bold text-navy">Resumen</h3>
                             <div id="checkout-items" class="mt-6 space-y-3 max-h-[320px] overflow-y-auto pr-2 custom-scrollbar"></div>
-                            <div class="mt-6 pt-6 border-t border-ink/10 space-y-2 text-[13px]">
-                                <div class="flex justify-between opacity-60"><span>Subtotal</span><span id="checkout-subtotal">$0</span></div>
-                                <div class="flex justify-between opacity-60"><span>Envío</span><span id="checkout-envio">A coordinar</span></div>
-                                <div class="flex justify-between font-bold text-[18px] pt-3 border-t border-ink/10"><span>Total a pagar</span><span id="checkout-total">$0</span></div>
+                            <div class="mt-6 pt-6 border-t border-navy-soft space-y-2 text-[13px] text-navy">
+                                <div class="flex justify-between text-navy-muted"><span>Subtotal</span><span id="checkout-subtotal" class="font-bold text-navy">$0</span></div>
+                                <div class="flex justify-between text-navy-muted"><span>Envío</span><span id="checkout-envio">A coordinar</span></div>
+                                <div class="flex justify-between font-bold text-[18px] pt-3 border-t border-navy-soft"><span>Total a pagar</span><span id="checkout-total">$0</span></div>
                             </div>
-                            <div class="mt-8 p-4 bg-paper border border-ink/10 rounded-[14px]">
-                                <div class="text-[11px] tracking-[0.1em] uppercase font-bold opacity-60">Nuestro compromiso</div>
-                                <ul class="mt-3 space-y-2 text-[12px] leading-[1.5] opacity-70">
-                                    <li class="flex gap-2"><span>✓</span> Productos horneados el mismo día</li>
-                                    <li class="flex gap-2"><span>✓</span> Empaque premium con cadena de frío</li>
-                                    <li class="flex gap-2"><span>✓</span> Confirmación por WhatsApp en 30 min</li>
+                            <div class="mt-8 p-4 bg-white border border-navy-soft rounded-[14px]">
+                                <div class="text-[11px] tracking-[0.1em] uppercase font-bold text-navy-muted">Nuestro compromiso</div>
+                                <ul class="mt-3 space-y-2 text-[12px] leading-[1.5] text-navy-muted font-medium">
+                                    <li class="flex gap-2"><span class="text-gold">✓</span> Productos horneados el mismo día</li>
+                                    <li class="flex gap-2"><span class="text-gold">✓</span> Empaque premium con cadena de frío</li>
+                                    <li class="flex gap-2"><span class="text-gold">✓</span> Confirmación por WhatsApp automática</li>
                                 </ul>
                             </div>
                         </div>
@@ -668,19 +648,19 @@
 
     <!-- SUCCESS MODAL -->
     <div id="success-modal" class="fixed inset-0 z-[80] hidden">
-        <div class="absolute inset-0 bg-ink/80 backdrop-blur-[12px]"></div>
+        <div class="absolute inset-0 bg-navy/80 backdrop-blur-[12px]"></div>
         <div class="relative h-full flex items-center justify-center p-6">
-            <div class="bg-paper rounded-[28px] p-8 lg:p-10 max-w-[460px] w-full text-center shadow-2xl animate-slide-up">
+            <div class="bg-white rounded-[28px] p-8 lg:p-10 max-w-[460px] w-full text-center shadow-2xl animate-slide-up border border-navy-soft">
                 <div class="w-16 h-16 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl mx-auto">✓</div>
-                <h3 class="font-display text-[30px] leading-[0.9] mt-6">¡Pedido confirmado!</h3>
-                <p class="text-[14px] leading-[1.6] opacity-60 mt-4">Gracias <span id="success-name" class="font-medium text-ink"></span>. Tu pedido <span id="success-id" class="font-mono font-bold"></span> fue registrado. Te contactamos por WhatsApp para coordinar la entrega.</p>
-                <div class="mt-6 p-4 bg-cream rounded-[14px] text-left">
-                    <div class="text-[11px] tracking-[0.1em] uppercase opacity-60">Resumen enviado</div>
-                    <div id="success-summary" class="mt-2 text-[13px] leading-[1.5]"></div>
+                <h3 class="font-display text-[30px] leading-[0.9] mt-6 font-bold text-navy">¡Pedido confirmado!</h3>
+                <p class="text-[14px] leading-[1.6] text-navy-muted mt-4">Gracias <span id="success-name" class="font-bold text-navy"></span>. Tu pedido <span id="success-id" class="font-mono font-bold text-navy"></span> fue registrado. Se abrió WhatsApp para enviarlo al dueño.</p>
+                <div class="mt-6 p-4 bg-cream rounded-[14px] text-left border border-navy-soft">
+                    <div class="text-[11px] tracking-[0.1em] uppercase font-bold text-navy-muted">Resumen enviado por WhatsApp</div>
+                    <div id="success-summary" class="mt-2 text-[13px] leading-[1.5] text-navy"></div>
                 </div>
                 <div class="mt-6 flex gap-3">
-                    <button onclick="closeSuccess()" class="flex-1 h-[44px] bg-ink text-cream rounded-full text-[12px] tracking-[0.1em] uppercase font-medium">Seguir comprando</button>
-                    <button onclick="openAdminFromSuccess()" class="flex-1 h-[44px] border border-ink/10 rounded-full text-[12px] tracking-[0.1em] uppercase font-medium">Ver planilla</button>
+                    <button onclick="closeSuccess()" class="flex-1 h-[44px] bg-navy text-white rounded-full text-[12px] tracking-[0.1em] uppercase font-bold">Seguir comprando</button>
+                    <button onclick="openAdminFromSuccess()" class="flex-1 h-[44px] border border-navy-soft rounded-full text-[12px] tracking-[0.1em] uppercase font-bold text-navy hover:bg-navy-soft transition">Ver planilla</button>
                 </div>
             </div>
         </div>
@@ -688,52 +668,52 @@
 
     <!-- ADMIN PLANILLA -->
     <div id="admin-panel" class="hidden">
-        <div class="bg-[#0F1115] text-cream min-h-screen">
+        <div class="bg-[#0F172A] text-white min-h-screen">
             <div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
                     <div>
                         <div class="flex items-center gap-3">
-                            <button onclick="toggleAdmin()" class="w-9 h-9 rounded-full border border-cream/15 flex items-center justify-center hover:bg-cream hover:text-ink transition">←</button>
-                            <h2 class="font-display text-[32px] leading-none">Planilla de Pedidos</h2>
+                            <button onclick="toggleAdmin()" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-white hover:text-navy transition">←</button>
+                            <h2 class="font-display text-[32px] leading-none font-bold">Planilla de Pedidos</h2>
                         </div>
-                        <p class="text-[13px] text-cream/60 mt-3 max-w-[60ch]">Estructura de datos simulada - Registro interno de la empresa. Cada pedido del checkout se inserta automáticamente aquí (simulación JSON + tabla visual).</p>
+                        <p class="text-[13px] text-white/60 mt-3 max-w-[60ch]">Registro interno + conexión WhatsApp automática. Cada pedido se guarda aquí y se envía formateado por WhatsApp al 2901 2672.</p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <div class="text-[11px] tracking-[0.1em] uppercase bg-cream/10 px-3 py-2 rounded-full">Live • <span id="admin-count">0</span> pedidos</div>
-                        <button onclick="clearOrders()" class="text-[11px] tracking-[0.1em] uppercase border border-cream/15 px-4 h-9 rounded-full hover:bg-cream hover:text-ink transition">Limpiar</button>
-                        <button onclick="exportJSON()" class="text-[11px] tracking-[0.1em] uppercase bg-gold text-ink px-4 h-9 rounded-full font-bold hover:bg-gold-light transition">Exportar JSON</button>
+                        <div class="text-[11px] tracking-[0.1em] uppercase bg-white/10 px-3 py-2 rounded-full font-bold">Live • <span id="admin-count">0</span> pedidos</div>
+                        <button onclick="clearOrders()" class="text-[11px] tracking-[0.1em] uppercase border border-white/15 px-4 h-9 rounded-full hover:bg-white hover:text-navy transition font-bold">Limpiar</button>
+                        <button onclick="exportJSON()" class="text-[11px] tracking-[0.1em] uppercase bg-gold text-navy px-4 h-9 rounded-full font-bold hover:bg-amber transition">Exportar JSON</button>
                     </div>
                 </div>
 
                 <div class="grid lg:grid-cols-[1.6fr_0.9fr] gap-6">
-                    <div class="bg-cream/5 border border-cream/10 rounded-[20px] overflow-hidden">
+                    <div class="bg-white/5 border border-white/10 rounded-[20px] overflow-hidden">
                         <div class="overflow-x-auto">
                             <table class="w-full text-left">
-                                <thead class="bg-cream/[0.04] border-b border-cream/10">
-                                    <tr class="text-[11px] tracking-[0.12em] uppercase opacity-60">
-                                        <th class="px-5 py-4 font-medium">ID / Cliente</th>
-                                        <th class="px-5 py-4 font-medium">Productos</th>
-                                        <th class="px-5 py-4 font-medium">Total</th>
-                                        <th class="px-5 py-4 font-medium">Fecha / Hora</th>
-                                        <th class="px-5 py-4 font-medium">Entrega</th>
+                                <thead class="bg-white/[0.04] border-b border-white/10">
+                                    <tr class="text-[11px] tracking-[0.12em] uppercase opacity-60 font-bold">
+                                        <th class="px-5 py-4">ID / Cliente</th>
+                                        <th class="px-5 py-4">Productos</th>
+                                        <th class="px-5 py-4">Total</th>
+                                        <th class="px-5 py-4">Fecha / Hora</th>
+                                        <th class="px-5 py-4">Entrega</th>
                                     </tr>
                                 </thead>
-                                <tbody id="orders-tbody" class="divide-y divide-cream/5">
-                                    <tr><td colspan="5" class="px-5 py-16 text-center opacity-40 text-[13px]">Aún no hay pedidos. Realizá una compra para ver la planilla.</td></tr>
+                                <tbody id="orders-tbody" class="divide-y divide-white/5">
+                                    <tr><td colspan="5" class="px-5 py-16 text-center opacity-40 text-[13px]">Aún no hay pedidos. Realizá una compra para ver la planilla y el mensaje de WhatsApp.</td></tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
                     <div class="space-y-4">
-                        <div class="bg-paper text-ink rounded-[20px] p-6">
-                            <div class="text-[11px] tracking-[0.12em] uppercase font-bold opacity-60">JSON interno (simulado)</div>
-                            <pre id="orders-json" class="mt-4 text-[11px] leading-[1.6] bg-ink text-cream p-4 rounded-[12px] overflow-auto max-h-[420px] custom-scrollbar">// Array de pedidos - se actualiza en tiempo real
+                        <div class="bg-white text-navy rounded-[20px] p-6">
+                            <div class="text-[11px] tracking-[0.12em] uppercase font-bold opacity-60">JSON interno + WhatsApp log</div>
+                            <pre id="orders-json" class="mt-4 text-[11px] leading-[1.6] bg-navy text-white p-4 rounded-[12px] overflow-auto max-h-[420px] custom-scrollbar">// Array de pedidos - se actualiza en tiempo real
 []</pre>
                         </div>
                         <div class="bg-gold/10 border border-gold/20 rounded-[20px] p-6">
-                            <div class="text-[12px] font-bold tracking-[0.08em] uppercase text-gold">Lógica implementada</div>
-                            <p class="mt-3 text-[12px] leading-[1.6] text-cream/70">Cada <code class="bg-cream/10 px-1.5 py-0.5 rounded">submitOrder()</code> ejecuta <code class="bg-cream/10 px-1.5 py-0.5 rounded">orders.push({nombre, productos, total, fecha, hora})</code>, persiste en <code class="bg-cream/10 px-1.5 py-0.5 rounded">localStorage</code> y re-renderiza tabla + JSON.</p>
+                            <div class="text-[12px] font-bold tracking-[0.08em] uppercase text-gold">WhatsApp integrado</div>
+                            <p class="mt-3 text-[12px] leading-[1.6] text-white/70">Cada <code class="bg-white/10 px-1.5 py-0.5 rounded">submitOrder()</code> ejecuta <code class="bg-white/10 px-1.5 py-0.5 rounded">window.open('https://wa.me/59829012672?text=...')</code> con mensaje formateado.</p>
                         </div>
                     </div>
                 </div>
@@ -741,9 +721,9 @@
         </div>
     </div>
 
-    <!-- WHATSAPP -->
+    <!-- WHATSAPP FLOTANTE -->
     <a id="whatsapp-btn" href="https://wa.me/59829012672?text=Hola%20Barcelonesa!%20Quiero%20consultar%20por%20un%20pedido" target="_blank" class="fixed bottom-6 right-6 z-[50] group">
-        <div class="absolute bottom-full right-0 mb-3 bg-ink text-cream text-[12px] px-3 py-2 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none">
+        <div class="absolute bottom-full right-0 mb-3 bg-navy text-white text-[12px] px-4 py-2 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none font-medium shadow-lg">
             ¿Necesitás ayuda? Chateá con nosotros
         </div>
         <div class="w-[56px] h-[56px] bg-[#25D366] rounded-full shadow-[0_8px_24px_rgba(37,211,102,0.4)] flex items-center justify-center text-white hover:scale-105 transition-transform">
@@ -752,136 +732,26 @@
     </a>
 
     <!-- TOAST -->
-    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[90] bg-ink text-cream px-5 py-3 rounded-full text-[13px] font-medium shadow-2xl hidden items-center gap-3">
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[90] bg-navy text-white px-5 py-3 rounded-full text-[13px] font-bold shadow-2xl hidden items-center gap-3">
         <span class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-[12px]">✓</span>
         <span id="toast-text">Producto agregado</span>
     </div>
 
     <script>
-// La Nueva Barcelonesa - Premium E-commerce Logic
-// Data
-
+// La Nueva Barcelonesa - Premium E-commerce Logic - Rediseño Blanco + Azul Marino + Dorado
 const PRODUCTS = [
-  {
-    id: 'olympic-4',
-    name: 'Sándwich Olímpico',
-    desc: 'Jamón, queso, morrón, huevo y aceitunas. Pan artesanal.',
-    price: 159,
-    cat: 'salados',
-    tag: 'Clásico',
-    image: 'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?q=80&w=600&auto=format&fit=crop',
-    unit: '4 unidades'
-  },
-  {
-    id: 'ricotta',
-    name: 'Torta de Ricotta',
-    desc: 'Masa sablée, ricotta fresca y ralladura de limón.',
-    price: 189,
-    cat: 'dulces',
-    tag: 'Destacada',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop',
-    unit: 'Porción 200g'
-  },
-  {
-    id: 'medialunas-jq',
-    name: 'Medialunas de Jamón y Queso',
-    desc: 'Hojaldre mantecoso, J&Q premium, horneadas hoy.',
-    price: 420,
-    cat: 'salados',
-    tag: 'Horneado hoy',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
-    unit: '12 unidades'
-  },
-  {
-    id: 'saladitos',
-    name: 'Saladitos de Copetín Variados',
-    desc: 'Surtido de sabores: atún, palmitos, J&Q, salame.',
-    price: 480,
-    cat: 'salados',
-    tag: 'Para eventos',
-    image: 'https://images.unsplash.com/photo-1604908177453-7462950a6a3b?q=80&w=600&auto=format&fit=crop',
-    unit: '24 unidades'
-  },
-  {
-    id: 'empanadas',
-    name: 'Empanaditas Copetín',
-    desc: 'Carne, J&Q, humita. Masa casera frita al horno.',
-    price: 390,
-    cat: 'salados',
-    tag: 'Bocado caliente',
-    image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=600&auto=format&fit=crop',
-    unit: '12 unidades'
-  },
-  {
-    id: 'jesuitas',
-    name: 'Jesuitas de Lunch',
-    desc: 'Hojaldre caramelizado, jamón y queso gratinado.',
-    price: 520,
-    cat: 'salados',
-    tag: 'Premium',
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop',
-    unit: '12 unidades'
-  },
-  {
-    id: 'torta-masa',
-    name: 'Torta de Masas Finas',
-    desc: 'Selección de masitas artesanales, dulce de leche.',
-    price: 890,
-    cat: 'dulces',
-    tag: 'Regalo',
-    image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=600&auto=format&fit=crop',
-    unit: '1 kg'
-  },
-  {
-    id: 'alfajores',
-    name: 'Alfajores Artesanales',
-    desc: 'Maicena y chocolate, dulce de leche repostero.',
-    price: 320,
-    cat: 'dulces',
-    tag: 'Dulce',
-    image: 'https://images.unsplash.com/photo-1488477181946-64290103bbd6?q=80&w=600&auto=format&fit=crop',
-    unit: '12 unidades'
-  },
-  {
-    id: 'postre-chaja',
-    name: 'Postre Chajá',
-    desc: 'Bizcochuelo, merengue, duraznos y crema.',
-    price: 420,
-    cat: 'dulces',
-    tag: 'Postre',
-    image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop',
-    unit: 'Porción'
-  },
-  {
-    id: 'lunch-5',
-    name: 'Lunch para 5 personas',
-    desc: '60 bocados combinados. Ideal reuniones.',
-    price: 3990,
-    cat: 'eventos',
-    tag: 'Evento',
-    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop',
-    unit: '60 bocados'
-  },
-  {
-    id: 'lunch-10',
-    name: 'Lunch para 10 personas',
-    desc: '120 bocados combinados. Cumpleaños.',
-    price: 7590,
-    cat: 'eventos',
-    tag: 'Más vendido',
-    image: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop',
-    unit: '120 bocados'
-  },
-  {
-    id: 'lunch-20',
-    name: 'Lunch para 20 personas',
-    desc: '240 bocados premium entre salados y masas.',
-    price: 13990,
-    cat: 'eventos',
-    tag: 'Evento grande',
-    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop',
-    unit: '240 bocados'
-  }
+  { id: 'olympic-4', name: 'Sándwich Olímpico', desc: 'Jamón, queso, morrón, huevo y aceitunas. Pan artesanal.', price: 159, cat: 'salados', tag: 'Clásico', image: 'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?q=80&w=600&auto=format&fit=crop', unit: '4 unidades' },
+  { id: 'ricotta', name: 'Torta de Ricotta', desc: 'Masa sablée, ricotta fresca y ralladura de limón.', price: 189, cat: 'dulces', tag: 'Destacada', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop', unit: 'Porción 200g' },
+  { id: 'medialunas-jq', name: 'Medialunas de Jamón y Queso', desc: 'Hojaldre mantecoso, J&Q premium, horneadas hoy.', price: 420, cat: 'salados', tag: 'Horneado hoy', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop', unit: '12 unidades' },
+  { id: 'saladitos', name: 'Saladitos de Copetín Variados', desc: 'Surtido de sabores: atún, palmitos, J&Q, salame.', price: 480, cat: 'salados', tag: 'Para eventos', image: 'https://images.unsplash.com/photo-1604908177453-7462950a6a3b?q=80&w=600&auto=format&fit=crop', unit: '24 unidades' },
+  { id: 'empanadas', name: 'Empanaditas Copetín', desc: 'Carne, J&Q, humita. Masa casera frita al horno.', price: 390, cat: 'salados', tag: 'Bocado caliente', image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=600&auto=format&fit=crop', unit: '12 unidades' },
+  { id: 'jesuitas', name: 'Jesuitas de Lunch', desc: 'Hojaldre caramelizado, jamón y queso gratinado.', price: 520, cat: 'salados', tag: 'Premium', image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop', unit: '12 unidades' },
+  { id: 'torta-masa', name: 'Torta de Masas Finas', desc: 'Selección de masitas artesanales, dulce de leche.', price: 890, cat: 'dulces', tag: 'Regalo', image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=600&auto=format&fit=crop', unit: '1 kg' },
+  { id: 'alfajores', name: 'Alfajores Artesanales', desc: 'Maicena y chocolate, dulce de leche repostero.', price: 320, cat: 'dulces', tag: 'Dulce', image: 'https://images.unsplash.com/photo-1488477181946-64290103bbd6?q=80&w=600&auto=format&fit=crop', unit: '12 unidades' },
+  { id: 'postre-chaja', name: 'Postre Chajá', desc: 'Bizcochuelo, merengue, duraznos y crema.', price: 420, cat: 'dulces', tag: 'Postre', image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop', unit: 'Porción' },
+  { id: 'lunch-5', name: 'Lunch para 5 personas', desc: '60 bocados combinados. Ideal reuniones.', price: 3990, cat: 'eventos', tag: 'Evento', image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop', unit: '60 bocados' },
+  { id: 'lunch-10', name: 'Lunch para 10 personas', desc: '120 bocados combinados. Cumpleaños.', price: 7590, cat: 'eventos', tag: 'Más vendido', image: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop', unit: '120 bocados' },
+  { id: 'lunch-20', name: 'Lunch para 20 personas', desc: '240 bocados premium entre salados y masas.', price: 13990, cat: 'eventos', tag: 'Evento grande', image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop', unit: '240 bocados' }
 ];
 
 const PACKAGES = [
@@ -900,16 +770,15 @@ const SUELTOS = [
   { id: 'calientes', name: 'Bocados Calientes', price: 35, desc: 'Empanaditas / Pizzetas' },
 ];
 
-// State
 let cart = JSON.parse(localStorage.getItem('barcelonesa_cart') || '[]');
 let customQuantities = {};
+let productQuantities = {};
 SUELTOS.forEach(s => customQuantities[s.id] = 0);
+PRODUCTS.forEach(p => productQuantities[p.id] = 1);
 let selectedSlot = null;
 let currentFilter = 'todos';
-let cotizadorTab = 'paquetes';
 let orders = JSON.parse(localStorage.getItem('barcelonesa_orders') || '[]');
 
-// Init
 document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
   renderPackages();
@@ -917,7 +786,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartUI();
   renderOrders();
   initDate();
-  // mobile menu
   document.getElementById('mobile-menu-btn').addEventListener('click', () => {
     document.getElementById('mobile-menu').classList.toggle('hidden');
   });
@@ -935,74 +803,97 @@ function initDate() {
   input.value = `${yyyy}-${mm}-${dd}`;
 }
 
-// Products
 function renderProducts() {
   const grid = document.getElementById('products-grid');
   const filtered = currentFilter === 'todos' ? PRODUCTS : PRODUCTS.filter(p => p.cat === currentFilter);
   grid.innerHTML = filtered.map(p => `
-    <div class="group bg-paper border border-ink/[0.06] rounded-[22px] overflow-hidden card-hover flex flex-col">
-      <div class="relative h-[220px] overflow-hidden bg-cream">
+    <div class="group bg-white border border-navy-soft rounded-[22px] overflow-hidden card-hover flex flex-col">
+      <div class="relative h-[220px] overflow-hidden bg-navy-soft/30">
         <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-        <div class="absolute top-3 left-3 bg-paper/90 backdrop-blur px-2.5 py-1 rounded-full text-[10px] tracking-[0.12em] uppercase font-medium">${p.tag}</div>
-        <div class="absolute top-3 right-3 w-8 h-8 bg-paper rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition">♡</div>
-        <div class="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-to-t from-ink/20 to-transparent pointer-events-none"></div>
+        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-full text-[10px] tracking-[0.12em] uppercase font-bold text-navy border border-navy-soft">${p.tag}</div>
+        <div class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition text-navy">♡</div>
       </div>
       <div class="p-5 flex flex-col flex-1">
         <div class="flex items-start justify-between gap-3">
           <div>
-            <div class="text-[11px] tracking-[0.14em] uppercase opacity-50">${p.cat} • ${p.unit}</div>
-            <h3 class="font-display text-[19px] leading-[1.1] mt-1">${p.name}</h3>
+            <div class="text-[11px] tracking-[0.14em] uppercase text-navy-muted font-bold">${p.cat} • ${p.unit}</div>
+            <h3 class="font-display text-[19px] leading-[1.1] mt-1 font-bold text-navy">${p.name}</h3>
           </div>
           <div class="text-right">
-            <div class="font-medium text-[16px]">$${p.price.toLocaleString('es-UY')}</div>
-            <div class="text-[11px] opacity-50 line-through">$${Math.round(p.price*1.25).toLocaleString('es-UY')}</div>
+            <div class="font-bold text-[16px] text-navy">$${p.price.toLocaleString('es-UY')}</div>
+            <div class="text-[11px] text-navy-muted line-through">$${Math.round(p.price*1.25).toLocaleString('es-UY')}</div>
           </div>
         </div>
-        <p class="text-[13px] leading-[1.5] opacity-60 mt-3 flex-1">${p.desc}</p>
-        <button onclick="addToCart('${p.id}')" class="mt-5 w-full h-[44px] bg-ink text-cream rounded-full text-[12px] tracking-[0.12em] uppercase font-medium flex items-center justify-center gap-2 hover:bg-navy-light transition group/btn">
-          Agregar
-          <span class="w-6 h-6 bg-cream text-ink rounded-full flex items-center justify-center group-hover/btn:rotate-45 transition-transform text-[14px]">+</span>
-        </button>
+        <p class="text-[13px] leading-[1.5] text-navy-muted mt-3 flex-1">${p.desc}</p>
+        
+        <div class="mt-5 flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-navy-soft/50 rounded-full p-1 border border-navy-soft">
+            <button onclick="updateProductQty('${p.id}', -1)" class="w-8 h-8 rounded-full bg-white border border-navy-soft flex items-center justify-center hover:bg-navy hover:text-white transition text-navy font-bold">−</button>
+            <input id="prod-qty-${p.id}" type="number" min="1" value="${productQuantities[p.id]}" oninput="handleProductInput('${p.id}')" onchange="handleProductInput('${p.id}')" class="w-12 h-8 text-center bg-transparent text-[13px] font-bold text-navy outline-none">
+            <button onclick="updateProductQty('${p.id}', 1)" class="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center hover:bg-navy-light transition font-bold">+</button>
+          </div>
+          <button onclick="addToCart('${p.id}')" class="flex-1 h-[40px] bg-gold text-navy rounded-full text-[12px] tracking-[0.08em] uppercase font-bold flex items-center justify-center gap-2 hover:bg-amber transition shadow-sm">
+            Agregar
+            <span class="w-5 h-5 bg-navy text-white rounded-full flex items-center justify-center text-[12px]">+</span>
+          </button>
+        </div>
       </div>
     </div>
   `).join('');
 }
 
+function updateProductQty(id, delta) {
+  let current = productQuantities[id] || 1;
+  let next = Math.max(1, current + delta);
+  if (next > 999) next = 999;
+  productQuantities[id] = next;
+  const input = document.getElementById(`prod-qty-${id}`);
+  if (input) input.value = next;
+}
+
+function handleProductInput(id) {
+  const input = document.getElementById(`prod-qty-${id}`);
+  if (!input) return;
+  let val = parseInt(input.value, 10);
+  if (isNaN(val) || val < 1) val = 1;
+  if (val > 999) val = 999;
+  productQuantities[id] = val;
+  input.value = val;
+}
+
 function filterProducts(cat) {
   currentFilter = cat;
   document.querySelectorAll('.filter-btn').forEach(b => {
-    b.className = b.dataset.filter === cat ? 'filter-btn tab-active px-5 h-9 rounded-full text-[13px] font-medium tracking-wide transition' : 'filter-btn tab-inactive px-5 h-9 rounded-full text-[13px] font-medium tracking-wide transition';
+    b.className = b.dataset.filter === cat ? 'filter-btn tab-active px-5 h-9 rounded-full text-[13px] font-bold tracking-wide transition' : 'filter-btn tab-inactive px-5 h-9 rounded-full text-[13px] font-bold tracking-wide transition';
   });
   renderProducts();
   document.getElementById('tienda').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Packages
 function renderPackages() {
   const grid = document.getElementById('packages-grid');
   grid.innerHTML = PACKAGES.map(pkg => `
-    <div class="group border ${pkg.popular ? 'border-gold bg-cream' : 'border-ink/10 bg-paper'} rounded-[18px] p-5 flex gap-4 hover:shadow-lg transition">
+    <div class="group border ${pkg.popular ? 'border-gold bg-amber-light' : 'border-navy-soft bg-white'} rounded-[18px] p-5 flex gap-4 hover:shadow-lg transition">
       <div class="flex-1">
-        <div class="flex items-center gap-2">
-          <div class="font-display text-[20px] leading-none">Lunch ${pkg.people} personas</div>
-          ${pkg.popular ? '<span class="text-[10px] tracking-[0.1em] uppercase bg-ink text-cream px-2 py-0.5 rounded-full">Más pedido</span>' : ''}
-          ${pkg.gift ? `<span class="text-[10px] tracking-[0.1em] uppercase bg-gold text-ink px-2 py-0.5 rounded-full font-bold">${pkg.gift}</span>` : ''}
+        <div class="flex items-center gap-2 flex-wrap">
+          <div class="font-display text-[20px] leading-none font-bold text-navy">Lunch ${pkg.people} personas</div>
+          ${pkg.popular ? '<span class="text-[10px] tracking-[0.1em] uppercase bg-navy text-white px-2 py-0.5 rounded-full font-bold">Más pedido</span>' : ''}
+          ${pkg.gift ? `<span class="text-[10px] tracking-[0.1em] uppercase bg-gold text-navy px-2 py-0.5 rounded-full font-bold">${pkg.gift}</span>` : ''}
         </div>
-        <div class="text-[12px] opacity-60 mt-1">${pkg.bocados} bocados • ${pkg.items}</div>
-        <div class="text-[13px] leading-[1.4] mt-3 opacity-80">${pkg.desc}</div>
+        <div class="text-[12px] text-navy-muted mt-1 font-medium">${pkg.bocados} bocados • ${pkg.items}</div>
+        <div class="text-[13px] leading-[1.4] mt-3 text-navy-muted">${pkg.desc}</div>
       </div>
       <div class="text-right flex flex-col items-end justify-between">
-        <div class="font-display text-[22px]">$${pkg.price.toLocaleString('es-UY')}</div>
-        <button onclick="addPackageToCart('${pkg.people}')" class="mt-3 bg-ink text-cream px-4 h-9 rounded-full text-[11px] tracking-[0.1em] uppercase font-medium hover:bg-navy-light transition">Agregar +</button>
+        <div class="font-display text-[22px] font-bold text-navy">$${pkg.price.toLocaleString('es-UY')}</div>
+        <button onclick="addPackageToCart('${pkg.people}')" class="mt-3 bg-navy text-white px-4 h-9 rounded-full text-[11px] tracking-[0.1em] uppercase font-bold hover:bg-navy-light transition">Agregar +</button>
       </div>
     </div>
   `).join('');
 }
 
 function switchCotizadorTab(tab) {
-  cotizadorTab = tab;
-  document.getElementById('tab-paquetes').className = tab === 'paquetes' ? 'px-6 h-10 rounded-[12px] text-[13px] font-medium tracking-wide bg-ink text-cream transition' : 'px-6 h-10 rounded-[12px] text-[13px] font-medium tracking-wide text-ink/60 hover:text-ink transition';
-  document.getElementById('tab-medida').className = tab === 'medida' ? 'px-6 h-10 rounded-[12px] text-[13px] font-medium tracking-wide bg-ink text-cream transition' : 'px-6 h-10 rounded-[12px] text-[13px] font-medium tracking-wide text-ink/60 hover:text-ink transition';
+  document.getElementById('tab-paquetes').className = tab === 'paquetes' ? 'px-6 h-10 rounded-[12px] text-[13px] font-bold tracking-wide bg-navy text-white transition' : 'px-6 h-10 rounded-[12px] text-[13px] font-bold tracking-wide text-navy-muted hover:text-navy transition';
+  document.getElementById('tab-medida').className = tab === 'medida' ? 'px-6 h-10 rounded-[12px] text-[13px] font-bold tracking-wide bg-navy text-white transition' : 'px-6 h-10 rounded-[12px] text-[13px] font-bold tracking-wide text-navy-muted hover:text-navy transition';
   document.getElementById('cotizador-paquetes').classList.toggle('hidden', tab !== 'paquetes');
   document.getElementById('cotizador-medida').classList.toggle('hidden', tab !== 'medida');
 }
@@ -1010,19 +901,19 @@ function switchCotizadorTab(tab) {
 function renderCustomItems() {
   const container = document.getElementById('custom-items');
   container.innerHTML = SUELTOS.map(item => `
-    <div class="group flex items-center gap-4 p-4 border border-ink/10 rounded-[16px] bg-paper hover:border-ink/20 transition">
+    <div class="group flex items-center gap-4 p-4 border border-navy-soft rounded-[16px] bg-white hover:border-navy/20 transition">
       <div class="flex-1 min-w-0">
         <div class="flex items-center gap-2 flex-wrap">
-          <div class="font-medium text-[13px]">${item.name}</div>
-          <span class="text-[10px] px-2 py-0.5 bg-cream border border-ink/10 rounded-full font-medium">$${item.price} c/u</span>
+          <div class="font-bold text-[13px] text-navy">${item.name}</div>
+          <span class="text-[10px] px-2 py-0.5 bg-navy-soft border border-navy-soft rounded-full font-bold text-navy">$${item.price} c/u</span>
         </div>
-        <div class="text-[11px] opacity-60 mt-1">${item.desc}</div>
-        <div class="mt-1.5 text-[11px] font-medium text-ink/50 group-hover:text-ink/80 transition">Subtotal: <span id="subtotal-${item.id}" class="font-bold">$0</span></div>
+        <div class="text-[11px] text-navy-muted mt-1">${item.desc}</div>
+        <div class="mt-1.5 text-[11px] font-bold text-navy-muted group-hover:text-navy transition">Subtotal: <span id="subtotal-${item.id}" class="font-bold text-navy">$0</span></div>
       </div>
       <div class="flex items-center gap-2">
-        <button type="button" data-bocado="${item.id}" data-action="minus" onclick="updateCustomQty('${item.id}', -1)" aria-label="Disminuir ${item.name}" class="w-9 h-9 rounded-full border border-ink/10 flex items-center justify-center hover:bg-ink hover:text-cream transition active:scale-95">−</button>
-        <input id="qty-input-${item.id}" data-bocado="${item.id}" type="number" min="0" value="${customQuantities[item.id]}" oninput="handleCustomInput('${item.id}')" onchange="handleCustomInput('${item.id}')" class="w-[64px] h-9 text-center border border-ink/15 rounded-full bg-cream text-[14px] font-bold focus:border-ink focus:ring-0 outline-none">
-        <button type="button" data-bocado="${item.id}" data-action="plus" onclick="updateCustomQty('${item.id}', 1)" aria-label="Aumentar ${item.name}" class="w-9 h-9 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-navy-light transition active:scale-95">+</button>
+        <button type="button" onclick="updateCustomQty('${item.id}', -1)" class="w-9 h-9 rounded-full border border-navy-soft bg-white flex items-center justify-center hover:bg-navy hover:text-white transition active:scale-95 text-navy font-bold">−</button>
+        <input id="qty-input-${item.id}" type="number" min="0" value="${customQuantities[item.id]}" oninput="handleCustomInput('${item.id}')" onchange="handleCustomInput('${item.id}')" class="w-[72px] h-9 text-center border border-navy-soft rounded-full bg-cream text-[14px] font-bold focus:border-navy focus:ring-0 outline-none text-navy">
+        <button type="button" onclick="updateCustomQty('${item.id}', 1)" class="w-9 h-9 rounded-full bg-navy text-white flex items-center justify-center hover:bg-navy-light transition active:scale-95 font-bold">+</button>
       </div>
     </div>
   `).join('');
@@ -1031,7 +922,8 @@ function renderCustomItems() {
 
 function updateCustomQty(id, delta) {
   const current = customQuantities[id] || 0;
-  const next = Math.max(0, current + delta);
+  let next = Math.max(0, current + delta);
+  if (next > 9999) next = 9999;
   customQuantities[id] = next;
   const input = document.getElementById(`qty-input-${id}`);
   if (input) input.value = next;
@@ -1043,6 +935,7 @@ function handleCustomInput(id) {
   if (!input) return;
   let val = parseInt(input.value, 10);
   if (isNaN(val) || val < 0) val = 0;
+  if (val > 9999) val = 9999;
   customQuantities[id] = val;
   input.value = val;
   updateCustomTotals();
@@ -1051,7 +944,6 @@ function handleCustomInput(id) {
 function updateCustomTotals() {
   let totalBocados = 0;
   let totalPrice = 0;
-
   SUELTOS.forEach(s => {
     const qty = customQuantities[s.id] || 0;
     const sub = qty * s.price;
@@ -1060,51 +952,28 @@ function updateCustomTotals() {
     const subEl = document.getElementById(`subtotal-${s.id}`);
     if (subEl) subEl.textContent = `$${sub.toLocaleString('es-UY')}`;
   });
-
   document.getElementById('custom-total-bocados').textContent = `${totalBocados} unidades`;
   document.getElementById('custom-total-price').textContent = `$${totalPrice.toLocaleString('es-UY')}`;
   document.getElementById('btn-add-custom').disabled = totalBocados === 0;
 
-  // Inteligencia de precios - alerta dinámica
   const alertBox = document.getElementById('smart-alert');
   const alertText = document.getElementById('smart-alert-text');
   const alertBtn = document.getElementById('smart-alert-btn');
+  if (totalBocados === 0) { alertBox.classList.add('hidden'); return; }
 
-  if (totalBocados === 0) {
-    alertBox.classList.add('hidden');
-    return;
-  }
-
-  // Lógica: si el costo personalizado supera o se acerca al de un paquete cerrado
-  // Ordenamos paquetes por precio ascendente para sugerir el más conveniente
   const sortedPackages = [...PACKAGES].sort((a,b) => a.price - b.price);
   let suggestion = null;
   let saving = 0;
-
   for (let pkg of sortedPackages) {
-    // Caso 1: precio personalizado supera directamente el paquete
-    if (totalPrice >= pkg.price) {
-      suggestion = pkg;
-      saving = totalPrice - pkg.price;
-      break;
-    }
-    // Caso 2: precio se acerca al 85% del paquete Y bocados similares (80% del paquete)
-    if (totalPrice >= pkg.price * 0.85 && totalBocados >= pkg.bocados * 0.7) {
-      suggestion = pkg;
-      saving = totalPrice - pkg.price;
-      break;
-    }
+    if (totalPrice >= pkg.price) { suggestion = pkg; saving = totalPrice - pkg.price; break; }
+    if (totalPrice >= pkg.price * 0.85 && totalBocados >= pkg.bocados * 0.7) { suggestion = pkg; saving = totalPrice - pkg.price; break; }
   }
-
   if (suggestion) {
     alertBox.classList.remove('hidden');
-    alertBox.classList.add('animate-fade-in');
-    const savingText = saving > 0 ? `te ahorrás $${saving.toLocaleString('es-UY')}` : `te llevás ${suggestion.bocados - totalBocados > 0 ? (suggestion.bocados - totalBocados) + ' bocados extra' : 'hasta un 20% más por el mismo precio'}`;
-    alertText.textContent = `¡Te conviene más nuestro paquete cerrado para ${suggestion.people} personas por $${suggestion.price.toLocaleString('es-UY')}! Incluye ${suggestion.bocados} bocados (${suggestion.items}) y ${savingText} vs tu armado actual de $${totalPrice.toLocaleString('es-UY')}.`;
+    const savingText = saving > 0 ? `te ahorrás $${saving.toLocaleString('es-UY')}` : `te llevás ${suggestion.bocados - totalBocados > 0 ? (suggestion.bocados - totalBocados) + ' bocados extra' : 'hasta un 20% más'}`;
+    alertText.textContent = `¡Te conviene más nuestro paquete cerrado para ${suggestion.people} personas por $${suggestion.price.toLocaleString('es-UY')}! Incluye ${suggestion.bocados} bocados (${suggestion.items}) y ${savingText} vs tu armado de $${totalPrice.toLocaleString('es-UY')}.`;
     alertBtn.textContent = `Agregar paquete ${suggestion.people} pers por $${suggestion.price.toLocaleString('es-UY')} →`;
-    alertBtn.onclick = () => {
-      addPackageToCart(String(suggestion.people));
-    };
+    alertBtn.onclick = () => addPackageToCart(String(suggestion.people));
   } else {
     alertBox.classList.add('hidden');
   }
@@ -1123,39 +992,19 @@ function addCustomToCart() {
   });
   if (totalBocados === 0) return;
   const id = 'custom-' + Date.now();
-  cart.push({
-    id,
-    name: `Lunch a medida - ${totalBocados} bocados`,
-    desc: descriptionParts.join(', '),
-    price: totalPrice,
-    qty: 1,
-    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=200&auto=format&fit=crop',
-    custom: true,
-    detail: customQuantities
-  });
-  saveCart();
-  updateCartUI();
-  showToast(`Cotización de ${totalBocados} bocados agregada`);
-  // reset
+  cart.push({ id, name: `Lunch a medida - ${totalBocados} bocados`, desc: descriptionParts.join(', '), price: totalPrice, qty: 1, image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=200&auto=format&fit=crop', custom: true, detail: customQuantities });
+  saveCart(); updateCartUI(); showToast(`Cotización de ${totalBocados} bocados agregada`);
   SUELTOS.forEach(s => customQuantities[s.id] = 0);
-  renderCustomItems();
-  openCart();
+  renderCustomItems(); openCart();
 }
 
-// Cart
 function addToCart(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
+  const qtyToAdd = productQuantities[productId] || 1;
   const existing = cart.find(c => c.id === productId);
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({ id: product.id, name: product.name, desc: product.unit, price: product.price, qty: 1, image: product.image });
-  }
-  saveCart();
-  updateCartUI();
-  showToast(`${product.name} agregado`);
-  openCart();
+  if (existing) { existing.qty += qtyToAdd; } else { cart.push({ id: product.id, name: product.name, desc: product.unit, price: product.price, qty: qtyToAdd, image: product.image }); }
+  saveCart(); updateCartUI(); showToast(`${qtyToAdd}x ${product.name} agregado`); openCart();
 }
 
 function addPackageToCart(people) {
@@ -1163,124 +1012,86 @@ function addPackageToCart(people) {
   if (!pkg) return;
   const id = `pkg-${pkg.people}`;
   const existing = cart.find(c => c.id === id);
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({
-      id,
-      name: `Lunch ${pkg.people} personas`,
-      desc: `${pkg.bocados} bocados • ${pkg.items}`,
-      price: pkg.price,
-      qty: 1,
-      image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=200&auto=format&fit=crop'
-    });
-  }
-  saveCart();
-  updateCartUI();
-  showToast(`Lunch ${pkg.people} personas agregado`);
-  openCart();
+  if (existing) { existing.qty += 1; } else { cart.push({ id, name: `Lunch ${pkg.people} personas`, desc: `${pkg.bocados} bocados • ${pkg.items}`, price: pkg.price, qty: 1, image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=200&auto=format&fit=crop' }); }
+  saveCart(); updateCartUI(); showToast(`Lunch ${pkg.people} personas agregado`); openCart();
 }
 
-function saveCart() {
-  localStorage.setItem('barcelonesa_cart', JSON.stringify(cart));
-}
+function saveCart() { localStorage.setItem('barcelonesa_cart', JSON.stringify(cart)); }
 
 function updateCartUI() {
   const count = cart.reduce((a, b) => a + b.qty, 0);
   document.getElementById('cart-count').textContent = count;
   document.getElementById('cart-items-count').textContent = count;
-
   const itemsContainer = document.getElementById('cart-items');
   const footer = document.getElementById('cart-footer');
   const empty = document.getElementById('empty-cart');
-
-  if (count === 0) {
-    itemsContainer.innerHTML = empty.outerHTML;
-    footer.classList.add('hidden');
-    return;
-  }
-
+  if (count === 0) { itemsContainer.innerHTML = empty.outerHTML; footer.classList.add('hidden'); return; }
   footer.classList.remove('hidden');
   itemsContainer.innerHTML = cart.map(item => `
-    <div class="flex gap-3 p-3 bg-paper border border-ink/10 rounded-[14px]">
+    <div class="flex gap-3 p-3 bg-white border border-navy-soft rounded-[14px]">
       <img src="${item.image}" class="w-[56px] h-[56px] rounded-[10px] object-cover flex-shrink-0">
       <div class="flex-1 min-w-0">
-        <div class="font-medium text-[13px] leading-[1.2]">${item.name}</div>
-        <div class="text-[11px] opacity-60 mt-0.5 truncate">${item.desc}</div>
+        <div class="font-bold text-[13px] leading-[1.2] text-navy">${item.name}</div>
+        <div class="text-[11px] text-navy-muted mt-0.5 truncate">${item.desc}</div>
         <div class="flex items-center justify-between mt-2">
-          <div class="flex items-center gap-2">
-            <button onclick="changeQty('${item.id}', -1)" class="w-6 h-6 rounded-full border border-ink/10 flex items-center justify-center text-[12px]">−</button>
-            <span class="text-[12px] font-medium w-4 text-center">${item.qty}</span>
-            <button onclick="changeQty('${item.id}', 1)" class="w-6 h-6 rounded-full bg-ink text-cream flex items-center justify-center text-[12px]">+</button>
+          <div class="flex items-center gap-1 bg-navy-soft/50 rounded-full p-1 border border-navy-soft">
+            <button onclick="changeQty('${item.id}', -1)" class="w-6 h-6 rounded-full bg-white border border-navy-soft flex items-center justify-center text-[12px] text-navy font-bold hover:bg-navy hover:text-white transition">−</button>
+            <input type="number" min="1" value="${item.qty}" oninput="handleCartInput('${item.id}', this.value)" onchange="handleCartInput('${item.id}', this.value)" class="w-10 h-6 text-center bg-transparent text-[12px] font-bold text-navy outline-none">
+            <button onclick="changeQty('${item.id}', 1)" class="w-6 h-6 rounded-full bg-navy text-white flex items-center justify-center text-[12px] font-bold hover:bg-navy-light transition">+</button>
           </div>
-          <div class="font-medium text-[13px]">$${(item.price * item.qty).toLocaleString('es-UY')}</div>
+          <div class="font-bold text-[13px] text-navy">$${(item.price * item.qty).toLocaleString('es-UY')}</div>
         </div>
       </div>
-      <button onclick="removeItem('${item.id}')" class="w-6 h-6 flex items-center justify-center opacity-30 hover:opacity-100">✕</button>
+      <button onclick="removeItem('${item.id}')" class="w-6 h-6 flex items-center justify-center text-navy-muted hover:text-navy font-bold">✕</button>
     </div>
   `).join('');
-
   const subtotal = cart.reduce((a, b) => a + b.price * b.qty, 0);
   document.getElementById('cart-subtotal').textContent = `$${subtotal.toLocaleString('es-UY')}`;
   document.getElementById('cart-total').textContent = `$${subtotal.toLocaleString('es-UY')}`;
+}
+
+function handleCartInput(id, value) {
+  let qty = parseInt(value, 10);
+  if (isNaN(qty) || qty < 1) qty = 1;
+  if (qty > 9999) qty = 9999;
+  const item = cart.find(c => c.id === id);
+  if (item) { item.qty = qty; saveCart(); updateCartUI(); }
 }
 
 function changeQty(id, delta) {
   const item = cart.find(c => c.id === id);
   if (!item) return;
   item.qty += delta;
-  if (item.qty <= 0) {
-    cart = cart.filter(c => c.id !== id);
-  }
-  saveCart();
-  updateCartUI();
+  if (item.qty <= 0) { cart = cart.filter(c => c.id !== id); }
+  saveCart(); updateCartUI();
 }
 
-function removeItem(id) {
-  cart = cart.filter(c => c.id !== id);
-  saveCart();
-  updateCartUI();
-}
+function removeItem(id) { cart = cart.filter(c => c.id !== id); saveCart(); updateCartUI(); }
 
 function openCart() {
   document.getElementById('cart-backdrop').classList.remove('hidden');
-  setTimeout(() => {
-    document.getElementById('cart-backdrop').classList.remove('opacity-0');
-    document.getElementById('cart-drawer').classList.remove('translate-x-full');
-  }, 10);
+  setTimeout(() => { document.getElementById('cart-backdrop').classList.remove('opacity-0'); document.getElementById('cart-drawer').classList.remove('translate-x-full'); }, 10);
   document.body.style.overflow = 'hidden';
 }
 
 function closeCart() {
   document.getElementById('cart-drawer').classList.add('translate-x-full');
   document.getElementById('cart-backdrop').classList.add('opacity-0');
-  setTimeout(() => {
-    document.getElementById('cart-backdrop').classList.add('hidden');
-  }, 300);
+  setTimeout(() => { document.getElementById('cart-backdrop').classList.add('hidden'); }, 300);
   document.body.style.overflow = '';
 }
 
-// Checkout
 function openCheckout() {
   closeCart();
   const subtotal = cart.reduce((a, b) => a + b.price * b.qty, 0);
   document.getElementById('checkout-subtotal').textContent = `$${subtotal.toLocaleString('es-UY')}`;
   document.getElementById('checkout-total').textContent = `$${subtotal.toLocaleString('es-UY')}`;
-  document.getElementById('checkout-items').innerHTML = cart.map(i => `
-    <div class="flex gap-3 text-[13px]">
-      <span class="opacity-60">${i.qty}x</span>
-      <span class="flex-1">${i.name}</span>
-      <span class="font-medium">$${(i.price*i.qty).toLocaleString('es-UY')}</span>
-    </div>
-  `).join('');
+  document.getElementById('checkout-items').innerHTML = cart.map(i => `<div class="flex gap-3 text-[13px] text-navy"><span class="text-navy-muted font-bold">${i.qty}x</span><span class="flex-1">${i.name}</span><span class="font-bold">$${(i.price*i.qty).toLocaleString('es-UY')}</span></div>`).join('');
   document.getElementById('checkout-modal').classList.remove('hidden');
   document.body.style.overflow = 'hidden';
 }
 
-function closeCheckout() {
-  document.getElementById('checkout-modal').classList.add('hidden');
-  document.body.style.overflow = '';
-}
+function closeCheckout() { document.getElementById('checkout-modal').classList.add('hidden'); document.body.style.overflow = ''; }
 
 function toggleEntrega() {
   const tipo = document.querySelector('input[name="tipoEntrega"]:checked').value;
@@ -1300,10 +1111,7 @@ function selectSlot(btn) {
 
 function submitOrder(e) {
   e.preventDefault();
-  if (!selectedSlot) {
-    alert('Seleccioná una franja horaria');
-    return;
-  }
+  if (!selectedSlot) { alert('Seleccioná una franja horaria'); return; }
   const formData = new FormData(e.target);
   const nombre = formData.get('nombre');
   const telefono = formData.get('telefono');
@@ -1316,7 +1124,6 @@ function submitOrder(e) {
   const subtotal = cart.reduce((a, b) => a + b.price * b.qty, 0);
   const envioCost = tipoEntrega === 'envio' ? 350 : 0;
   const total = subtotal + envioCost;
-
   const orderId = 'BRC-' + Date.now().toString().slice(-6);
 
   const order = {
@@ -1327,6 +1134,8 @@ function submitOrder(e) {
     productos: cart.map(c => `${c.qty}x ${c.name}`).join(', '),
     productosDetalle: [...cart],
     total,
+    subtotal,
+    envioCost,
     fecha,
     hora: franja,
     tipoEntrega,
@@ -1338,126 +1147,83 @@ function submitOrder(e) {
   orders.push(order);
   localStorage.setItem('barcelonesa_orders', JSON.stringify(orders));
 
-  // Clear cart
+  // Construir mensaje WhatsApp formateado
+  const productosTexto = cart.map(c => `• ${c.qty}x ${c.name} - $${(c.price*c.qty).toLocaleString('es-UY')} (${c.desc})`).join('%0A');
+  const mensaje = `*¡Nuevo Pedido - La Nueva Barcelonesa!* 🎉%0A%0A` +
+    `*ID:* ${orderId}%0A` +
+    `*Cliente:* ${nombre}%0A` +
+    `*Tel:* ${telefono}%0A` +
+    `*Email:* ${email || 'No proporcionado'}%0A` +
+    `*Entrega:* ${tipoEntrega === 'envio' ? '🚚 Envío a domicilio' : '🏪 Retiro en local'}%0A` +
+    `*Dirección:* ${order.direccion}%0A` +
+    `*Fecha:* ${fecha}%0A` +
+    `*Hora:* ${franja}%0A%0A` +
+    `*Productos:*%0A${productosTexto}%0A%0A` +
+    `*Subtotal:* $${subtotal.toLocaleString('es-UY')}%0A` +
+    `*Envío:* ${tipoEntrega === 'envio' ? '$350' : 'Gratis'}%0A` +
+    `*Total a pagar:* *$${total.toLocaleString('es-UY')}*%0A%0A` +
+    `_Pedido registrado en planilla interna_ ✅`;
+
+  const whatsappUrl = `https://wa.me/59829012672?text=${mensaje}`;
+  window.open(whatsappUrl, '_blank');
+
   cart = [];
   saveCart();
   updateCartUI();
   closeCheckout();
 
-  // Show success
   document.getElementById('success-name').textContent = nombre.split(' ')[0];
   document.getElementById('success-id').textContent = orderId;
-  document.getElementById('success-summary').innerHTML = `
-    <div>${order.productos}</div>
-    <div class="mt-2 font-medium">Total: $${total.toLocaleString('es-UY')} • ${fecha} ${franja} • ${tipoEntrega}</div>
-  `;
+  document.getElementById('success-summary').innerHTML = `<div>${order.productos}</div><div class="mt-2 font-bold">Total: $${total.toLocaleString('es-UY')} • ${fecha} ${franja} • ${tipoEntrega}</div><div class="mt-2 text-[11px] text-emerald-600 font-bold">✓ Mensaje WhatsApp abierto con el pedido formateado</div>`;
   document.getElementById('success-modal').classList.remove('hidden');
-
   renderOrders();
 }
 
-function closeSuccess() {
-  document.getElementById('success-modal').classList.add('hidden');
-}
+function closeSuccess() { document.getElementById('success-modal').classList.add('hidden'); }
+function openAdminFromSuccess() { closeSuccess(); toggleAdmin(); }
 
-function openAdminFromSuccess() {
-  closeSuccess();
-  toggleAdmin();
-}
-
-// Admin / Planilla
 function toggleAdmin() {
   const panel = document.getElementById('admin-panel');
   const isHidden = panel.classList.contains('hidden');
-  if (isHidden) {
-    panel.classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.body.style.overflow = 'hidden';
-    renderOrders();
-  } else {
-    panel.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
+  if (isHidden) { panel.classList.remove('hidden'); window.scrollTo({ top: 0, behavior: 'smooth' }); document.body.style.overflow = 'hidden'; renderOrders(); } else { panel.classList.add('hidden'); document.body.style.overflow = ''; }
 }
 
 function renderOrders() {
   const tbody = document.getElementById('orders-tbody');
   const jsonPre = document.getElementById('orders-json');
   const count = document.getElementById('admin-count');
-
   if (!tbody) return;
   count.textContent = orders.length;
-
   if (orders.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="5" class="px-5 py-16 text-center opacity-40 text-[13px]">Aún no hay pedidos. Realizá una compra para ver la planilla.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5" class="px-5 py-16 text-center opacity-40 text-[13px]">Aún no hay pedidos. Realizá una compra para ver la planilla y el mensaje de WhatsApp.</td></tr>`;
     jsonPre.textContent = '// Array de pedidos - se actualiza en tiempo real\n[]';
     return;
   }
-
   tbody.innerHTML = orders.slice().reverse().map(o => `
-    <tr class="hover:bg-cream/[0.03] transition">
-      <td class="px-5 py-4">
-        <div class="font-mono text-[12px] font-bold">${o.id}</div>
-        <div class="font-medium text-[13px] mt-1">${o.cliente}</div>
-        <div class="text-[11px] opacity-60">${o.telefono}</div>
-      </td>
-      <td class="px-5 py-4 max-w-[280px]">
-        <div class="text-[12px] leading-[1.4] line-clamp-3">${o.productos}</div>
-      </td>
-      <td class="px-5 py-4">
-        <div class="font-medium">$${o.total.toLocaleString('es-UY')}</div>
-        <div class="text-[11px] opacity-60">${o.estado}</div>
-      </td>
-      <td class="px-5 py-4">
-        <div class="text-[12px]">${o.fecha}</div>
-        <div class="text-[11px] opacity-60">${o.hora}</div>
-      </td>
-      <td class="px-5 py-4">
-        <div class="text-[11px] px-2 py-1 rounded-full bg-cream/10 inline-flex">${o.tipoEntrega === 'envio' ? '🚚 Envío' : '🏪 Retiro'}</div>
-        <div class="text-[11px] opacity-60 mt-1 max-w-[160px] truncate">${o.direccion}</div>
-      </td>
+    <tr class="hover:bg-white/[0.03] transition">
+      <td class="px-5 py-4"><div class="font-mono text-[12px] font-bold">${o.id}</div><div class="font-bold text-[13px] mt-1">${o.cliente}</div><div class="text-[11px] opacity-60">${o.telefono}</div></td>
+      <td class="px-5 py-4 max-w-[280px]"><div class="text-[12px] leading-[1.4] line-clamp-3">${o.productos}</div></td>
+      <td class="px-5 py-4"><div class="font-bold">$${o.total.toLocaleString('es-UY')}</div><div class="text-[11px] opacity-60">${o.estado}</div></td>
+      <td class="px-5 py-4"><div class="text-[12px]">${o.fecha}</div><div class="text-[11px] opacity-60">${o.hora}</div></td>
+      <td class="px-5 py-4"><div class="text-[11px] px-2 py-1 rounded-full bg-white/10 inline-flex font-bold">${o.tipoEntrega === 'envio' ? '🚚 Envío' : '🏪 Retiro'}</div><div class="text-[11px] opacity-60 mt-1 max-w-[160px] truncate">${o.direccion}</div></td>
     </tr>
   `).join('');
-
   jsonPre.textContent = JSON.stringify(orders, null, 2);
 }
 
-function clearOrders() {
-  if (!confirm('¿Limpiar planilla de pedidos?')) return;
-  orders = [];
-  localStorage.setItem('barcelonesa_orders', JSON.stringify(orders));
-  renderOrders();
-}
+function clearOrders() { if (!confirm('¿Limpiar planilla de pedidos?')) return; orders = []; localStorage.setItem('barcelonesa_orders', JSON.stringify(orders)); renderOrders(); }
+function exportJSON() { const blob = new Blob([JSON.stringify(orders, null, 2)], { type: 'application/json' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = `barcelonesa-pedidos-${new Date().toISOString().slice(0,10)}.json`; a.click(); URL.revokeObjectURL(url); showToast('JSON exportado'); }
+function showToast(text) { const toast = document.getElementById('toast'); document.getElementById('toast-text').textContent = text; toast.classList.remove('hidden'); toast.classList.add('flex'); setTimeout(() => { toast.classList.add('hidden'); toast.classList.remove('flex'); }, 3000); }
 
-function exportJSON() {
-  const blob = new Blob([JSON.stringify(orders, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `barcelonesa-pedidos-${new Date().toISOString().slice(0,10)}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast('JSON exportado');
-}
-
-function showToast(text) {
-  const toast = document.getElementById('toast');
-  document.getElementById('toast-text').textContent = text;
-  toast.classList.remove('hidden');
-  toast.classList.add('flex');
-  setTimeout(() => {
-    toast.classList.add('hidden');
-    toast.classList.remove('flex');
-  }, 3000);
-}
-
-// Expose global
 window.addToCart = addToCart;
 window.addPackageToCart = addPackageToCart;
 window.filterProducts = filterProducts;
 window.switchCotizadorTab = switchCotizadorTab;
 window.updateCustomQty = updateCustomQty;
 window.handleCustomInput = handleCustomInput;
+window.updateProductQty = updateProductQty;
+window.handleProductInput = handleProductInput;
+window.handleCartInput = handleCartInput;
 window.addCustomToCart = addCustomToCart;
 window.openCart = openCart;
 window.closeCart = closeCart;
@@ -1473,7 +1239,6 @@ window.clearOrders = clearOrders;
 window.exportJSON = exportJSON;
 window.changeQty = changeQty;
 window.removeItem = removeItem;
-
-</script>
+    </script>
 </body>
 </html>
