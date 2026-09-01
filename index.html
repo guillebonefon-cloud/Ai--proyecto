@@ -46,7 +46,7 @@ input[type=number]{ -moz-appearance:textfield; }
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-[80px] md:h-[88px]">
 <div class="flex justify-center items-center w-full py-2 bg-blue-900">
-  <a href="#" class="block focus:outline-none">
+  <a href="index.html" class="block focus:outline-none" title="Volver a página principal">
     <img src="logo.png" 
          alt="La Nueva Barcelonesa" 
          class="h-20 w-auto object-contain max-w-full mx-auto block"
@@ -54,10 +54,11 @@ input[type=number]{ -moz-appearance:textfield; }
   </a>
 </div>
       <div class="hidden lg:flex items-center gap-7">
-        <a href="#tienda" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Tienda</a>
-        <a href="#cotizador" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Cotizador</a>
-        <a href="#nosotros" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Herencia</a>
-        <a href="#contacto" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Contacto</a>
+        <a href="index.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Inicio</a>
+        <a href="tienda.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Tienda</a>
+        <a href="cotizador.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Cotizador</a>
+        <a href="nosotros.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Herencia</a>
+        <a href="contacto.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Contacto</a>
       </div>
       <div class="flex items-center gap-3">
         <button onclick="toggleAdmin()" class="hidden md:flex text-[11px] tracking-widest uppercase bg-white/10 border border-white/20 px-4 py-2.5 rounded-full hover:bg-white hover:text-blue-900 transition font-semibold">Planilla Pedidos</button>
@@ -71,10 +72,11 @@ input[type=number]{ -moz-appearance:textfield; }
   </div>
   <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 bg-blue-900">
     <div class="px-4 py-6 flex flex-col gap-4 text-white">
-      <a href="#tienda" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">Tienda</a>
-      <a href="#cotizador" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">Cotizador Lunch</a>
-      <a href="#nosotros" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">Herencia</a>
-      <a href="#contacto" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">Contacto</a>
+      <a href="index.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">🏠 Inicio</a>
+      <a href="tienda.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">🛍️ Tienda</a>
+      <a href="cotizador.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📋 Cotizador Lunch</a>
+      <a href="nosotros.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📖 Herencia</a>
+      <a href="contacto.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📞 Contacto</a>
       <div class="pt-4 border-t border-white/10 text-sm opacity-70">Ejido 1400, Montevideo - Tel 2901 2672</div>
     </div>
   </div>
@@ -93,8 +95,12 @@ input[type=number]{ -moz-appearance:textfield; }
       </h1>
       <p class="mt-6 text-[17px] leading-[1.6] text-slate-600 max-w-[44ch]">Desde 1930 elaboramos a mano cada pieza en Ejido 1400. Tradición familiar transformada en catering premium para tus eventos.</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#tienda" class="bg-brandGold text-blue-900 px-7 h-[50px] inline-flex items-center gap-3 rounded-full text-[13px] tracking-[0.1em] uppercase font-bold hover:bg-amber-400 transition">Explorar tienda <span class="w-7 h-7 bg-blue-900 text-white rounded-full flex items-center justify-center">→</span></a>
-        <a href="#cotizador" class="bg-white border border-blue-900/15 px-7 h-[50px] inline-flex items-center rounded-full text-[13px] tracking-[0.1em] uppercase font-bold text-blue-900 hover:bg-blue-900 hover:text-white transition">Cotizar lunch</a>
+        <a href="tienda.html" class="bg-brandGold text-blue-900 px-7 h-[50px] min-h-[50px] inline-flex items-center gap-3 rounded-full text-[13px] tracking-[0.1em] uppercase font-bold hover:bg-amber-400 transition">Explorar tienda <span class="w-7 h-7 bg-blue-900 text-white rounded-full flex items-center justify-center">→</span></a>
+        <a href="cotizador.html" class="bg-white border border-blue-900/15 px-7 h-[50px] min-h-[50px] inline-flex items-center rounded-full text-[13px] tracking-[0.1em] uppercase font-bold text-blue-900 hover:bg-blue-900 hover:text-white transition">Cotizar lunch</a>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <a href="index.html" class="text-[11px] uppercase tracking-widest bg-blue-50 border border-blue-100 text-blue-900 px-4 py-2 rounded-full font-bold">Página principal</a>
+        <span class="text-[11px] text-slate-400 px-2 py-2">Logo arriba siempre vuelve al inicio → Intuitivo para todos</span>
       </div>
       <div class="mt-10 flex gap-8 border-t border-slate-100 pt-6 max-w-[380px]">
         <div><div class="font-display text-2xl font-bold text-blue-900">+94</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Años tradición</div></div>
@@ -127,21 +133,24 @@ input[type=number]{ -moz-appearance:textfield; }
       <p class="max-w-[32ch] text-[14px] text-slate-600">Selección curada de salados, dulces y catering. Todo horneado hoy.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div onclick="filterProducts('salados')" class="cursor-pointer bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition">
-        <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">↗</div>
+      <a href="tienda.html" class="bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">→</div>
         <div class="font-display text-[24px] font-bold mt-4 text-blue-900">Salados</div>
         <div class="text-[13px] text-slate-500 mt-1">Medialunas, olímpicos, saladitos, empanadas</div>
-      </div>
-      <div onclick="filterProducts('dulces')" class="cursor-pointer bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition">
-        <div class="w-10 h-10 bg-brandGold text-blue-900 rounded-full flex items-center justify-center font-bold">↗</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-blue-50 border border-blue-100 text-blue-900 px-3 py-1 rounded-full inline-flex">Ir a Tienda →</div>
+      </a>
+      <a href="tienda.html" class="bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="w-10 h-10 bg-brandGold text-blue-900 rounded-full flex items-center justify-center font-bold">→</div>
         <div class="font-display text-[24px] font-bold mt-4 text-blue-900">Dulces</div>
         <div class="text-[13px] text-slate-500 mt-1">Tortas, postres, masitas, alfajores</div>
-      </div>
-      <div onclick="document.getElementById('cotizador').scrollIntoView({behavior:'smooth'})" class="cursor-pointer bg-white border border-amber-200 rounded-[20px] p-6 hover:border-brandGold transition">
-        <div class="inline-flex bg-brandGold text-blue-900 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Cotizador inteligente</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-amber-50 border border-amber-200 text-amber-800 px-3 py-1 rounded-full inline-flex">Ir a Tienda →</div>
+      </a>
+      <a href="cotizador.html" class="bg-white border border-amber-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="inline-flex bg-brandGold text-blue-900 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Cotizador inteligente - Página separada</div>
         <div class="font-display text-[24px] font-bold mt-3 text-blue-900">Eventos & Catering</div>
-        <div class="text-[13px] text-slate-500 mt-1">Paquetes para 5 a 100 personas</div>
-      </div>
+        <div class="text-[13px] text-slate-500 mt-1">Paquetes para 5 a 100 personas - Página dedicada</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-blue-900 text-white px-3 py-1 rounded-full inline-flex">Ir a Cotizador →</div>
+      </a>
     </div>
   </div>
 </section>
@@ -162,6 +171,10 @@ input[type=number]{ -moz-appearance:textfield; }
       </div>
     </div>
     <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+    <div class="mt-10 flex justify-center">
+      <a href="tienda.html" class="bg-blue-900 text-white px-8 h-14 min-h-[44px] rounded-full font-bold uppercase text-[13px] tracking-widest inline-flex items-center gap-3">Ver tienda completa en página separada <span class="w-8 h-8 bg-brandGold text-blue-900 rounded-full flex items-center justify-center">→</span></a>
+    </div>
+    <div class="mt-4 text-center text-[11px] text-slate-500">Página dedicada → más fácil para gente que no se maneja bien en internet. Tocá el logo arriba para volver siempre al inicio.</div>
   </div>
 </section>
 
@@ -222,41 +235,62 @@ input[type=number]{ -moz-appearance:textfield; }
           <div class="text-[11px] uppercase font-bold tracking-widest text-blue-900/60">Beneficio</div>
           <div class="font-display font-bold text-[18px] text-blue-900 mt-2 leading-tight">Paquetes 15+ personas incluyen postre de obsequio</div>
         </div>
+        <a href="cotizador.html" class="bg-blue-900 text-white px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest inline-flex items-center gap-2 justify-center w-full">Abrir cotizador en página completa →</a>
       </div>
     </div>
+    <div class="mt-8 text-center"><span class="text-[11px] text-slate-500 bg-white border border-slate-200 px-4 py-2 rounded-full">💡 Cotizador también disponible como página separada - más intuitivo</span></div>
   </div>
 </section>
 
-<!-- NOSOTROS - BLANCO -->
+<!-- NOSOTROS - BLANCO - AHORA CON LINK A PÁGINA SEPARADA -->
 <section id="nosotros" class="bg-white py-20">
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
     <div class="rounded-[24px] overflow-hidden border border-slate-200 aspect-[4/3] bg-[#F9F9F9]"><img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover"></div>
     <div>
-      <div class="inline-flex bg-blue-50 border border-blue-100 px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-blue-900">Herencia</div>
+      <div class="inline-flex bg-blue-50 border border-blue-100 px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-blue-900">Herencia - Página separada disponible</div>
       <h2 class="font-display text-[38px] lg:text-[52px] leading-[0.9] tracking-tight mt-4 text-blue-900">94 años haciendo lo mismo: <span class="italic font-light text-brandGoldDark">hacerlo bien.</span></h2>
-      <p class="mt-6 text-slate-600 leading-relaxed">Desde 1930 en Ejido 1400, Montevideo. Horno a leña, recetas familiares y calidad sin negociación. Ahora con experiencia digital luminosa.</p>
+      <p class="mt-6 text-slate-600 leading-relaxed">Desde 1930 en Ejido 1400, Montevideo. Horno a leña, recetas familiares y calidad sin negociación. Ahora con navegación por páginas separadas, más intuitivo para todos.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="nosotros.html" class="bg-blue-900 text-white px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest inline-flex items-center gap-2">Leer historia completa →</a>
+        <a href="index.html" class="border border-slate-200 px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest text-blue-900 inline-flex items-center">Inicio</a>
+      </div>
+      <div class="mt-4 text-[11px] text-slate-500">💡 Tocá el logo arriba para volver siempre al inicio</div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER - AZUL MARINO PROFUNDO -->
+<!-- FOOTER - AZUL MARINO PROFUNDO - MULTIPÁGINA -->
 <footer id="contacto" class="bg-blue-900 text-white pt-14 pb-8">
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
       <div>
-        <div class="flex items-center gap-3"><img src="logo.png" alt="La Nueva Barcelonesa" class="w-10 h-10 sm:w-11 sm:h-11 object-contain rounded-[10px] bg-black border border-white/10"><div><div class="font-display font-bold">La Nueva Barcelonesa</div><div class="text-[11px] uppercase tracking-widest opacity-60">Montevideo • Desde 1930</div></div></div>
-        <p class="mt-4 text-[13px] text-white/60 max-w-[32ch]">Panadería artesanal premium y catering. Todo con fondo blanco luminoso y experiencia de alta gama.</p>
+        <a href="index.html" class="flex items-center gap-3"><img src="logo.png" alt="La Nueva Barcelonesa" class="h-16 w-auto object-contain max-w-full block" style="min-height: 64px;"><div><div class="font-display font-bold">La Nueva Barcelonesa</div><div class="text-[11px] uppercase tracking-widest opacity-60">Montevideo • Desde 1930</div></div></a>
+        <p class="mt-4 text-[13px] text-white/60 max-w-[32ch]">Navegación por páginas separadas, más intuitivo. Logo arriba siempre lleva al inicio.</p>
+        <a href="index.html" class="mt-4 inline-flex bg-white/10 border border-white/20 px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-blue-900">🏠 Volver a Inicio</a>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Páginas separadas</div>
+        <div class="space-y-2 text-[14px]">
+          <a href="index.html" class="block hover:text-brandGold font-bold text-brandGold">🏠 Inicio - Página principal</a>
+          <a href="tienda.html" class="block hover:text-brandGold">🛍️ Tienda completa</a>
+          <a href="cotizador.html" class="block hover:text-brandGold">📋 Cotizador Lunch</a>
+          <a href="nosotros.html" class="block hover:text-brandGold">📖 Herencia</a>
+          <a href="contacto.html" class="block hover:text-brandGold">📞 Contacto</a>
+        </div>
       </div>
       <div>
         <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Contacto Real</div>
         <div class="space-y-2 text-[14px]"><div><span class="opacity-60">Tel:</span> <span class="font-bold">2901 2672</span></div><div><span class="opacity-60">Dirección:</span> Ejido 1400, Montevideo</div><div class="break-all"><span class="opacity-60">Email:</span> presupuesto.barcelonesa@gmail.com</div></div>
       </div>
       <div>
-        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Horarios</div>
-        <div class="text-[13px] text-white/70 space-y-1"><p>Lun-Sáb 7:00-20:30</p><p>Dom 8:00-13:00</p><p class="pt-2 text-white/50 text-[12px]">Envíos todo Montevideo • Retiro sin costo • 24h anticipación</p></div>
+        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Ayuda - Intuitivo</div>
+        <div class="text-[13px] text-white/70 space-y-2">
+          <p class="bg-white/10 p-3 rounded-[10px]">💡 <span class="font-bold text-white">¿No te manejás bien en internet?</span><br>1. Logo arriba = siempre vuelve al inicio<br>2. Botones grandes fáciles de tocar<br>3. Cada tarea es una página separada</p>
+          <p class="pt-2 text-white/50 text-[12px]">Envíos todo Montevideo • Retiro sin costo • 24h anticipación</p>
+        </div>
       </div>
     </div>
-    <div class="pt-6 text-[11px] uppercase tracking-widest opacity-40 flex flex-wrap justify-between gap-3"><span>© 2026 La Nueva Barcelonesa - Ejido 1400</span><span>Visa • Mastercard • Oca • Lider • Diners • Passcard • Mercado Pago</span></div>
+    <div class="pt-6 text-[11px] uppercase tracking-widest opacity-40 flex flex-wrap justify-between gap-3"><span>© 2026 La Nueva Barcelonesa - Ejido 1400 - Multipágina intuitiva</span><span>Logo siempre lleva a Inicio • Visa • Mastercard • Oca • Lider • Diners • Passcard • Mercado Pago</span></div>
   </div>
 </footer>
 
