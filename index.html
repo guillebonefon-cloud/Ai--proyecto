@@ -45,18 +45,14 @@ input[type=number]{ -moz-appearance:textfield; }
 <nav class="sticky top-0 z-40 bg-blue-900 text-white border-b border-blue-800">
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-[80px] md:h-[88px]">
-      <a href="#" class="flex items-center gap-3">
-        <!-- LOGO URL ABSOLUTA EXTERNA REAL -->
-        <img src="https://fenicio.app" alt="La Nueva Barcelonesa" class="h-16 md:h-20 w-auto object-contain mx-auto">
-        <div class="leading-[0.9]">
-          <div class="font-display font-bold text-[18px] tracking-tight">La Nueva</div>
-          <div class="font-display font-light text-[18px] -mt-1">Barcelonesa</div>
-        </div>
-        <div class="hidden md:block ml-4 pl-4 border-l border-white/20">
-          <div class="text-[10px] tracking-[0.2em] uppercase opacity-70">Desde 1930</div>
-          <div class="text-[11px] font-bold -mt-0.5">Montevideo</div>
-        </div>
-      </a>
+<div class="flex justify-center items-center w-full py-2 bg-blue-900">
+  <a href="#" class="block focus:outline-none">
+    <img src="logo.png" 
+         alt="La Nueva Barcelonesa" 
+         class="h-20 w-auto object-contain max-w-full mx-auto block"
+         style="min-height: 80px; display: block;">
+  </a>
+</div>
       <div class="hidden lg:flex items-center gap-7">
         <a href="#tienda" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Tienda</a>
         <a href="#cotizador" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Cotizador</a>
