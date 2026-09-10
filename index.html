@@ -45,7 +45,7 @@ input[type=number]{ -moz-appearance:textfield; }
 <nav class="sticky top-0 z-40 bg-blue-900 text-white border-b border-blue-800">
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-[80px] md:h-[88px]">
-<div class="flex justify-center items-center w-full py-2 bg-blue-900">
+<div class="flex justify-center items-center w-full py-2">
   <a href="index.html" class="block focus:outline-none" title="Volver a página principal">
     <img src="logo.png" 
          alt="La Nueva Barcelonesa" 
@@ -128,8 +128,8 @@ input[type=number]{ -moz-appearance:textfield; }
 <section class="bg-[#F9F9F9] border-y border-slate-100 py-14">
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-wrap items-end justify-between gap-6 mb-8">
-      <h2 class="font-display text-[32px] lg:text-[44px] leading-[0.9] tracking-tight text-blue-900">Tres universos,<br>una misma artesanía.</h2>
-      <p class="max-w-[32ch] text-[14px] text-slate-600">Selección curada de salados, dulces y catering. Todo horneado hoy.</p>
+      <h2 class="font-display text-[32px] lg:text-[44px] leading-[0.9] tracking-tight text-blue-900">Cinco universos,<br>una misma artesanía.</h2>
+      <p class="max-w-[32ch] text-[14px] text-slate-600">Salados, dulces, eventos, promociones y lunch. Todo horneado hoy.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <a href="tienda.html" class="bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition block">
@@ -167,6 +167,8 @@ input[type=number]{ -moz-appearance:textfield; }
         <button onclick="filterProducts('salados')" data-filter="salados" class="filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Salados</button>
         <button onclick="filterProducts('dulces')" data-filter="dulces" class="filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Dulces</button>
         <button onclick="filterProducts('eventos')" data-filter="eventos" class="filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Eventos</button>
+        <button onclick="filterProducts('promociones')" data-filter="promociones" class="filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Promociones</button>
+        <button onclick="filterProducts('lunch')" data-filter="lunch" class="filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Lunch</button>
       </div>
     </div>
     <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
@@ -392,18 +394,41 @@ input[type=number]{ -moz-appearance:textfield; }
 <script>
 // DATA
 const PRODUCTS = [
-  {id:'olympic-4', name:'Sándwich Olímpico', desc:'Jamón, queso, morrón, huevo y aceitunas. Pan artesanal.', price:159, cat:'salados', tag:'Clásico', image:'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?q=80&w=600&auto=format&fit=crop', unit:'4 unidades'},
-  {id:'ricotta', name:'Torta de Ricotta', desc:'Masa sablée, ricotta fresca y limón.', price:189, cat:'dulces', tag:'Destacada', image:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop', unit:'Porción 200g'},
-  {id:'medialunas-jq', name:'Medialunas Jamón y Queso', desc:'Hojaldre mantecoso, J&Q premium.', price:420, cat:'salados', tag:'Horneado hoy', image:'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
-  {id:'saladitos', name:'Saladitos Variados', desc:'Atún, palmitos, J&Q, salame.', price:480, cat:'salados', tag:'Para eventos', image:'https://images.unsplash.com/photo-1604908177453-7462950a6a3b?q=80&w=600&auto=format&fit=crop', unit:'24 unidades'},
-  {id:'empanadas', name:'Empanaditas Copetín', desc:'Carne, J&Q, humita.', price:390, cat:'salados', tag:'Bocado caliente', image:'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
-  {id:'jesuitas', name:'Jesuitas de Lunch', desc:'Hojaldre caramelizado, jamón y queso.', price:520, cat:'salados', tag:'Premium', image:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
-  {id:'torta-masa', name:'Torta Masas Finas', desc:'Masitas artesanales, dulce de leche.', price:890, cat:'dulces', tag:'Regalo', image:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=600&auto=format&fit=crop', unit:'1 kg'},
-  {id:'alfajores', name:'Alfajores Artesanales', desc:'Maicena y chocolate.', price:320, cat:'dulces', tag:'Dulce', image:'https://images.unsplash.com/photo-1488477181946-64290103bbd6?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
-  {id:'postre-chaja', name:'Postre Chajá', desc:'Bizcochuelo, merengue, duraznos.', price:420, cat:'dulces', tag:'Postre', image:'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop', unit:'Porción'},
-  {id:'lunch-5', name:'Lunch 5 personas', desc:'60 bocados combinados.', price:3990, cat:'eventos', tag:'Evento', image:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop', unit:'60 bocados'},
-  {id:'lunch-10', name:'Lunch 10 personas', desc:'120 bocados combinados.', price:7590, cat:'eventos', tag:'Más vendido', image:'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop', unit:'120 bocados'},
-  {id:'lunch-20', name:'Lunch 20 personas', desc:'240 bocados premium.', price:13990, cat:'eventos', tag:'Evento grande', image:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop', unit:'240 bocados'}
+  // SALADOS
+  {id:'medialunas', name:'Medialunas', desc:'De manteca, horneadas hoy. Receta de la casa.', price:180, cat:'salados', tag:'Horneado hoy', image:'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'sandwiches', name:'Sandwiches', desc:'De miga surtidos: jamón, queso, salame y palmitos.', price:420, cat:'salados', tag:'Clásico', image:'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'saladitos', name:'Saladitos', desc:'Atún, palmitos, J&Q, salame.', price:480, cat:'salados', tag:'Para eventos', image:'https://images.unsplash.com/photo-1604908177453-7462950a6a3b?q=80&w=600&auto=format&fit=crop', unit:'24 unidades'},
+  {id:'jesuitas', name:'Jesuítas', desc:'Hojaldre caramelizado, jamón y queso.', price:520, cat:'salados', tag:'Premium', image:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'pizza', name:'Pizza', desc:'Masa artesanal, salsa casera y muzzarela.', price:350, cat:'salados', tag:'Horneado hoy', image:'https://images.unsplash.com/photo-1513104890138-7c749ca1b213?q=80&w=600&auto=format&fit=crop', unit:'1 unidad'},
+  {id:'tortas-saladas', name:'Tortas saladas', desc:'Torta de jamón y queso ideal para compartir.', price:650, cat:'salados', tag:'Para eventos', image:'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop', unit:'1 unidad'},
+  {id:'hojaldraditos', name:'Hojaldraditos', desc:'Hojaldre mantecoso con rellenos surtidos.', price:390, cat:'salados', tag:'Horneado hoy', image:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'empanadas', name:'Empanadas', desc:'Carne, queso y cebolla, humita.', price:390, cat:'salados', tag:'Bocado caliente', image:'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'pebetes', name:'Pebetes', desc:'Pan catalán con jamón, queso y tomate.', price:320, cat:'salados', tag:'Clásico', image:'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?q=80&w=600&auto=format&fit=crop', unit:'4 unidades'},
+  {id:'platos-calientes', name:'Platos calientes', desc:'Milanesas, tartas y pasteles de horno para tu evento.', price:450, cat:'salados', tag:'Bocado caliente', image:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop', unit:'Porción'},
+  // DULCES
+  {id:'tortas', name:'Tortas', desc:'Ricotta, chocolate o zanahoria. También a pedido.', price:890, cat:'dulces', tag:'Regalo', image:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=600&auto=format&fit=crop', unit:'1 kg'},
+  {id:'masitas', name:'Masitas', desc:'Surtido de masitas finas de té.', price:350, cat:'dulces', tag:'Dulce', image:'https://images.unsplash.com/photo-1488477181946-64290103bbd6?q=80&w=600&auto=format&fit=crop', unit:'500 g'},
+  {id:'postres', name:'Postres', desc:'Chajá, tiramisú y flan casero.', price:420, cat:'dulces', tag:'Postre', image:'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop', unit:'Porción'},
+  {id:'budines', name:'Budines', desc:'Limón, naranja o frutal con glaseado casero.', price:280, cat:'dulces', tag:'Horneado hoy', image:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop', unit:'1 unidad'},
+  {id:'mantecadas', name:'Mantecadas', desc:'Esponjosas, receta tradicional.', price:220, cat:'dulces', tag:'Horneado hoy', image:'https://images.unsplash.com/photo-1488477181946-64290103bbd6?q=80&w=600&auto=format&fit=crop', unit:'6 unidades'},
+  {id:'pasteles', name:'Pasteles', desc:'Pasta frola, membrillo y crema.', price:300, cat:'dulces', tag:'Clásico', image:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=600&auto=format&fit=crop', unit:'1 unidad'},
+  {id:'alfajores', name:'Alfajores', desc:'Maicena y chocolate, dulce de leche pleno.', price:320, cat:'dulces', tag:'Dulce', image:'https://images.unsplash.com/photo-1488477181946-64290103bbd6?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'antojos', name:'Antojos', desc:'Churros, tortas fritas y dulces del día.', price:250, cat:'dulces', tag:'Horneado hoy', image:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop', unit:'6 unidades'},
+  {id:'sin-azucar', name:'Sin Azúcar', desc:'Budín y alfajores sin azúcar agregada.', price:340, cat:'dulces', tag:'Sin azúcar', image:'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop', unit:'6 unidades'},
+  // EVENTOS
+  {id:'desayunos', name:'Desayunos', desc:'Caja desayuno con tortas, masitas y jugo.', price:1290, cat:'eventos', tag:'Regalo', image:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop', unit:'1 caja'},
+  {id:'coffee-break', name:'Coffee Break', desc:'Café, masitas y salados para empresas.', price:2990, cat:'eventos', tag:'Empresas', image:'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop', unit:'10 personas'},
+  {id:'cumpleanos', name:'Cumpleaños', desc:'Torta + 100 bocados dulces y salados.', price:5990, cat:'eventos', tag:'Más vendido', image:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=600&auto=format&fit=crop', unit:'20 personas'},
+  {id:'boda', name:'Boda', desc:'Mesa dulce y salada a medida, coordinación incluida.', price:15990, cat:'eventos', tag:'Premium', image:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop', unit:'50 personas'},
+  // PROMOCIONES
+  {id:'promo-medialunas', name:'Promo Medialunas', desc:'2 docenas de medialunas de manteca.', price:300, cat:'promociones', tag:'Promo', image:'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop', unit:'24 unidades'},
+  {id:'promo-merienda', name:'Promo Merienda', desc:'Budín + 6 masitas + 6 alfajores.', price:490, cat:'promociones', tag:'Promo', image:'https://images.unsplash.com/photo-1488477181946-64290103bbd6?q=80&w=600&auto=format&fit=crop', unit:'1 combo'},
+  {id:'promo-lunch', name:'Promo Lunch Semana', desc:'Lunch 10 personas + 12 medialunas de regalo.', price:7990, cat:'promociones', tag:'Promo', image:'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop', unit:'120 bocados'},
+  // LUNCH
+  {id:'lunch-5', name:'Lunch 5 personas', desc:'60 bocados combinados.', price:3990, cat:'lunch', tag:'Evento', image:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop', unit:'60 bocados'},
+  {id:'lunch-10', name:'Lunch 10 personas', desc:'120 bocados combinados.', price:7590, cat:'lunch', tag:'Más vendido', image:'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop', unit:'120 bocados'},
+  {id:'lunch-15', name:'Lunch 15 personas', desc:'180 bocados + postre de obsequio.', price:9290, cat:'lunch', tag:'Recomendado', image:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop', unit:'180 bocados'},
+  {id:'lunch-20', name:'Lunch 20 personas', desc:'240 bocados premium.', price:13990, cat:'lunch', tag:'Evento grande', image:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop', unit:'240 bocados'}
 ];
 const PACKAGES = [
   {people:5, price:3990, bocados:60, desc:'60 bocados combinados. Ideal reuniones íntimas.', items:'Surtidos + saladitos + jesuitas'},
@@ -443,7 +468,7 @@ function renderProducts(){
   const filtered=currentFilter==='todos'?PRODUCTS:PRODUCTS.filter(p=>p.cat===currentFilter);
   grid.innerHTML=filtered.map(p=>`
     <div class="bg-white border border-slate-200 rounded-[20px] overflow-hidden flex flex-col hover:border-amber-200 transition shadow-sm">
-      <div class="h-[200px] bg-[#F9F9F9] overflow-hidden"><img src="${p.image}" class="w-full h-full object-cover"></div>
+      <div class="h-[200px] bg-[#F9F9F9] overflow-hidden"><img src="${p.image}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop'" class="w-full h-full object-cover"></div>
       <div class="p-5 flex flex-col flex-1">
         <div class="flex justify-between gap-3"><div><div class="text-[10px] uppercase font-bold tracking-widest text-slate-500">${p.cat} • ${p.unit}</div><h3 class="font-display font-bold text-[18px] text-blue-900 mt-1">${p.name}</h3></div><div class="text-right"><div class="font-bold text-blue-900">$${p.price.toLocaleString('es-UY')}</div><div class="text-[10px] text-amber-600 font-bold bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full mt-1">${p.tag}</div></div></div>
         <p class="text-[13px] text-slate-500 mt-3 flex-1">${p.desc}</p>
