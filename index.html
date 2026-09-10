@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Nueva Barcelonesa | Panadería Artesanal Premium - Montevideo</title>
-<meta name="description" content="La Nueva Barcelonesa - Panadería artesanal desde 1930 en Ejido 1400, Montevideo. Catering premium, lunch, tortas y salados.">
+<meta name="description" content="La Nueva Barcelonesa - Panadería artesanal en Ejido 1400, Montevideo. Catering premium, lunch, tortas y salados. Tel 2901 2672 Cel 097 212 136.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -46,7 +46,7 @@ input[type=number]{ -moz-appearance:textfield; }
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-[80px] md:h-[88px]">
 <div class="flex justify-center items-center w-full py-2 bg-blue-900">
-  <a href="#" class="block focus:outline-none">
+  <a href="index.html" class="block focus:outline-none" title="Volver a página principal">
     <img src="logo.png" 
          alt="La Nueva Barcelonesa" 
          class="h-20 w-auto object-contain max-w-full mx-auto block"
@@ -54,13 +54,13 @@ input[type=number]{ -moz-appearance:textfield; }
   </a>
 </div>
       <div class="hidden lg:flex items-center gap-7">
-        <a href="#tienda" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Tienda</a>
-        <a href="#cotizador" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Cotizador</a>
-        <a href="#nosotros" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Herencia</a>
-        <a href="#contacto" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Contacto</a>
+        <a href="index.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Inicio</a>
+        <a href="tienda.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Tienda</a>
+        <a href="cotizador.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Cotizador</a>
+        <a href="nosotros.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Herencia</a>
+        <a href="contacto.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Contacto</a>
       </div>
       <div class="flex items-center gap-3">
-        <button onclick="toggleAdmin()" class="hidden md:flex text-[11px] tracking-widest uppercase bg-white/10 border border-white/20 px-4 py-2.5 rounded-full hover:bg-white hover:text-blue-900 transition font-semibold">Planilla Pedidos</button>
         <button onclick="openCart()" class="flex items-center gap-3 bg-brandGold text-blue-900 pl-5 pr-1.5 py-1.5 rounded-full font-bold hover:bg-yellow-500 transition">
           <span class="text-[12px] tracking-[0.12em] uppercase">Carrito</span>
           <span id="cart-count" class="bg-blue-900 text-white w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-bold">0</span>
@@ -71,10 +71,11 @@ input[type=number]{ -moz-appearance:textfield; }
   </div>
   <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 bg-blue-900">
     <div class="px-4 py-6 flex flex-col gap-4 text-white">
-      <a href="#tienda" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">Tienda</a>
-      <a href="#cotizador" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">Cotizador Lunch</a>
-      <a href="#nosotros" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">Herencia</a>
-      <a href="#contacto" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">Contacto</a>
+      <a href="index.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">🏠 Inicio</a>
+      <a href="tienda.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">🛍️ Tienda</a>
+      <a href="cotizador.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📋 Cotizador Lunch</a>
+      <a href="nosotros.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📖 Herencia</a>
+      <a href="contacto.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📞 Contacto</a>
       <div class="pt-4 border-t border-white/10 text-sm opacity-70">Ejido 1400, Montevideo - Tel 2901 2672</div>
     </div>
   </div>
@@ -91,15 +92,19 @@ input[type=number]{ -moz-appearance:textfield; }
       <h1 class="font-display text-[36px] sm:text-[48px] lg:text-[78px] leading-[0.85] tracking-[-0.04em] text-blue-900 break-words">
         Panadería<br><span class="font-light italic text-brandGoldDark">artesanal</span><br>de alta gama.
       </h1>
-      <p class="mt-6 text-[17px] leading-[1.6] text-slate-600 max-w-[44ch]">Desde 1930 elaboramos a mano cada pieza en Ejido 1400. Tradición familiar transformada en catering premium para tus eventos.</p>
+      <p class="mt-6 text-[17px] leading-[1.6] text-slate-600 max-w-[44ch]">Panadería artesanal en Ejido 1400, Montevideo. Elaboramos a mano cada pieza con recetas familiares y catering premium para tus eventos.</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#tienda" class="bg-brandGold text-blue-900 px-7 h-[50px] inline-flex items-center gap-3 rounded-full text-[13px] tracking-[0.1em] uppercase font-bold hover:bg-amber-400 transition">Explorar tienda <span class="w-7 h-7 bg-blue-900 text-white rounded-full flex items-center justify-center">→</span></a>
-        <a href="#cotizador" class="bg-white border border-blue-900/15 px-7 h-[50px] inline-flex items-center rounded-full text-[13px] tracking-[0.1em] uppercase font-bold text-blue-900 hover:bg-blue-900 hover:text-white transition">Cotizar lunch</a>
+        <a href="tienda.html" class="bg-brandGold text-blue-900 px-7 h-[50px] min-h-[50px] inline-flex items-center gap-3 rounded-full text-[13px] tracking-[0.1em] uppercase font-bold hover:bg-amber-400 transition">Explorar tienda <span class="w-7 h-7 bg-blue-900 text-white rounded-full flex items-center justify-center">→</span></a>
+        <a href="cotizador.html" class="bg-white border border-blue-900/15 px-7 h-[50px] min-h-[50px] inline-flex items-center rounded-full text-[13px] tracking-[0.1em] uppercase font-bold text-blue-900 hover:bg-blue-900 hover:text-white transition">Cotizar lunch</a>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <a href="index.html" class="text-[11px] uppercase tracking-widest bg-blue-50 border border-blue-100 text-blue-900 px-4 py-2 rounded-full font-bold">Página principal</a>
+        <span class="text-[11px] text-slate-400 px-2 py-2">Logo arriba siempre vuelve al inicio → Intuitivo para todos</span>
       </div>
       <div class="mt-10 flex gap-8 border-t border-slate-100 pt-6 max-w-[380px]">
-        <div><div class="font-display text-2xl font-bold text-blue-900">+94</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Años tradición</div></div>
-        <div><div class="font-display text-2xl font-bold text-blue-900">4.9★</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Rating clientes</div></div>
-        <div><div class="font-display text-2xl font-bold text-blue-900">+12k</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Eventos</div></div>
+        <div><div class="font-display text-2xl font-bold text-blue-900">Ejido 1400</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Montevideo</div></div>
+        <div><div class="font-display text-2xl font-bold text-blue-900">Artesanal</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Elaboración diaria</div></div>
+        <div><div class="font-display text-2xl font-bold text-blue-900">Catering</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Eventos y lunch</div></div>
       </div>
     </div>
     <div class="relative">
@@ -127,21 +132,24 @@ input[type=number]{ -moz-appearance:textfield; }
       <p class="max-w-[32ch] text-[14px] text-slate-600">Selección curada de salados, dulces y catering. Todo horneado hoy.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div onclick="filterProducts('salados')" class="cursor-pointer bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition">
-        <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">↗</div>
+      <a href="tienda.html" class="bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">→</div>
         <div class="font-display text-[24px] font-bold mt-4 text-blue-900">Salados</div>
         <div class="text-[13px] text-slate-500 mt-1">Medialunas, olímpicos, saladitos, empanadas</div>
-      </div>
-      <div onclick="filterProducts('dulces')" class="cursor-pointer bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition">
-        <div class="w-10 h-10 bg-brandGold text-blue-900 rounded-full flex items-center justify-center font-bold">↗</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-blue-50 border border-blue-100 text-blue-900 px-3 py-1 rounded-full inline-flex">Ir a Tienda →</div>
+      </a>
+      <a href="tienda.html" class="bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="w-10 h-10 bg-brandGold text-blue-900 rounded-full flex items-center justify-center font-bold">→</div>
         <div class="font-display text-[24px] font-bold mt-4 text-blue-900">Dulces</div>
         <div class="text-[13px] text-slate-500 mt-1">Tortas, postres, masitas, alfajores</div>
-      </div>
-      <div onclick="document.getElementById('cotizador').scrollIntoView({behavior:'smooth'})" class="cursor-pointer bg-white border border-amber-200 rounded-[20px] p-6 hover:border-brandGold transition">
-        <div class="inline-flex bg-brandGold text-blue-900 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Cotizador inteligente</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-amber-50 border border-amber-200 text-amber-800 px-3 py-1 rounded-full inline-flex">Ir a Tienda →</div>
+      </a>
+      <a href="cotizador.html" class="bg-white border border-amber-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="inline-flex bg-brandGold text-blue-900 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Cotizador inteligente - Página separada</div>
         <div class="font-display text-[24px] font-bold mt-3 text-blue-900">Eventos & Catering</div>
-        <div class="text-[13px] text-slate-500 mt-1">Paquetes para 5 a 100 personas</div>
-      </div>
+        <div class="text-[13px] text-slate-500 mt-1">Paquetes para 5 a 100 personas - Página dedicada</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-blue-900 text-white px-3 py-1 rounded-full inline-flex">Ir a Cotizador →</div>
+      </a>
     </div>
   </div>
 </section>
@@ -162,6 +170,10 @@ input[type=number]{ -moz-appearance:textfield; }
       </div>
     </div>
     <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+    <div class="mt-10 flex justify-center">
+      <a href="tienda.html" class="bg-blue-900 text-white px-8 h-14 min-h-[44px] rounded-full font-bold uppercase text-[13px] tracking-widest inline-flex items-center gap-3">Ver tienda completa en página separada <span class="w-8 h-8 bg-brandGold text-blue-900 rounded-full flex items-center justify-center">→</span></a>
+    </div>
+    <div class="mt-4 text-center text-[11px] text-slate-500">Página dedicada → más fácil para gente que no se maneja bien en internet. Tocá el logo arriba para volver siempre al inicio.</div>
   </div>
 </section>
 
@@ -222,41 +234,68 @@ input[type=number]{ -moz-appearance:textfield; }
           <div class="text-[11px] uppercase font-bold tracking-widest text-blue-900/60">Beneficio</div>
           <div class="font-display font-bold text-[18px] text-blue-900 mt-2 leading-tight">Paquetes 15+ personas incluyen postre de obsequio</div>
         </div>
+        <a href="cotizador.html" class="bg-blue-900 text-white px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest inline-flex items-center gap-2 justify-center w-full">Abrir cotizador en página completa →</a>
       </div>
     </div>
+    <div class="mt-8 text-center"><span class="text-[11px] text-slate-500 bg-white border border-slate-200 px-4 py-2 rounded-full">💡 Cotizador también disponible como página separada - más intuitivo</span></div>
   </div>
 </section>
 
-<!-- NOSOTROS - BLANCO -->
+<!-- NOSOTROS - BLANCO - AHORA CON LINK A PÁGINA SEPARADA -->
 <section id="nosotros" class="bg-white py-20">
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
     <div class="rounded-[24px] overflow-hidden border border-slate-200 aspect-[4/3] bg-[#F9F9F9]"><img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover"></div>
     <div>
-      <div class="inline-flex bg-blue-50 border border-blue-100 px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-blue-900">Herencia</div>
-      <h2 class="font-display text-[38px] lg:text-[52px] leading-[0.9] tracking-tight mt-4 text-blue-900">94 años haciendo lo mismo: <span class="italic font-light text-brandGoldDark">hacerlo bien.</span></h2>
-      <p class="mt-6 text-slate-600 leading-relaxed">Desde 1930 en Ejido 1400, Montevideo. Horno a leña, recetas familiares y calidad sin negociación. Ahora con experiencia digital luminosa.</p>
+      <div class="inline-flex bg-blue-50 border border-blue-100 px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-blue-900">Herencia - Página separada disponible</div>
+      <h2 class="font-display text-[38px] lg:text-[52px] leading-[0.9] tracking-tight mt-4 text-blue-900">Panadería artesanal: <span class="italic font-light text-brandGoldDark">hacerlo bien, cada día.</span></h2>
+      <p class="mt-6 text-slate-600 leading-relaxed">En Ejido 1400, Montevideo. Horno artesanal, recetas familiares y calidad sin negociación. Ahora con navegación por páginas separadas, más intuitivo para todos.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="nosotros.html" class="bg-blue-900 text-white px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest inline-flex items-center gap-2">Leer historia completa →</a>
+        <a href="index.html" class="border border-slate-200 px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest text-blue-900 inline-flex items-center">Inicio</a>
+      </div>
+      <div class="mt-4 text-[11px] text-slate-500">💡 Tocá el logo arriba para volver siempre al inicio</div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER - AZUL MARINO PROFUNDO -->
+<!-- FOOTER - AZUL MARINO PROFUNDO - MULTIPÁGINA -->
 <footer id="contacto" class="bg-blue-900 text-white pt-14 pb-8">
   <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
       <div>
-        <div class="flex items-center gap-3"><img src="logo.png" alt="La Nueva Barcelonesa" class="w-10 h-10 sm:w-11 sm:h-11 object-contain rounded-[10px] bg-black border border-white/10"><div><div class="font-display font-bold">La Nueva Barcelonesa</div><div class="text-[11px] uppercase tracking-widest opacity-60">Montevideo • Desde 1930</div></div></div>
-        <p class="mt-4 text-[13px] text-white/60 max-w-[32ch]">Panadería artesanal premium y catering. Todo con fondo blanco luminoso y experiencia de alta gama.</p>
+        <a href="index.html" class="flex items-center gap-3"><img src="logo.png" alt="La Nueva Barcelonesa" class="h-16 w-auto object-contain max-w-full block" style="min-height: 64px;"><div><div class="font-display font-bold">La Nueva Barcelonesa</div><div class="text-[11px] uppercase tracking-widest opacity-60">Ejido 1400, Montevideo</div></div></a>
+        <p class="mt-4 text-[13px] text-white/60 max-w-[32ch]">Panadería artesanal en Ejido 1400. Logo arriba siempre lleva al inicio.</p>
+        <a href="index.html" class="mt-4 inline-flex bg-white/10 border border-white/20 px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-blue-900">🏠 Volver a Inicio</a>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Páginas</div>
+        <div class="space-y-2 text-[14px]">
+          <a href="index.html" class="block hover:text-brandGold font-bold text-brandGold">🏠 Inicio</a>
+          <a href="tienda.html" class="block hover:text-brandGold">🛍️ Tienda</a>
+          <a href="cotizador.html" class="block hover:text-brandGold">📋 Cotizador</a>
+          <a href="nosotros.html" class="block hover:text-brandGold">📖 Herencia</a>
+          <a href="contacto.html" class="block hover:text-brandGold">📞 Contacto</a>
+        </div>
       </div>
       <div>
         <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Contacto Real</div>
-        <div class="space-y-2 text-[14px]"><div><span class="opacity-60">Tel:</span> <span class="font-bold">2901 2672</span></div><div><span class="opacity-60">Dirección:</span> Ejido 1400, Montevideo</div><div class="break-all"><span class="opacity-60">Email:</span> presupuesto.barcelonesa@gmail.com</div></div>
+        <div class="space-y-2 text-[13px]">
+          <div><span class="opacity-60">Fijo:</span> <span class="font-bold">2901 2672</span></div>
+          <div><span class="opacity-60">Cel/WhatsApp:</span> <span class="font-bold">097 212 136</span></div>
+          <div><span class="opacity-60">Dirección:</span> Ejido 1400, Montevideo</div>
+          <div class="break-all"><span class="opacity-60">Email:</span> presupuesto.barcelonesa@gmail.com</div>
+          <div class="pt-2 text-[11px] text-white/50">Lunes a viernes 07:00–19:30, sábados 07:00–19:00</div>
+        </div>
       </div>
       <div>
-        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Horarios</div>
-        <div class="text-[13px] text-white/70 space-y-1"><p>Lun-Sáb 7:00-20:30</p><p>Dom 8:00-13:00</p><p class="pt-2 text-white/50 text-[12px]">Envíos todo Montevideo • Retiro sin costo • 24h anticipación</p></div>
+        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Info</div>
+        <div class="text-[13px] text-white/70 space-y-2">
+          <p class="bg-white/10 p-3 rounded-[10px]">💡 <span class="font-bold text-white">¿No te manejás bien en internet?</span><br>Logo arriba = inicio siempre. Botones grandes.</p>
+          <p class="pt-2 text-white/50 text-[12px]">Coordinamos el pago por WhatsApp al confirmar tu pedido. Fotos de referencia, productos reales en local.</p>
+        </div>
       </div>
     </div>
-    <div class="pt-6 text-[11px] uppercase tracking-widest opacity-40 flex flex-wrap justify-between gap-3"><span>© 2026 La Nueva Barcelonesa - Ejido 1400</span><span>Visa • Mastercard • Oca • Lider • Diners • Passcard • Mercado Pago</span></div>
+    <div class="pt-6 text-[11px] uppercase tracking-widest opacity-40 flex flex-wrap justify-between gap-3"><span>© 2026 La Nueva Barcelonesa - Ejido 1400 Montevideo</span><span>Tel 2901 2672 • Cel 097 212 136 • presupuesto.barcelonesa@gmail.com</span></div>
   </div>
 </footer>
 
@@ -308,10 +347,10 @@ input[type=number]{ -moz-appearance:textfield; }
                 </div>
               </div>
               <div>
-                <div class="text-[11px] font-bold uppercase tracking-widest text-blue-900 mb-3 flex items-center gap-2"><span class="w-5 h-5 bg-blue-900 text-white rounded-full flex items-center justify-center text-[10px]">3</span> Pago seguro</div>
+                <div class="text-[11px] font-bold uppercase tracking-widest text-blue-900 mb-3 flex items-center gap-2"><span class="w-5 h-5 bg-blue-900 text-white rounded-full flex items-center justify-center text-[10px]">3</span> Pago y confirmación</div>
                 <div class="bg-[#F9F9F9] border border-slate-200 rounded-[14px] p-4">
-                  <div class="text-[11px] font-bold uppercase tracking-widest text-slate-500">Tarjetas: Visa • Mastercard • Oca • Lider • Diners • Passcard • Mercado Pago</div>
-                  <div class="mt-3 text-[11px] text-slate-500 bg-white border border-slate-200 p-2.5 rounded-[8px]">💬 Al confirmar se guardará en planilla y se abrirá WhatsApp automáticamente con el desglose.</div>
+                  <div class="text-[13px] font-semibold text-blue-900">Coordinamos el pago por WhatsApp al confirmar tu pedido</div>
+                  <div class="mt-2 text-[11px] text-slate-500 bg-white border border-slate-200 p-2.5 rounded-[8px]">💬 Al confirmar se abrirá WhatsApp automáticamente con el desglose. Coordinamos entrega y forma de pago por ahí. Fotos de referencia, productos reales en local.</div>
                 </div>
               </div>
               <button type="submit" class="w-full h-12 bg-brandGold text-blue-900 rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-amber-400 transition flex items-center justify-center gap-2">Confirmar pedido <span class="w-6 h-6 bg-blue-900 text-white rounded-full flex items-center justify-center">→</span></button>
@@ -335,52 +374,15 @@ input[type=number]{ -moz-appearance:textfield; }
     <div class="bg-white border border-slate-200 rounded-[24px] p-8 max-w-[440px] w-full text-center shadow-2xl">
       <div class="w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xl mx-auto">✓</div>
       <h3 class="font-display text-[26px] font-bold mt-4 text-blue-900">¡Pedido Registrado con Éxito!</h3>
-      <p class="text-[13px] text-slate-600 mt-3">Gracias <span id="success-name" class="font-bold text-blue-900"></span>. Pedido <span id="success-id" class="font-mono font-bold text-blue-900"></span> guardado en planilla.</p>
+      <p class="text-[13px] text-slate-600 mt-3">Gracias <span id="success-name" class="font-bold text-blue-900"></span>. Pedido <span id="success-id" class="font-mono font-bold text-blue-900"></span> registrado. Coordinamos por WhatsApp.</p>
       <div class="mt-4 p-3 bg-[#F9F9F9] border border-slate-200 rounded-[12px] text-left"><div class="text-[11px] uppercase font-bold tracking-widest text-slate-500">Resumen</div><div id="success-summary" class="mt-2 text-[13px] text-blue-900"></div></div>
-      <div class="mt-5 flex gap-2"><button onclick="closeSuccess()" class="flex-1 h-10 bg-blue-900 text-white rounded-full text-[11px] font-bold uppercase tracking-widest">Seguir comprando</button><button onclick="openAdminFromSuccess()" class="flex-1 h-10 border border-slate-200 rounded-full text-[11px] font-bold uppercase tracking-widest text-blue-900">Ver planilla</button></div>
+      <div class="mt-5 flex gap-2"><button onclick="closeSuccess()" class="flex-1 h-10 bg-blue-900 text-white rounded-full text-[11px] font-bold uppercase tracking-widest">Seguir comprando</button><a href="https://wa.me/59897212136" target="_blank" class="flex-1 h-10 border border-slate-200 rounded-full text-[11px] font-bold uppercase tracking-widest text-blue-900 flex items-center justify-center">WhatsApp</a></div>
     </div>
   </div>
 </div>
 
-<!-- PLANILLA DE PEDIDOS - FONDO BLANCO CREMA CLARO -->
-<section id="admin-panel" class="bg-[#F9F9F9] border-t border-slate-200 py-12">
-  <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-      <div>
-        <h2 class="font-display text-[28px] font-bold text-blue-900 flex items-center gap-3">Planilla de Pedidos <span class="text-[10px] bg-blue-900 text-white px-3 py-1 rounded-full uppercase tracking-widest">Administración Interna</span></h2>
-        <p class="text-[13px] text-slate-600 mt-2 max-w-[70ch]">Tabla visual en fondo blanco #FFFFFF / #F9F9F9. Cada pedido del checkout se guarda en LocalStorage y aparece aquí inmediatamente.</p>
-      </div>
-      <div class="flex items-center gap-2">
-        <div class="text-[11px] font-bold uppercase tracking-widest bg-blue-900 text-white px-4 py-2 rounded-full">Live • <span id="admin-count">0</span> pedidos</div>
-        <button onclick="clearOrders()" class="text-[11px] font-bold uppercase border border-slate-200 bg-white px-4 h-9 rounded-full hover:bg-slate-50 text-blue-900">Limpiar</button>
-        <button onclick="exportJSON()" class="text-[11px] font-bold uppercase bg-brandGold text-blue-900 px-4 h-9 rounded-full hover:bg-amber-400">Exportar JSON</button>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-[1.7fr_0.8fr] gap-6">
-      <div class="bg-white border border-slate-200 rounded-[16px] overflow-hidden shadow-sm">
-        <div class="overflow-x-auto">
-          <table class="w-full text-left">
-            <thead class="bg-[#F9F9F9] border-b border-slate-200"><tr class="text-[11px] uppercase tracking-widest font-bold text-slate-500"><th class="px-4 py-3">ID / Cliente</th><th class="px-4 py-3">Productos</th><th class="px-4 py-3">Total</th><th class="px-4 py-3">Fecha / Hora</th><th class="px-4 py-3">Entrega</th></tr></thead>
-            <tbody id="orders-tbody" class="divide-y divide-slate-100 bg-white"><tr><td colspan="5" class="px-5 py-12 text-center text-slate-400 text-[13px]">Aún no hay pedidos. Hacé una compra de prueba.</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="space-y-4">
-        <div class="bg-white border border-slate-200 rounded-[16px] p-5 shadow-sm">
-          <div class="text-[11px] uppercase font-bold tracking-widest text-slate-500">JSON LocalStorage</div>
-          <pre id="orders-json" class="mt-3 text-[11px] leading-[1.5] bg-[#F9F9F9] border border-slate-200 text-blue-900 p-3 rounded-[10px] overflow-auto max-h-[380px] custom-scrollbar">[]</pre>
-        </div>
-        <div class="bg-blue-900 text-white rounded-[16px] p-5">
-          <div class="text-[11px] uppercase font-bold tracking-widest text-brandGold">Flujo A-E</div>
-          <p class="mt-2 text-[12px] leading-relaxed text-white/80">A: preventDefault • B: Captura datos • C: Guarda LocalStorage + actualiza tabla • D: Modal éxito • E: WhatsApp + carrito cero</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/59829012672?text=Hola%20Barcelonesa!%20Quiero%20consultar%20por%20un%20pedido" target="_blank" class="fixed bottom-5 right-5 z-[50] group">
+<!-- WHATSAPP - NÚMERO CELULAR REAL -->
+<a href="https://wa.me/59897212136?text=Hola%20Barcelonesa!%20Quiero%20consultar%20por%20un%20pedido" target="_blank" class="fixed bottom-5 right-5 z-[50] group">
   <div class="absolute bottom-full right-0 mb-3 bg-blue-900 text-white text-[12px] px-4 py-2 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition font-medium shadow-lg">Chateá con nosotros</div>
   <div class="w-14 h-14 bg-[#25D366] rounded-full shadow-[0_8px_20px_rgba(37,211,102,0.4)] flex items-center justify-center text-white hover:scale-105 transition-transform">💬</div>
 </a>
@@ -427,7 +429,7 @@ let orders = JSON.parse(localStorage.getItem('barcelonesa_orders') || '[]');
 
 function closeMobileMenu(){ const m=document.getElementById('mobile-menu'); if(m) m.classList.add('hidden'); }
 document.addEventListener('DOMContentLoaded', ()=>{
-  renderProducts(); renderPackages(); renderCustomItems(); updateCartUI(); renderOrders(); initDate();
+  renderProducts(); renderPackages(); renderCustomItems(); updateCartUI(); initDate();
   document.getElementById('mobile-menu-btn').addEventListener('click', ()=>{ document.getElementById('mobile-menu').classList.toggle('hidden'); });
 });
 function initDate(){
@@ -531,13 +533,11 @@ function closeCheckout(){ document.getElementById('checkout-modal').classList.ad
 function toggleEntrega(){ const tipo=document.querySelector('input[name="tipoEntrega"]:checked').value; document.getElementById('direccion-field').classList.toggle('hidden',tipo!=='envio'); document.getElementById('checkout-envio').textContent=tipo==='envio'?'$350 (Montevideo)':'Gratis - Retiro'; const subtotal=cart.reduce((a,b)=>a+b.price*b.qty,0); const total=tipo==='envio'?subtotal+350:subtotal; document.getElementById('checkout-total').textContent=`$${total.toLocaleString('es-UY')}`; }
 function selectSlot(btn){ document.querySelectorAll('.slot-btn').forEach(b=>b.classList.remove('slot-active')); btn.classList.add('slot-active'); selectedSlot=btn.dataset.slot; document.getElementById('franja-input').value=selectedSlot; }
 
-// FLUJO CRÍTICO CORRECCIÓN DEFINITIVA A-E
+// Flujo pedido - demo interna (planilla movida a admin.html, no visible al público)
+// A: preventDefault, B: captura datos, C: guarda LocalStorage, D: modal éxito, E: WhatsApp
 function submitOrder(e){
-  // Paso A: Usa 'e.preventDefault()' para evitar que la página se recargue o se redirija inmediatamente
   e.preventDefault();
   if(!selectedSlot){ alert('Seleccioná una franja horaria'); return; }
-
-  // Paso B: Recopila todos los datos del formulario (Nombre, Dirección, Fecha, Hora, Detalle de Productos del Carrito y el Total monetario)
   const formData = new FormData(e.target);
   const nombre = formData.get('nombre');
   const telefono = formData.get('telefono');
@@ -546,14 +546,12 @@ function submitOrder(e){
   const franja = formData.get('franja');
   const tipoEntrega = formData.get('tipoEntrega');
   const direccion = formData.get('direccion') || 'Retiro en local - Ejido 1400, Montevideo';
-
   const subtotal = cart.reduce((a,b)=>a+b.price*b.qty,0);
   const envioCost = tipoEntrega==='envio'?350:0;
   const total = subtotal + envioCost;
   const orderId = 'BRC-' + Date.now().toString().slice(-6);
   const productosDetalle = [...cart];
   const detalleProductosStr = cart.map(c=>`${c.qty}x ${c.name}`).join(', ');
-
   const order = {
     id: orderId,
     cliente: nombre,
@@ -571,16 +569,10 @@ function submitOrder(e){
     timestamp: new Date().toISOString(),
     estado: 'Confirmado'
   };
-
-  // Paso C: Guarda esos datos inmediatamente en el array interno de la "Planilla de Pedidos" (LocalStorage) y actualiza la tabla visual
+  // Guarda en LocalStorage (demo interna, tabla en admin.html)
   orders.push(order);
   localStorage.setItem('barcelonesa_orders', JSON.stringify(orders));
-  renderOrders(); // Actualiza inmediatamente tabla visual al final de página
-
-  // Cerrar checkout antes de mostrar éxito
   closeCheckout();
-
-  // Paso D: Muestra un aviso de "Pedido guardado con éxito"
   document.getElementById('success-name').textContent = nombre.split(' ')[0];
   document.getElementById('success-id').textContent = orderId;
   document.getElementById('success-summary').innerHTML = `
@@ -588,11 +580,9 @@ function submitOrder(e){
     <div class="mt-2 text-[13px]"><span class="text-slate-500">Fecha:</span> <span class="font-bold text-blue-900">${fecha}</span> <span class="text-slate-500 ml-2">Hora:</span> <span class="font-bold text-blue-900">${franja}</span></div>
     <div class="mt-1 text-[13px]"><span class="text-slate-500">Dirección:</span> <span class="font-bold text-blue-900">${direccion}</span></div>
     <div class="mt-3 font-bold text-[16px] text-blue-900">Total: $${total.toLocaleString('es-UY')}</div>
-    <div class="mt-2 text-[11px] text-emerald-600 font-bold">✓ Guardado en LocalStorage y tabla actualizada</div>
+    <div class="mt-2 text-[11px] text-slate-500">Coordinamos el pago por WhatsApp al confirmar</div>
   `;
   document.getElementById('success-modal').classList.remove('hidden');
-
-  // Paso E: Recién al final, abre en una ventana nueva el enlace de WhatsApp enviando texto redactado con desglose, vaciando carrito en web
   const productosTexto = productosDetalle.map(c=>`• ${c.qty}x ${c.name} - $${(c.price*c.qty).toLocaleString('es-UY')} (${c.desc})`).join('%0A');
   const textoWhatsApp = 
     `*¡Nuevo Pedido - La Nueva Barcelonesa!* 🎉%0A%0A`+
@@ -608,37 +598,22 @@ function submitOrder(e){
     `*Subtotal:* $${subtotal.toLocaleString('es-UY')}%0A`+
     `*Envío:* ${tipoEntrega==='envio'?'$350':'Gratis'}%0A`+
     `*TOTAL A PAGAR:* *$${total.toLocaleString('es-UY')}*%0A%0A`+
-    `_Pedido guardado en Planilla de Pedidos_ ✅`;
-
-  const whatsappUrl = `https://wa.me/59829012672?text=${textoWhatsApp}`;
-
+    `_Coordinamos pago por WhatsApp_`;
+  const whatsappUrl = `https://wa.me/59897212136?text=${textoWhatsApp}`;
   setTimeout(()=>{
     window.open(whatsappUrl, '_blank');
-    // Vaciar carrito en web (Paso E)
     cart = [];
     saveCart();
     updateCartUI();
     const summaryEl=document.getElementById('success-summary');
-    if(summaryEl){ summaryEl.innerHTML+=`<div class="mt-3 p-2 bg-emerald-50 border border-emerald-200 rounded-[8px] text-[11px] text-emerald-700 font-bold">✓ WhatsApp abierto • Carrito vaciado • Pedido en planilla</div>`; }
+    if(summaryEl){ summaryEl.innerHTML+=`<div class="mt-3 p-2 bg-emerald-50 border border-emerald-200 rounded-[8px] text-[11px] text-emerald-700 font-bold">✓ WhatsApp abierto • Carrito vaciado</div>`; }
   }, 900);
 }
 
 function closeSuccess(){ document.getElementById('success-modal').classList.add('hidden'); }
-function openAdminFromSuccess(){ closeSuccess(); document.getElementById('admin-panel').scrollIntoView({behavior:'smooth'}); }
-function toggleAdmin(){ document.getElementById('admin-panel').scrollIntoView({behavior:'smooth'}); }
-function renderOrders(){
-  const tbody=document.getElementById('orders-tbody'), jsonPre=document.getElementById('orders-json'), count=document.getElementById('admin-count');
-  if(!tbody)return;
-  count.textContent=orders.length;
-  if(orders.length===0){ tbody.innerHTML=`<tr><td colspan="5" class="px-5 py-10 text-center text-slate-400 text-[13px]">Aún no hay pedidos. Hacé una compra de prueba para ver el flujo A-E.</td></tr>`; jsonPre.textContent='[]'; return; }
-  tbody.innerHTML=orders.slice().reverse().map(o=>`<tr class="hover:bg-[#F9F9F9]"><td class="px-4 py-3"><div class="font-mono text-[11px] font-bold text-blue-900">${o.id}</div><div class="font-bold text-[13px] text-blue-900">${o.cliente}</div><div class="text-[11px] text-slate-500">${o.telefono}</div></td><td class="px-4 py-3 max-w-[260px] text-[12px] text-blue-900">${o.productos}</td><td class="px-4 py-3 font-bold text-blue-900">$${o.total.toLocaleString('es-UY')}</td><td class="px-4 py-3"><div class="text-[12px] text-blue-900">${o.fecha}</div><div class="text-[11px] text-slate-500">${o.hora}</div></td><td class="px-4 py-3"><span class="text-[10px] font-bold uppercase bg-blue-900 text-white px-2 py-1 rounded-full">${o.tipoEntrega==='envio'?'Envío':'Retiro'}</span><div class="text-[11px] text-slate-500 mt-1 truncate max-w-[140px]">${o.direccion}</div></td></tr>`).join('');
-  jsonPre.textContent=JSON.stringify(orders,null,2);
-}
-function clearOrders(){ if(!confirm('¿Limpiar planilla?'))return; orders=[]; localStorage.setItem('barcelonesa_orders',JSON.stringify(orders)); renderOrders(); }
-function exportJSON(){ const blob=new Blob([JSON.stringify(orders,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=`barcelonesa-pedidos-${new Date().toISOString().slice(0,10)}.json`; a.click(); URL.revokeObjectURL(url); showToast('JSON exportado'); }
 function showToast(text){ const toast=document.getElementById('toast'); document.getElementById('toast-text').textContent=text; toast.classList.remove('hidden'); toast.classList.add('flex'); setTimeout(()=>{ toast.classList.add('hidden'); toast.classList.remove('flex'); },3000); }
 
-window.addToCart=addToCart; window.addPackageToCart=addPackageToCart; window.filterProducts=filterProducts; window.switchCotizadorTab=switchCotizadorTab; window.updateCustomQty=updateCustomQty; window.handleCustomInput=handleCustomInput; window.updateProductQty=updateProductQty; window.handleProductInput=handleProductInput; window.handleCartInput=handleCartInput; window.addCustomToCart=addCustomToCart; window.openCart=openCart; window.closeCart=closeCart; window.openCheckout=openCheckout; window.closeCheckout=closeCheckout; window.toggleEntrega=toggleEntrega; window.selectSlot=selectSlot; window.submitOrder=submitOrder; window.closeSuccess=closeSuccess; window.openAdminFromSuccess=openAdminFromSuccess; window.toggleAdmin=toggleAdmin; window.clearOrders=clearOrders; window.exportJSON=exportJSON; window.changeQty=changeQty; window.removeItem=removeItem; window.closeMobileMenu=closeMobileMenu;
+window.addToCart=addToCart; window.addPackageToCart=addPackageToCart; window.filterProducts=filterProducts; window.switchCotizadorTab=switchCotizadorTab; window.updateCustomQty=updateCustomQty; window.handleCustomInput=handleCustomInput; window.updateProductQty=updateProductQty; window.handleProductInput=handleProductInput; window.handleCartInput=handleCartInput; window.addCustomToCart=addCustomToCart; window.openCart=openCart; window.closeCart=closeCart; window.openCheckout=openCheckout; window.closeCheckout=closeCheckout; window.toggleEntrega=toggleEntrega; window.selectSlot=selectSlot; window.submitOrder=submitOrder; window.closeSuccess=closeSuccess; window.changeQty=changeQty; window.removeItem=removeItem; window.closeMobileMenu=closeMobileMenu;
 </script>
 </body>
 </html>
