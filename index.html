@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Nueva Barcelonesa | Panadería Artesanal Premium - Montevideo</title>
+<meta name="description" content="La Nueva Barcelonesa - Panadería artesanal en Ejido 1400, Montevideo. Catering premium, lunch, tortas y salados. Tel 2901 2672 Cel 097 212 136.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { display: ['Fraunces','serif'], sans: ['Inter','sans-serif'] },
+      colors: {
+        brandBlue: '#0F2D52',
+        brandBlueDark: '#0A1F3A',
+        brandGold: '#C9A86A',
+        brandGoldLight: '#F6E8C3',
+        brandGoldDark: '#8C6D3F',
+        brandCream: '#F9F9F9',
+      }
+    }
+  }
+}
+</script>
+<style>
+*{ -webkit-font-smoothing: antialiased; box-sizing:border-box; }
+html{ overflow-x:hidden; max-width:100vw; }
+body{ background:#FFFFFF; color:#0F2D52; overflow-x:hidden; max-width:100vw; }
+img{ max-width:100%; height:auto; }
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{ -webkit-appearance:none; margin:0; }
+input[type=number]{ -moz-appearance:textfield; }
+.custom-scrollbar::-webkit-scrollbar{ width:5px; }
+.custom-scrollbar::-webkit-scrollbar-thumb{ background:#C9A86A; border-radius:999px; }
+.slot-active{ background:#0F2D52 !important; color:#FFFFFF !important; border-color:#0F2D52 !important; }
+.tab-active{ background:#0F2D52; color:#FFFFFF; }
+.tab-inactive{ background:#F9F9F9; color:#64748B; border:1px solid #E2E8F0; }
+</style>
+</head>
+<body class="font-sans bg-white selection:bg-brandGold selection:text-brandBlue overflow-x-hidden max-w-[100vw]">
+<!-- Mobile-Friendly 100%: viewport, navbar hamburguesa, grids responsive, sin fixed width -->
+
+<!-- NAVBAR - AZUL MARINO PROFUNDO -->
+<nav class="sticky top-0 z-40 bg-blue-900 text-white border-b border-blue-800">
+  <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-[80px] md:h-[88px]">
+<div class="flex justify-center items-center w-full py-2 bg-blue-900">
+  <a href="index.html" class="block focus:outline-none" title="Volver a página principal">
+    <img src="logo.png" 
+         alt="La Nueva Barcelonesa" 
+         class="h-20 w-auto object-contain max-w-full mx-auto block"
+         style="min-height: 80px; display: block;">
+  </a>
+</div>
+      <div class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Inicio</a>
+        <a href="tienda.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Tienda</a>
+        <a href="cotizador.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Cotizador</a>
+        <a href="nosotros.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Herencia</a>
+        <a href="contacto.html" class="text-[13px] tracking-[0.08em] uppercase font-semibold hover:text-brandGold transition">Contacto</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="openCart()" class="flex items-center gap-3 bg-brandGold text-blue-900 pl-5 pr-1.5 py-1.5 rounded-full font-bold hover:bg-yellow-500 transition">
+          <span class="text-[12px] tracking-[0.12em] uppercase">Carrito</span>
+          <span id="cart-count" class="bg-blue-900 text-white w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-bold">0</span>
+        </button>
+        <button id="mobile-menu-btn" class="lg:hidden w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center border border-white/20 rounded-full">☰</button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 bg-blue-900">
+    <div class="px-4 py-6 flex flex-col gap-4 text-white">
+      <a href="index.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">🏠 Inicio</a>
+      <a href="tienda.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">🛍️ Tienda</a>
+      <a href="cotizador.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📋 Cotizador Lunch</a>
+      <a href="nosotros.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📖 Herencia</a>
+      <a href="contacto.html" onclick="closeMobileMenu()" class="font-display text-xl min-h-[44px] flex items-center">📞 Contacto</a>
+      <div class="pt-4 border-t border-white/10 text-sm opacity-70">Ejido 1400, Montevideo - Tel 2901 2672</div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO - FONDO BLANCO -->
+<section class="bg-white">
+  <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-6">
+        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+        <span class="text-[11px] tracking-[0.14em] uppercase font-bold text-blue-900">Abierto hoy • Ejido 1400</span>
+      </div>
+      <h1 class="font-display text-[36px] sm:text-[48px] lg:text-[78px] leading-[0.85] tracking-[-0.04em] text-blue-900 break-words">
+        Panadería<br><span class="font-light italic text-brandGoldDark">artesanal</span><br>de alta gama.
+      </h1>
+      <p class="mt-6 text-[17px] leading-[1.6] text-slate-600 max-w-[44ch]">Panadería artesanal en Ejido 1400, Montevideo. Elaboramos a mano cada pieza con recetas familiares y catering premium para tus eventos.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="tienda.html" class="bg-brandGold text-blue-900 px-7 h-[50px] min-h-[50px] inline-flex items-center gap-3 rounded-full text-[13px] tracking-[0.1em] uppercase font-bold hover:bg-amber-400 transition">Explorar tienda <span class="w-7 h-7 bg-blue-900 text-white rounded-full flex items-center justify-center">→</span></a>
+        <a href="cotizador.html" class="bg-white border border-blue-900/15 px-7 h-[50px] min-h-[50px] inline-flex items-center rounded-full text-[13px] tracking-[0.1em] uppercase font-bold text-blue-900 hover:bg-blue-900 hover:text-white transition">Cotizar lunch</a>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <a href="index.html" class="text-[11px] uppercase tracking-widest bg-blue-50 border border-blue-100 text-blue-900 px-4 py-2 rounded-full font-bold">Página principal</a>
+        <span class="text-[11px] text-slate-400 px-2 py-2">Logo arriba siempre vuelve al inicio → Intuitivo para todos</span>
+      </div>
+      <div class="mt-10 flex gap-8 border-t border-slate-100 pt-6 max-w-[380px]">
+        <div><div class="font-display text-2xl font-bold text-blue-900">Ejido 1400</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Montevideo</div></div>
+        <div><div class="font-display text-2xl font-bold text-blue-900">Artesanal</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Elaboración diaria</div></div>
+        <div><div class="font-display text-2xl font-bold text-blue-900">Catering</div><div class="text-[11px] uppercase tracking-widest text-slate-500">Eventos y lunch</div></div>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="rounded-[28px] overflow-hidden bg-[#F9F9F9] border border-slate-100 aspect-[4/3.2] shadow-sm">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute -bottom-4 left-2 right-2 sm:right-auto sm:-bottom-6 sm:-left-6 bg-white border border-slate-100 rounded-[18px] p-4 shadow-xl flex gap-3 max-w-[calc(100%-16px)] sm:max-w-[320px]">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-[12px] object-cover">
+        <div class="flex-1">
+          <div class="text-[10px] uppercase tracking-widest bg-blue-900 text-white px-2 py-0.5 rounded-full inline-flex font-bold">Más vendido</div>
+          <div class="font-display font-bold text-[15px] mt-1 text-blue-900">Lunch 15 personas</div>
+          <div class="text-[12px] text-slate-500">50 J&Q, 50 surtidos, 50 saladitos + postre</div>
+          <div class="mt-1 font-bold text-blue-900">$9.290 <button onclick="addPackageToCart('15')" class="ml-2 text-[11px] bg-brandGold text-blue-900 px-2.5 py-1 rounded-full font-bold">Agregar +</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIAS - FONDO CREMA CLARO -->
+<section class="bg-[#F9F9F9] border-y border-slate-100 py-14">
+  <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-8">
+      <h2 class="font-display text-[32px] lg:text-[44px] leading-[0.9] tracking-tight text-blue-900">Tres universos,<br>una misma artesanía.</h2>
+      <p class="max-w-[32ch] text-[14px] text-slate-600">Selección curada de salados, dulces y catering. Todo horneado hoy.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="tienda.html" class="bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">→</div>
+        <div class="font-display text-[24px] font-bold mt-4 text-blue-900">Salados</div>
+        <div class="text-[13px] text-slate-500 mt-1">Medialunas, olímpicos, saladitos, empanadas</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-blue-50 border border-blue-100 text-blue-900 px-3 py-1 rounded-full inline-flex">Ir a Tienda →</div>
+      </a>
+      <a href="tienda.html" class="bg-white border border-slate-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="w-10 h-10 bg-brandGold text-blue-900 rounded-full flex items-center justify-center font-bold">→</div>
+        <div class="font-display text-[24px] font-bold mt-4 text-blue-900">Dulces</div>
+        <div class="text-[13px] text-slate-500 mt-1">Tortas, postres, masitas, alfajores</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-amber-50 border border-amber-200 text-amber-800 px-3 py-1 rounded-full inline-flex">Ir a Tienda →</div>
+      </a>
+      <a href="cotizador.html" class="bg-white border border-amber-200 rounded-[20px] p-6 hover:border-brandGold transition block">
+        <div class="inline-flex bg-brandGold text-blue-900 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Cotizador inteligente - Página separada</div>
+        <div class="font-display text-[24px] font-bold mt-3 text-blue-900">Eventos & Catering</div>
+        <div class="text-[13px] text-slate-500 mt-1">Paquetes para 5 a 100 personas - Página dedicada</div>
+        <div class="mt-3 text-[11px] font-bold uppercase tracking-widest bg-blue-900 text-white px-3 py-1 rounded-full inline-flex">Ir a Cotizador →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TIENDA - FONDO BLANCO -->
+<section id="tienda" class="bg-white py-20">
+  <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-blue-900">Catálogo en vivo</div>
+        <h2 class="font-display text-[42px] lg:text-[60px] leading-[0.9] tracking-tight mt-4 text-blue-900">Tienda<br>artesanal.</h2>
+      </div>
+      <div class="flex gap-2 p-1.5 bg-[#F9F9F9] border border-slate-200 rounded-full overflow-x-auto max-w-full">
+        <button onclick="filterProducts('todos')" data-filter="todos" class="filter-btn tab-active px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Todos</button>
+        <button onclick="filterProducts('salados')" data-filter="salados" class="filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Salados</button>
+        <button onclick="filterProducts('dulces')" data-filter="dulces" class="filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Dulces</button>
+        <button onclick="filterProducts('eventos')" data-filter="eventos" class="filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap">Eventos</button>
+      </div>
+    </div>
+    <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+    <div class="mt-10 flex justify-center">
+      <a href="tienda.html" class="bg-blue-900 text-white px-8 h-14 min-h-[44px] rounded-full font-bold uppercase text-[13px] tracking-widest inline-flex items-center gap-3">Ver tienda completa en página separada <span class="w-8 h-8 bg-brandGold text-blue-900 rounded-full flex items-center justify-center">→</span></a>
+    </div>
+    <div class="mt-4 text-center text-[11px] text-slate-500">Página dedicada → más fácil para gente que no se maneja bien en internet. Tocá el logo arriba para volver siempre al inicio.</div>
+  </div>
+</section>
+
+<!-- COTIZADOR - FONDO BLANCO / CREMA CLARO (ESTRICTO) -->
+<section id="cotizador" class="bg-[#F9F9F9] border-y border-slate-100 py-20">
+  <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[720px]">
+      <div class="inline-flex items-center gap-2 bg-blue-900 text-white rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest"><span class="w-1.5 h-1.5 bg-brandGold rounded-full animate-pulse"></span> Cotizador inteligente</div>
+      <h2 class="font-display text-[36px] lg:text-[56px] leading-[0.9] tracking-tight mt-4 text-blue-900">Armá tu lunch.<br><span class="font-light italic text-brandGoldDark">Nosotros optimizamos el precio.</span></h2>
+      <p class="mt-4 text-[15px] text-slate-600 max-w-[52ch]">Elegí paquetes cerrados o armá bocado por bocado escribiendo la cantidad exacta. El total se recalcula al instante.</p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 items-start">
+      <div class="bg-white border border-slate-200 rounded-[24px] p-2 shadow-sm">
+        <div class="flex gap-2 p-1 bg-[#F9F9F9] border border-slate-200 rounded-[16px] w-full sm:w-fit overflow-x-auto">
+          <button id="tab-paquetes" onclick="switchCotizadorTab('paquetes')" class="px-5 h-11 min-h-[44px] rounded-[12px] text-[13px] font-bold bg-blue-900 text-white whitespace-nowrap flex-1 sm:flex-none">Paquetes Sugeridos</button>
+          <button id="tab-medida" onclick="switchCotizadorTab('medida')" class="px-5 h-11 min-h-[44px] rounded-[12px] text-[13px] font-bold text-slate-500 whitespace-nowrap flex-1 sm:flex-none">Armá a Medida</button>
+        </div>
+
+        <div id="cotizador-paquetes" class="p-4 lg:p-6">
+          <div id="packages-grid" class="grid gap-3"></div>
+        </div>
+
+        <div id="cotizador-medida" class="hidden p-4 lg:p-6">
+          <div class="flex items-center justify-between mb-5">
+            <h3 class="font-display text-[20px] font-bold text-blue-900">Cantidades exactas</h3>
+            <span class="text-[10px] font-bold uppercase tracking-widest bg-amber-100 text-amber-800 border border-amber-200 px-3 py-1 rounded-full">Escribí 150 directo</span>
+          </div>
+          <div id="custom-items" class="space-y-3"></div>
+
+          <div class="mt-6 p-5 bg-[#F9F9F9] border border-slate-200 rounded-[16px]">
+            <div class="flex justify-between">
+              <div><div class="text-[11px] uppercase font-bold tracking-widest text-slate-500">Total bocados</div><div id="custom-total-bocados" class="font-display text-xl font-bold text-blue-900 mt-1">0 unidades</div></div>
+              <div class="text-right"><div class="text-[11px] uppercase font-bold tracking-widest text-slate-500">Total estimado</div><div id="custom-total-price" class="font-display text-xl font-bold text-blue-900 mt-1">$0</div></div>
+            </div>
+            <div id="smart-alert" class="hidden mt-4 p-4 bg-amber-50 border border-amber-200 rounded-[12px] flex gap-3">
+              <div class="w-8 h-8 bg-amber-400 text-blue-900 rounded-full flex items-center justify-center font-bold flex-shrink-0">!</div>
+              <div class="flex-1">
+                <div id="smart-alert-text" class="text-[13px] font-semibold text-blue-900"></div>
+                <button id="smart-alert-btn" class="mt-2 bg-blue-900 text-white px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest"></button>
+              </div>
+            </div>
+            <button onclick="addCustomToCart()" id="btn-add-custom" disabled class="mt-4 w-full h-11 bg-blue-900 text-white rounded-full font-bold uppercase text-[12px] tracking-widest disabled:opacity-30 flex items-center justify-center gap-2"><span>Añadir al carrito</span><span class="w-6 h-6 bg-brandGold text-blue-900 rounded-full flex items-center justify-center font-bold">→</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-white border border-slate-200 rounded-[20px] p-6">
+          <h3 class="font-display font-bold text-[18px] text-blue-900">¿Cómo funciona?</h3>
+          <div class="mt-4 space-y-3 text-[13px] text-slate-600">
+            <p><span class="font-bold text-blue-900 bg-blue-50 w-6 h-6 inline-flex items-center justify-center rounded-full mr-2">1</span> Escribí la cantidad exacta en la caja del medio (ej. 150)</p>
+            <p><span class="font-bold text-blue-900 bg-blue-50 w-6 h-6 inline-flex items-center justify-center rounded-full mr-2">2</span> El total se recalcula al instante con precios reales</p>
+            <p><span class="font-bold text-white bg-brandGold w-6 h-6 inline-flex items-center justify-center rounded-full mr-2">3</span> Si superás un paquete, te sugerimos ahorrar automáticamente</p>
+          </div>
+        </div>
+        <div class="bg-brandGold border border-amber-200 rounded-[20px] p-6">
+          <div class="text-[11px] uppercase font-bold tracking-widest text-blue-900/60">Beneficio</div>
+          <div class="font-display font-bold text-[18px] text-blue-900 mt-2 leading-tight">Paquetes 15+ personas incluyen postre de obsequio</div>
+        </div>
+        <a href="cotizador.html" class="bg-blue-900 text-white px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest inline-flex items-center gap-2 justify-center w-full">Abrir cotizador en página completa →</a>
+      </div>
+    </div>
+    <div class="mt-8 text-center"><span class="text-[11px] text-slate-500 bg-white border border-slate-200 px-4 py-2 rounded-full">💡 Cotizador también disponible como página separada - más intuitivo</span></div>
+  </div>
+</section>
+
+<!-- NOSOTROS - BLANCO - AHORA CON LINK A PÁGINA SEPARADA -->
+<section id="nosotros" class="bg-white py-20">
+  <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <div class="rounded-[24px] overflow-hidden border border-slate-200 aspect-[4/3] bg-[#F9F9F9]"><img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+    <div>
+      <div class="inline-flex bg-blue-50 border border-blue-100 px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-blue-900">Herencia - Página separada disponible</div>
+      <h2 class="font-display text-[38px] lg:text-[52px] leading-[0.9] tracking-tight mt-4 text-blue-900">Panadería artesanal: <span class="italic font-light text-brandGoldDark">hacerlo bien, cada día.</span></h2>
+      <p class="mt-6 text-slate-600 leading-relaxed">En Ejido 1400, Montevideo. Horno artesanal, recetas familiares y calidad sin negociación. Ahora con navegación por páginas separadas, más intuitivo para todos.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="nosotros.html" class="bg-blue-900 text-white px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest inline-flex items-center gap-2">Leer historia completa →</a>
+        <a href="index.html" class="border border-slate-200 px-6 h-12 min-h-[44px] rounded-full font-bold uppercase text-[12px] tracking-widest text-blue-900 inline-flex items-center">Inicio</a>
+      </div>
+      <div class="mt-4 text-[11px] text-slate-500">💡 Tocá el logo arriba para volver siempre al inicio</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER - AZUL MARINO PROFUNDO - MULTIPÁGINA -->
+<footer id="contacto" class="bg-blue-900 text-white pt-14 pb-8">
+  <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <div>
+        <a href="index.html" class="flex items-center gap-3"><img src="logo.png" alt="La Nueva Barcelonesa" class="h-16 w-auto object-contain max-w-full block" style="min-height: 64px;"><div><div class="font-display font-bold">La Nueva Barcelonesa</div><div class="text-[11px] uppercase tracking-widest opacity-60">Ejido 1400, Montevideo</div></div></a>
+        <p class="mt-4 text-[13px] text-white/60 max-w-[32ch]">Panadería artesanal en Ejido 1400. Logo arriba siempre lleva al inicio.</p>
+        <a href="index.html" class="mt-4 inline-flex bg-white/10 border border-white/20 px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-blue-900">🏠 Volver a Inicio</a>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Páginas</div>
+        <div class="space-y-2 text-[14px]">
+          <a href="index.html" class="block hover:text-brandGold font-bold text-brandGold">🏠 Inicio</a>
+          <a href="tienda.html" class="block hover:text-brandGold">🛍️ Tienda</a>
+          <a href="cotizador.html" class="block hover:text-brandGold">📋 Cotizador</a>
+          <a href="nosotros.html" class="block hover:text-brandGold">📖 Herencia</a>
+          <a href="contacto.html" class="block hover:text-brandGold">📞 Contacto</a>
+        </div>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Contacto Real</div>
+        <div class="space-y-2 text-[13px]">
+          <div><span class="opacity-60">Fijo:</span> <span class="font-bold">2901 2672</span></div>
+          <div><span class="opacity-60">Cel/WhatsApp:</span> <span class="font-bold">097 212 136</span></div>
+          <div><span class="opacity-60">Dirección:</span> Ejido 1400, Montevideo</div>
+          <div class="break-all"><span class="opacity-60">Email:</span> presupuesto.barcelonesa@gmail.com</div>
+          <div class="pt-2 text-[11px] text-white/50">Lunes a viernes 07:00–19:30, sábados 07:00–19:00</div>
+        </div>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase font-bold tracking-widest opacity-50 mb-4">Info</div>
+        <div class="text-[13px] text-white/70 space-y-2">
+          <p class="bg-white/10 p-3 rounded-[10px]">💡 <span class="font-bold text-white">¿No te manejás bien en internet?</span><br>Logo arriba = inicio siempre. Botones grandes.</p>
+          <p class="pt-2 text-white/50 text-[12px]">Coordinamos el pago por WhatsApp al confirmar tu pedido. Fotos de referencia, productos reales en local.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pt-6 text-[11px] uppercase tracking-widest opacity-40 flex flex-wrap justify-between gap-3"><span>© 2026 La Nueva Barcelonesa - Ejido 1400 Montevideo</span><span>Tel 2901 2672 • Cel 097 212 136 • presupuesto.barcelonesa@gmail.com</span></div>
+  </div>
+</footer>
+
+<!-- CART - FONDO BLANCO -->
+<div id="cart-backdrop" onclick="closeCart()" class="fixed inset-0 bg-blue-900/20 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity"></div>
+<div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[440px] bg-white z-[61] translate-x-full transition-transform duration-300 flex flex-col shadow-2xl border-l border-slate-200">
+  <div class="p-6 border-b border-slate-100 bg-[#F9F9F9] flex items-center justify-between">
+    <div><h3 class="font-display text-[22px] font-bold text-blue-900">Tu pedido</h3><div class="text-[12px] text-slate-500"><span id="cart-items-count">0</span> productos</div></div>
+    <button onclick="closeCart()" class="w-9 h-9 rounded-full border border-slate-200 bg-white flex items-center justify-center text-blue-900">✕</button>
+  </div>
+  <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-3 bg-white custom-scrollbar">
+    <div id="empty-cart" class="h-full flex flex-col items-center justify-center text-center p-8"><div class="w-16 h-16 bg-[#F9F9F9] border border-slate-200 rounded-full flex items-center justify-center text-xl">🛒</div><div class="font-display font-bold text-[18px] mt-4 text-blue-900">Carrito vacío</div><div class="text-[13px] text-slate-500 mt-1">Agregá productos con cantidad exacta</div></div>
+  </div>
+  <div id="cart-footer" class="p-5 border-t border-slate-200 bg-[#F9F9F9] hidden">
+    <div class="flex justify-between text-[13px]"><span class="text-slate-500">Subtotal</span><span id="cart-subtotal" class="font-bold text-blue-900">$0</span></div>
+    <div class="flex justify-between font-bold text-[16px] mt-3 pt-3 border-t border-slate-200 text-blue-900"><span>Total a pagar</span><span id="cart-total">$0</span></div>
+    <button onclick="openCheckout()" class="mt-4 w-full h-12 bg-blue-900 text-white rounded-full font-bold uppercase text-[12px] tracking-widest flex items-center justify-center gap-2"><span>Finalizar compra</span><span class="w-6 h-6 bg-brandGold text-blue-900 rounded-full flex items-center justify-center font-bold">→</span></button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL - FONDO BLANCO -->
+<div id="checkout-modal" class="fixed inset-0 z-[70] hidden">
+  <div class="absolute inset-0 bg-blue-900/30 backdrop-blur-[6px]" onclick="closeCheckout()"></div>
+  <div class="relative h-full overflow-y-auto">
+    <div class="min-h-full flex items-start justify-center p-4 lg:p-8">
+      <div class="bg-white w-full max-w-[1000px] rounded-[24px] overflow-hidden shadow-2xl my-8 border border-slate-200">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
+          <div class="p-6 lg:p-8 bg-white">
+            <div class="flex items-center justify-between mb-6"><h2 class="font-display text-[26px] font-bold text-blue-900">Finalizar pedido</h2><button onclick="closeCheckout()" class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-blue-900">✕</button></div>
+            <form id="checkout-form" class="space-y-6" onsubmit="submitOrder(event)">
+              <div>
+                <div class="text-[11px] font-bold uppercase tracking-widest text-blue-900 mb-3 flex items-center gap-2"><span class="w-5 h-5 bg-blue-900 text-white rounded-full flex items-center justify-center text-[10px]">1</span> Datos cliente</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label class="block"><span class="text-[12px] font-semibold text-blue-900">Nombre completo *</span><input required name="nombre" class="mt-1 w-full h-11 min-h-[44px] px-4 bg-[#F9F9F9] border border-slate-200 rounded-[10px] text-[14px] focus:border-blue-900 outline-none" placeholder="María García"></label>
+                  <label class="block"><span class="text-[12px] font-semibold text-blue-900">Teléfono *</span><input required name="telefono" class="mt-1 w-full h-11 min-h-[44px] px-4 bg-[#F9F9F9] border border-slate-200 rounded-[10px] text-[14px] focus:border-blue-900 outline-none" placeholder="099 123 456"></label>
+                  <label class="block sm:col-span-2"><span class="text-[12px] font-semibold text-blue-900">Email</span><input name="email" type="email" class="mt-1 w-full h-11 min-h-[44px] px-4 bg-[#F9F9F9] border border-slate-200 rounded-[10px] text-[14px] focus:border-blue-900 outline-none" placeholder="tu@email.com"></label>
+                </div>
+              </div>
+              <div>
+                <div class="text-[11px] font-bold uppercase tracking-widest text-blue-900 mb-3 flex items-center gap-2"><span class="w-5 h-5 bg-blue-900 text-white rounded-full flex items-center justify-center text-[10px]">2</span> Entrega</div>
+                <div class="flex gap-2 mb-4">
+                  <label class="flex-1 cursor-pointer"><input type="radio" name="tipoEntrega" value="retiro" checked class="peer sr-only" onchange="toggleEntrega()"><div class="h-11 min-h-[44px] border border-slate-200 rounded-[10px] flex items-center justify-center gap-2 text-[13px] font-bold peer-checked:bg-blue-900 peer-checked:text-white transition">🏪 Retiro</div></label>
+                  <label class="flex-1 cursor-pointer"><input type="radio" name="tipoEntrega" value="envio" class="peer sr-only" onchange="toggleEntrega()"><div class="h-11 min-h-[44px] border border-slate-200 rounded-[10px] flex items-center justify-center gap-2 text-[13px] font-bold peer-checked:bg-blue-900 peer-checked:text-white transition">🚚 Envío</div></label>
+                </div>
+                <div id="direccion-field" class="hidden mb-3"><label class="block"><span class="text-[12px] font-semibold text-blue-900">Dirección *</span><input name="direccion" class="mt-1 w-full h-11 min-h-[44px] px-4 bg-[#F9F9F9] border border-slate-200 rounded-[10px] text-[14px] focus:border-blue-900 outline-none" placeholder="Calle, número, barrio"></label></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label class="block"><span class="text-[12px] font-semibold text-blue-900">Fecha *</span><input required name="fecha" type="date" id="fecha-input" class="mt-1 w-full h-11 px-4 bg-[#F9F9F9] border border-slate-200 rounded-[10px] text-[14px] focus:border-blue-900 outline-none"></label>
+                  <div><span class="text-[12px] font-semibold text-blue-900">Franja horaria *</span><div class="mt-1 grid grid-cols-2 gap-2"><button type="button" data-slot="09:00-11:00" onclick="selectSlot(this)" class="slot-btn h-11 min-h-[44px] border border-slate-200 rounded-[10px] text-[12px] font-bold hover:border-blue-900 transition">09-11</button><button type="button" data-slot="11:00-13:00" onclick="selectSlot(this)" class="slot-btn h-11 min-h-[44px] border border-slate-200 rounded-[10px] text-[12px] font-bold hover:border-blue-900 transition">11-13</button><button type="button" data-slot="14:00-16:00" onclick="selectSlot(this)" class="slot-btn h-11 min-h-[44px] border border-slate-200 rounded-[10px] text-[12px] font-bold hover:border-blue-900 transition">14-16</button><button type="button" data-slot="16:00-18:00" onclick="selectSlot(this)" class="slot-btn h-11 min-h-[44px] border border-slate-200 rounded-[10px] text-[12px] font-bold hover:border-blue-900 transition">16-18</button><button type="button" data-slot="18:00-20:00" onclick="selectSlot(this)" class="slot-btn col-span-2 h-11 min-h-[44px] border border-slate-200 rounded-[10px] text-[12px] font-bold hover:border-blue-900 transition">18-20</button></div><input type="hidden" name="franja" id="franja-input" required></div>
+                </div>
+              </div>
+              <div>
+                <div class="text-[11px] font-bold uppercase tracking-widest text-blue-900 mb-3 flex items-center gap-2"><span class="w-5 h-5 bg-blue-900 text-white rounded-full flex items-center justify-center text-[10px]">3</span> Pago y confirmación</div>
+                <div class="bg-[#F9F9F9] border border-slate-200 rounded-[14px] p-4">
+                  <div class="text-[13px] font-semibold text-blue-900">Coordinamos el pago por WhatsApp al confirmar tu pedido</div>
+                  <div class="mt-2 text-[11px] text-slate-500 bg-white border border-slate-200 p-2.5 rounded-[8px]">💬 Al confirmar se abrirá WhatsApp automáticamente con el desglose. Coordinamos entrega y forma de pago por ahí. Fotos de referencia, productos reales en local.</div>
+                </div>
+              </div>
+              <button type="submit" class="w-full h-12 bg-brandGold text-blue-900 rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-amber-400 transition flex items-center justify-center gap-2">Confirmar pedido <span class="w-6 h-6 bg-blue-900 text-white rounded-full flex items-center justify-center">→</span></button>
+            </form>
+          </div>
+          <div class="bg-[#F9F9F9] border-l border-slate-200 p-6 lg:p-8">
+            <h3 class="font-display font-bold text-[18px] text-blue-900">Resumen</h3>
+            <div id="checkout-items" class="mt-4 space-y-2 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar"></div>
+            <div class="mt-6 pt-4 border-t border-slate-200 space-y-2 text-[13px]"><div class="flex justify-between text-slate-500"><span>Subtotal</span><span id="checkout-subtotal" class="font-bold text-blue-900">$0</span></div><div class="flex justify-between text-slate-500"><span>Envío</span><span id="checkout-envio">A coordinar</span></div><div class="flex justify-between font-bold text-[18px] pt-3 border-t border-slate-200 text-blue-900"><span>Total</span><span id="checkout-total">$0</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL - FONDO BLANCO -->
+<div id="success-modal" class="fixed inset-0 z-[80] hidden">
+  <div class="absolute inset-0 bg-blue-900/20 backdrop-blur-[8px]"></div>
+  <div class="relative h-full flex items-center justify-center p-6">
+    <div class="bg-white border border-slate-200 rounded-[24px] p-8 max-w-[440px] w-full text-center shadow-2xl">
+      <div class="w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xl mx-auto">✓</div>
+      <h3 class="font-display text-[26px] font-bold mt-4 text-blue-900">¡Pedido Registrado con Éxito!</h3>
+      <p class="text-[13px] text-slate-600 mt-3">Gracias <span id="success-name" class="font-bold text-blue-900"></span>. Pedido <span id="success-id" class="font-mono font-bold text-blue-900"></span> registrado. Coordinamos por WhatsApp.</p>
+      <div class="mt-4 p-3 bg-[#F9F9F9] border border-slate-200 rounded-[12px] text-left"><div class="text-[11px] uppercase font-bold tracking-widest text-slate-500">Resumen</div><div id="success-summary" class="mt-2 text-[13px] text-blue-900"></div></div>
+      <div class="mt-5 flex gap-2"><button onclick="closeSuccess()" class="flex-1 h-10 bg-blue-900 text-white rounded-full text-[11px] font-bold uppercase tracking-widest">Seguir comprando</button><a href="https://wa.me/59897212136" target="_blank" class="flex-1 h-10 border border-slate-200 rounded-full text-[11px] font-bold uppercase tracking-widest text-blue-900 flex items-center justify-center">WhatsApp</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP - NÚMERO CELULAR REAL -->
+<a href="https://wa.me/59897212136?text=Hola%20Barcelonesa!%20Quiero%20consultar%20por%20un%20pedido" target="_blank" class="fixed bottom-5 right-5 z-[50] group">
+  <div class="absolute bottom-full right-0 mb-3 bg-blue-900 text-white text-[12px] px-4 py-2 rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition font-medium shadow-lg">Chateá con nosotros</div>
+  <div class="w-14 h-14 bg-[#25D366] rounded-full shadow-[0_8px_20px_rgba(37,211,102,0.4)] flex items-center justify-center text-white hover:scale-105 transition-transform">💬</div>
+</a>
+
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[90] bg-blue-900 text-white px-5 py-3 rounded-full text-[13px] font-bold shadow-xl hidden items-center gap-3"><span class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-[12px]">✓</span><span id="toast-text"></span></div>
+
+<script>
+// DATA
+const PRODUCTS = [
+  {id:'olympic-4', name:'Sándwich Olímpico', desc:'Jamón, queso, morrón, huevo y aceitunas. Pan artesanal.', price:159, cat:'salados', tag:'Clásico', image:'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?q=80&w=600&auto=format&fit=crop', unit:'4 unidades'},
+  {id:'ricotta', name:'Torta de Ricotta', desc:'Masa sablée, ricotta fresca y limón.', price:189, cat:'dulces', tag:'Destacada', image:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop', unit:'Porción 200g'},
+  {id:'medialunas-jq', name:'Medialunas Jamón y Queso', desc:'Hojaldre mantecoso, J&Q premium.', price:420, cat:'salados', tag:'Horneado hoy', image:'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'saladitos', name:'Saladitos Variados', desc:'Atún, palmitos, J&Q, salame.', price:480, cat:'salados', tag:'Para eventos', image:'https://images.unsplash.com/photo-1604908177453-7462950a6a3b?q=80&w=600&auto=format&fit=crop', unit:'24 unidades'},
+  {id:'empanadas', name:'Empanaditas Copetín', desc:'Carne, J&Q, humita.', price:390, cat:'salados', tag:'Bocado caliente', image:'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'jesuitas', name:'Jesuitas de Lunch', desc:'Hojaldre caramelizado, jamón y queso.', price:520, cat:'salados', tag:'Premium', image:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'torta-masa', name:'Torta Masas Finas', desc:'Masitas artesanales, dulce de leche.', price:890, cat:'dulces', tag:'Regalo', image:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=600&auto=format&fit=crop', unit:'1 kg'},
+  {id:'alfajores', name:'Alfajores Artesanales', desc:'Maicena y chocolate.', price:320, cat:'dulces', tag:'Dulce', image:'https://images.unsplash.com/photo-1488477181946-64290103bbd6?q=80&w=600&auto=format&fit=crop', unit:'12 unidades'},
+  {id:'postre-chaja', name:'Postre Chajá', desc:'Bizcochuelo, merengue, duraznos.', price:420, cat:'dulces', tag:'Postre', image:'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop', unit:'Porción'},
+  {id:'lunch-5', name:'Lunch 5 personas', desc:'60 bocados combinados.', price:3990, cat:'eventos', tag:'Evento', image:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop', unit:'60 bocados'},
+  {id:'lunch-10', name:'Lunch 10 personas', desc:'120 bocados combinados.', price:7590, cat:'eventos', tag:'Más vendido', image:'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop', unit:'120 bocados'},
+  {id:'lunch-20', name:'Lunch 20 personas', desc:'240 bocados premium.', price:13990, cat:'eventos', tag:'Evento grande', image:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop', unit:'240 bocados'}
+];
+const PACKAGES = [
+  {people:5, price:3990, bocados:60, desc:'60 bocados combinados. Ideal reuniones íntimas.', items:'Surtidos + saladitos + jesuitas'},
+  {people:10, price:7590, bocados:120, desc:'120 bocados combinados. Cumpleaños.', items:'Surtidos + olímpicos + saladitos + jesuitas', popular:true},
+  {people:15, price:9290, bocados:180, desc:'50 J&Q, 50 surtidos, 50 saladitos, 30 jesuitas, calientes + postre obsequio.', items:'50 J&Q + 50 surtidos + 50 saladitos + 30 jesuitas + calientes', gift:'Postre obsequio'},
+  {people:20, price:13990, bocados:240, desc:'240 bocados entre salados y masas.', items:'240 bocados premium'},
+  {people:100, price:74990, bocados:1200, desc:'Paquete masivo corporativo.', items:'1200 bocados + entrega'}
+];
+const SUELTOS = [
+  {id:'surtidos', name:'Sándwiches Copetín Surtidos', price:38, desc:'Jamón, queso, salame, palmitos'},
+  {id:'olimpicos', name:'Sándwiches Olímpicos Copetín', price:40, desc:'Jamón, queso, morrón, huevo'},
+  {id:'saladitos_cop', name:'Saladitos Copetín Variados', price:40, desc:'Atún, palmitos, J&Q, roquefort'},
+  {id:'jesuitas_cop', name:'Jesuitas de Lunch', price:42, desc:'Hojaldre caramelizado premium'},
+  {id:'calientes', name:'Bocados Calientes', price:35, desc:'Empanaditas / Pizzetas'}
+];
+
+let cart = JSON.parse(localStorage.getItem('barcelonesa_cart') || '[]');
+let customQuantities = {}; let productQuantities = {};
+SUELTOS.forEach(s => customQuantities[s.id]=0);
+PRODUCTS.forEach(p => productQuantities[p.id]=1);
+let selectedSlot=null; let currentFilter='todos';
+let orders = JSON.parse(localStorage.getItem('barcelonesa_orders') || '[]');
+
+function closeMobileMenu(){ const m=document.getElementById('mobile-menu'); if(m) m.classList.add('hidden'); }
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderProducts(); renderPackages(); renderCustomItems(); updateCartUI(); initDate();
+  document.getElementById('mobile-menu-btn').addEventListener('click', ()=>{ document.getElementById('mobile-menu').classList.toggle('hidden'); });
+});
+function initDate(){
+  const input=document.getElementById('fecha-input'); if(!input) return;
+  const tomorrow=new Date(); tomorrow.setDate(tomorrow.getDate()+1);
+  const yyyy=tomorrow.getFullYear(); const mm=String(tomorrow.getMonth()+1).padStart(2,'0'); const dd=String(tomorrow.getDate()).padStart(2,'0');
+  input.min=`${yyyy}-${mm}-${dd}`; input.value=`${yyyy}-${mm}-${dd}`;
+}
+function renderProducts(){
+  const grid=document.getElementById('products-grid');
+  const filtered=currentFilter==='todos'?PRODUCTS:PRODUCTS.filter(p=>p.cat===currentFilter);
+  grid.innerHTML=filtered.map(p=>`
+    <div class="bg-white border border-slate-200 rounded-[20px] overflow-hidden flex flex-col hover:border-amber-200 transition shadow-sm">
+      <div class="h-[200px] bg-[#F9F9F9] overflow-hidden"><img src="${p.image}" class="w-full h-full object-cover"></div>
+      <div class="p-5 flex flex-col flex-1">
+        <div class="flex justify-between gap-3"><div><div class="text-[10px] uppercase font-bold tracking-widest text-slate-500">${p.cat} • ${p.unit}</div><h3 class="font-display font-bold text-[18px] text-blue-900 mt-1">${p.name}</h3></div><div class="text-right"><div class="font-bold text-blue-900">$${p.price.toLocaleString('es-UY')}</div><div class="text-[10px] text-amber-600 font-bold bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full mt-1">${p.tag}</div></div></div>
+        <p class="text-[13px] text-slate-500 mt-3 flex-1">${p.desc}</p>
+        <div class="mt-4 flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-[#F9F9F9] border border-slate-200 rounded-full p-1">
+            <button onclick="updateProductQty('${p.id}',-1)" class="w-10 h-10 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 sm:w-8 sm:h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-blue-900 font-bold hover:bg-blue-900 hover:text-white transition">−</button>
+            <input id="prod-qty-${p.id}" type="number" min="1" value="${productQuantities[p.id]}" oninput="handleProductInput('${p.id}')" onchange="handleProductInput('${p.id}')" class="w-14 sm:w-12 h-11 sm:h-8 text-center bg-transparent text-[13px] font-bold text-blue-900 outline-none">
+            <button onclick="updateProductQty('${p.id}',1)" class="w-10 h-10 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 sm:w-8 sm:h-8 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold hover:bg-blue-800 transition">+</button>
+          </div>
+          <button onclick="addToCart('${p.id}')" class="flex-1 h-11 min-h-[44px] bg-brandGold text-blue-900 rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-amber-400 transition">Agregar +</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+function updateProductQty(id,delta){ let cur=productQuantities[id]||1; let next=Math.max(1,cur+delta); if(next>9999)next=9999; productQuantities[id]=next; const inp=document.getElementById(`prod-qty-${id}`); if(inp) inp.value=next; }
+function handleProductInput(id){ const inp=document.getElementById(`prod-qty-${id}`); if(!inp)return; let v=parseInt(inp.value,10); if(isNaN(v)||v<1)v=1; if(v>9999)v=9999; productQuantities[id]=v; inp.value=v; }
+function filterProducts(cat){ currentFilter=cat; document.querySelectorAll('.filter-btn').forEach(b=>{ b.className=b.dataset.filter===cat?'filter-btn tab-active px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap':'filter-btn tab-inactive px-5 h-11 min-h-[44px] rounded-full text-[13px] font-bold whitespace-nowrap'; }); renderProducts(); document.getElementById('tienda').scrollIntoView({behavior:'smooth'}); closeMobileMenu(); }
+function renderPackages(){ const grid=document.getElementById('packages-grid'); grid.innerHTML=PACKAGES.map(pkg=>`<div class="bg-white border ${pkg.popular?'border-amber-300 bg-amber-50':'border-slate-200'} rounded-[14px] p-4 flex flex-col sm:flex-row gap-4"><div class="flex-1"><div class="font-bold text-blue-900">Lunch ${pkg.people} personas ${pkg.popular?'<span class=\"ml-2 text-[10px] bg-blue-900 text-white px-2 py-0.5 rounded-full uppercase\">Más pedido</span>':''}</div><div class="text-[12px] text-slate-500 mt-1">${pkg.bocados} bocados • ${pkg.items}</div><div class="text-[12px] text-slate-600 mt-2">${pkg.desc}</div></div><div class="text-right sm:text-right text-left flex sm:flex-col flex-row items-center sm:items-end justify-between gap-3"><div class="font-bold text-blue-900">$${pkg.price.toLocaleString('es-UY')}</div><button onclick="addPackageToCart('${pkg.people}')" class="bg-blue-900 text-white px-5 h-11 min-h-[44px] rounded-full text-[11px] font-bold uppercase">Agregar +</button></div></div>`).join(''); }
+function switchCotizadorTab(tab){ document.getElementById('tab-paquetes').className=tab==='paquetes'?'px-5 h-11 min-h-[44px] rounded-[12px] text-[13px] font-bold bg-blue-900 text-white whitespace-nowrap flex-1 sm:flex-none':'px-5 h-11 min-h-[44px] rounded-[12px] text-[13px] font-bold text-slate-500 whitespace-nowrap flex-1 sm:flex-none'; document.getElementById('tab-medida').className=tab==='medida'?'px-5 h-11 min-h-[44px] rounded-[12px] text-[13px] font-bold bg-blue-900 text-white whitespace-nowrap flex-1 sm:flex-none':'px-5 h-11 min-h-[44px] rounded-[12px] text-[13px] font-bold text-slate-500 whitespace-nowrap flex-1 sm:flex-none'; document.getElementById('cotizador-paquetes').classList.toggle('hidden',tab!=='paquetes'); document.getElementById('cotizador-medida').classList.toggle('hidden',tab!=='medida'); }
+function renderCustomItems(){
+  const container=document.getElementById('custom-items');
+  container.innerHTML=SUELTOS.map(item=>`
+    <div class="bg-white border border-slate-200 rounded-[14px] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:border-amber-200 transition">
+      <div class="flex-1 min-w-0"><div class="flex items-center gap-2 flex-wrap"><span class="font-bold text-[13px] text-blue-900">${item.name}</span><span class="text-[10px] font-bold bg-[#F9F9F9] border border-slate-200 px-2 py-0.5 rounded-full text-blue-900">$${item.price} c/u</span></div><div class="text-[11px] text-slate-500 mt-1">${item.desc}</div><div class="text-[11px] font-bold text-slate-500 mt-1">Subtotal: <span id="subtotal-${item.id}" class="text-blue-900">$0</span></div></div>
+      <div class="flex items-center gap-2 self-end sm:self-auto">
+        <button onclick="updateCustomQty('${item.id}',-1)" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-slate-200 bg-white text-blue-900 font-bold hover:bg-blue-900 hover:text-white transition">−</button>
+        <input id="qty-input-${item.id}" type="number" min="0" value="${customQuantities[item.id]}" oninput="handleCustomInput('${item.id}')" onchange="handleCustomInput('${item.id}')" class="w-[72px] h-11 min-h-[44px] text-center border border-slate-200 rounded-full bg-[#F9F9F9] text-[14px] font-bold text-blue-900 focus:border-blue-900 outline-none">
+        <button onclick="updateCustomQty('${item.id}',1)" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-blue-900 text-white font-bold hover:bg-blue-800 transition">+</button>
+      </div>
+    </div>
+  `).join('');
+  updateCustomTotals();
+}
+function updateCustomQty(id,delta){ let cur=customQuantities[id]||0; let next=Math.max(0,cur+delta); if(next>9999)next=9999; customQuantities[id]=next; const inp=document.getElementById(`qty-input-${id}`); if(inp) inp.value=next; updateCustomTotals(); }
+function handleCustomInput(id){ const inp=document.getElementById(`qty-input-${id}`); if(!inp)return; let v=parseInt(inp.value,10); if(isNaN(v)||v<0)v=0; if(v>9999)v=9999; customQuantities[id]=v; inp.value=v; updateCustomTotals(); }
+function updateCustomTotals(){
+  let totalBocados=0, totalPrice=0;
+  SUELTOS.forEach(s=>{ const qty=customQuantities[s.id]||0; const sub=qty*s.price; totalBocados+=qty; totalPrice+=sub; const el=document.getElementById(`subtotal-${s.id}`); if(el) el.textContent=`$${sub.toLocaleString('es-UY')}`; });
+  document.getElementById('custom-total-bocados').textContent=`${totalBocados} unidades`;
+  document.getElementById('custom-total-price').textContent=`$${totalPrice.toLocaleString('es-UY')}`;
+  document.getElementById('btn-add-custom').disabled=totalBocados===0;
+  const alertBox=document.getElementById('smart-alert'), alertText=document.getElementById('smart-alert-text'), alertBtn=document.getElementById('smart-alert-btn');
+  if(totalBocados===0){ alertBox.classList.add('hidden'); return; }
+  const sorted=[...PACKAGES].sort((a,b)=>a.price-b.price); let suggestion=null, saving=0;
+  for(let pkg of sorted){ if(totalPrice>=pkg.price){ suggestion=pkg; saving=totalPrice-pkg.price; break; } if(totalPrice>=pkg.price*0.85 && totalBocados>=pkg.bocados*0.7){ suggestion=pkg; saving=totalPrice-pkg.price; break; } }
+  if(suggestion){ alertBox.classList.remove('hidden'); const savingText=saving>0?`te ahorrás $${saving.toLocaleString('es-UY')}`:`te llevás más bocados`; alertText.textContent=`¡Te conviene más nuestro paquete cerrado para ${suggestion.people} personas por $${suggestion.price.toLocaleString('es-UY')}! Incluye ${suggestion.bocados} bocados y ${savingText} vs $${totalPrice.toLocaleString('es-UY')}.`; alertBtn.textContent=`Agregar paquete ${suggestion.people} pers →`; alertBtn.onclick=()=>addPackageToCart(String(suggestion.people)); } else { alertBox.classList.add('hidden'); }
+}
+function addCustomToCart(){ let totalBocados=0,totalPrice=0,parts=[]; SUELTOS.forEach(s=>{ if(customQuantities[s.id]>0){ totalBocados+=customQuantities[s.id]; totalPrice+=customQuantities[s.id]*s.price; parts.push(`${customQuantities[s.id]}x ${s.name}`); } }); if(totalBocados===0)return; const id='custom-'+Date.now(); cart.push({id,name:`Lunch a medida - ${totalBocados} bocados`,desc:parts.join(', '),price:totalPrice,qty:1,image:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=200&auto=format&fit=crop'}); saveCart(); updateCartUI(); showToast(`${totalBocados} bocados agregados`); SUELTOS.forEach(s=>customQuantities[s.id]=0); renderCustomItems(); openCart(); }
+function addToCart(productId){ const product=PRODUCTS.find(p=>p.id===productId); if(!product)return; const qty=productQuantities[productId]||1; const existing=cart.find(c=>c.id===productId); if(existing){ existing.qty+=qty; } else { cart.push({id:product.id,name:product.name,desc:product.unit,price:product.price,qty:qty,image:product.image}); } saveCart(); updateCartUI(); showToast(`${qty}x ${product.name} agregado`); openCart(); }
+function addPackageToCart(people){ const pkg=PACKAGES.find(p=>String(p.people)===String(people)); if(!pkg)return; const id=`pkg-${pkg.people}`; const existing=cart.find(c=>c.id===id); if(existing){ existing.qty+=1; } else { cart.push({id,name:`Lunch ${pkg.people} personas`,desc:`${pkg.bocados} bocados • ${pkg.items}`,price:pkg.price,qty:1,image:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop'}); } saveCart(); updateCartUI(); showToast(`Lunch ${pkg.people} pers agregado`); openCart(); }
+function saveCart(){ localStorage.setItem('barcelonesa_cart', JSON.stringify(cart)); }
+function updateCartUI(){
+  const count=cart.reduce((a,b)=>a+b.qty,0);
+  document.getElementById('cart-count').textContent=count;
+  document.getElementById('cart-items-count').textContent=count;
+  const itemsContainer=document.getElementById('cart-items'), footer=document.getElementById('cart-footer'), empty=document.getElementById('empty-cart');
+  if(count===0){ itemsContainer.innerHTML=empty.outerHTML; footer.classList.add('hidden'); return; }
+  footer.classList.remove('hidden');
+  itemsContainer.innerHTML=cart.map(item=>`
+    <div class="flex gap-3 p-3 bg-white border border-slate-200 rounded-[12px]">
+      <img src="${item.image}" class="w-14 h-14 rounded-[10px] object-cover">
+      <div class="flex-1 min-w-0"><div class="font-bold text-[13px] text-blue-900">${item.name}</div><div class="text-[11px] text-slate-500 truncate">${item.desc}</div>
+        <div class="flex items-center justify-between mt-2">
+          <div class="flex items-center gap-1 bg-[#F9F9F9] border border-slate-200 rounded-full p-1">
+            <button onclick="changeQty('${item.id}',-1)" class="w-6 h-6 rounded-full bg-white border border-slate-200 flex items-center justify-center text-blue-900 font-bold text-[12px]">−</button>
+            <input type="number" min="1" value="${item.qty}" oninput="handleCartInput('${item.id}',this.value)" onchange="handleCartInput('${item.id}',this.value)" class="w-10 h-6 text-center bg-transparent text-[12px] font-bold text-blue-900 outline-none">
+            <button onclick="changeQty('${item.id}',1)" class="w-6 h-6 rounded-full bg-blue-900 text-white flex items-center justify-center text-[12px] font-bold">+</button>
+          </div>
+          <div class="font-bold text-[13px] text-blue-900">$${(item.price*item.qty).toLocaleString('es-UY')}</div>
+        </div>
+      </div>
+      <button onclick="removeItem('${item.id}')" class="text-slate-400 hover:text-blue-900 font-bold">✕</button>
+    </div>
+  `).join('');
+  const subtotal=cart.reduce((a,b)=>a+b.price*b.qty,0);
+  document.getElementById('cart-subtotal').textContent=`$${subtotal.toLocaleString('es-UY')}`;
+  document.getElementById('cart-total').textContent=`$${subtotal.toLocaleString('es-UY')}`;
+}
+function handleCartInput(id,val){ let qty=parseInt(val,10); if(isNaN(qty)||qty<1)qty=1; if(qty>9999)qty=9999; const item=cart.find(c=>c.id===id); if(item){ item.qty=qty; saveCart(); updateCartUI(); } }
+function changeQty(id,delta){ const item=cart.find(c=>c.id===id); if(!item)return; item.qty+=delta; if(item.qty<=0){ cart=cart.filter(c=>c.id!==id); } saveCart(); updateCartUI(); }
+function removeItem(id){ cart=cart.filter(c=>c.id!==id); saveCart(); updateCartUI(); }
+function openCart(){ document.getElementById('cart-backdrop').classList.remove('hidden'); setTimeout(()=>{ document.getElementById('cart-backdrop').classList.remove('opacity-0'); document.getElementById('cart-drawer').classList.remove('translate-x-full'); },10); document.body.style.overflow='hidden'; }
+function closeCart(){ document.getElementById('cart-drawer').classList.add('translate-x-full'); document.getElementById('cart-backdrop').classList.add('opacity-0'); setTimeout(()=>{ document.getElementById('cart-backdrop').classList.add('hidden'); },300); document.body.style.overflow=''; }
+function openCheckout(){ closeCart(); const subtotal=cart.reduce((a,b)=>a+b.price*b.qty,0); document.getElementById('checkout-subtotal').textContent=`$${subtotal.toLocaleString('es-UY')}`; document.getElementById('checkout-total').textContent=`$${subtotal.toLocaleString('es-UY')}`; document.getElementById('checkout-items').innerHTML=cart.map(i=>`<div class="flex gap-2 text-[13px] text-blue-900"><span class="font-bold text-slate-500">${i.qty}x</span><span class="flex-1">${i.name}</span><span class="font-bold">$${(i.price*i.qty).toLocaleString('es-UY')}</span></div>`).join(''); document.getElementById('checkout-modal').classList.remove('hidden'); document.body.style.overflow='hidden'; }
+function closeCheckout(){ document.getElementById('checkout-modal').classList.add('hidden'); document.body.style.overflow=''; }
+function toggleEntrega(){ const tipo=document.querySelector('input[name="tipoEntrega"]:checked').value; document.getElementById('direccion-field').classList.toggle('hidden',tipo!=='envio'); document.getElementById('checkout-envio').textContent=tipo==='envio'?'$350 (Montevideo)':'Gratis - Retiro'; const subtotal=cart.reduce((a,b)=>a+b.price*b.qty,0); const total=tipo==='envio'?subtotal+350:subtotal; document.getElementById('checkout-total').textContent=`$${total.toLocaleString('es-UY')}`; }
+function selectSlot(btn){ document.querySelectorAll('.slot-btn').forEach(b=>b.classList.remove('slot-active')); btn.classList.add('slot-active'); selectedSlot=btn.dataset.slot; document.getElementById('franja-input').value=selectedSlot; }
+
+// Flujo pedido - demo interna (planilla movida a admin.html, no visible al público)
+// A: preventDefault, B: captura datos, C: guarda LocalStorage, D: modal éxito, E: WhatsApp
+function submitOrder(e){
+  e.preventDefault();
+  if(!selectedSlot){ alert('Seleccioná una franja horaria'); return; }
+  const formData = new FormData(e.target);
+  const nombre = formData.get('nombre');
+  const telefono = formData.get('telefono');
+  const email = formData.get('email') || '';
+  const fecha = formData.get('fecha');
+  const franja = formData.get('franja');
+  const tipoEntrega = formData.get('tipoEntrega');
+  const direccion = formData.get('direccion') || 'Retiro en local - Ejido 1400, Montevideo';
+  const subtotal = cart.reduce((a,b)=>a+b.price*b.qty,0);
+  const envioCost = tipoEntrega==='envio'?350:0;
+  const total = subtotal + envioCost;
+  const orderId = 'BRC-' + Date.now().toString().slice(-6);
+  const productosDetalle = [...cart];
+  const detalleProductosStr = cart.map(c=>`${c.qty}x ${c.name}`).join(', ');
+  const order = {
+    id: orderId,
+    cliente: nombre,
+    telefono: telefono,
+    email: email,
+    direccion: direccion,
+    fecha: fecha,
+    hora: franja,
+    productos: detalleProductosStr,
+    productosDetalle: productosDetalle,
+    subtotal: subtotal,
+    envioCost: envioCost,
+    total: total,
+    tipoEntrega: tipoEntrega,
+    timestamp: new Date().toISOString(),
+    estado: 'Confirmado'
+  };
+  // Guarda en LocalStorage (demo interna, tabla en admin.html)
+  orders.push(order);
+  localStorage.setItem('barcelonesa_orders', JSON.stringify(orders));
+  closeCheckout();
+  document.getElementById('success-name').textContent = nombre.split(' ')[0];
+  document.getElementById('success-id').textContent = orderId;
+  document.getElementById('success-summary').innerHTML = `
+    <div class="font-bold text-blue-900">${order.productos}</div>
+    <div class="mt-2 text-[13px]"><span class="text-slate-500">Fecha:</span> <span class="font-bold text-blue-900">${fecha}</span> <span class="text-slate-500 ml-2">Hora:</span> <span class="font-bold text-blue-900">${franja}</span></div>
+    <div class="mt-1 text-[13px]"><span class="text-slate-500">Dirección:</span> <span class="font-bold text-blue-900">${direccion}</span></div>
+    <div class="mt-3 font-bold text-[16px] text-blue-900">Total: $${total.toLocaleString('es-UY')}</div>
+    <div class="mt-2 text-[11px] text-slate-500">Coordinamos el pago por WhatsApp al confirmar</div>
+  `;
+  document.getElementById('success-modal').classList.remove('hidden');
+  const productosTexto = productosDetalle.map(c=>`• ${c.qty}x ${c.name} - $${(c.price*c.qty).toLocaleString('es-UY')} (${c.desc})`).join('%0A');
+  const textoWhatsApp = 
+    `*¡Nuevo Pedido - La Nueva Barcelonesa!* 🎉%0A%0A`+
+    `*ID:* ${orderId}%0A`+
+    `*Cliente:* ${nombre}%0A`+
+    `*Teléfono:* ${telefono}%0A`+
+    `*Email:* ${email||'No proporcionado'}%0A`+
+    `*Dirección:* ${direccion}%0A`+
+    `*Entrega:* ${tipoEntrega==='envio'?'🚚 Envío a domicilio':'🏪 Retiro en local - Ejido 1400'}%0A`+
+    `*Fecha:* ${fecha}%0A`+
+    `*Hora:* ${franja}%0A%0A`+
+    `*Detalle Compra:*%0A${productosTexto}%0A%0A`+
+    `*Subtotal:* $${subtotal.toLocaleString('es-UY')}%0A`+
+    `*Envío:* ${tipoEntrega==='envio'?'$350':'Gratis'}%0A`+
+    `*TOTAL A PAGAR:* *$${total.toLocaleString('es-UY')}*%0A%0A`+
+    `_Coordinamos pago por WhatsApp_`;
+  const whatsappUrl = `https://wa.me/59897212136?text=${textoWhatsApp}`;
+  setTimeout(()=>{
+    window.open(whatsappUrl, '_blank');
+    cart = [];
+    saveCart();
+    updateCartUI();
+    const summaryEl=document.getElementById('success-summary');
+    if(summaryEl){ summaryEl.innerHTML+=`<div class="mt-3 p-2 bg-emerald-50 border border-emerald-200 rounded-[8px] text-[11px] text-emerald-700 font-bold">✓ WhatsApp abierto • Carrito vaciado</div>`; }
+  }, 900);
+}
+
+function closeSuccess(){ document.getElementById('success-modal').classList.add('hidden'); }
+function showToast(text){ const toast=document.getElementById('toast'); document.getElementById('toast-text').textContent=text; toast.classList.remove('hidden'); toast.classList.add('flex'); setTimeout(()=>{ toast.classList.add('hidden'); toast.classList.remove('flex'); },3000); }
+
+window.addToCart=addToCart; window.addPackageToCart=addPackageToCart; window.filterProducts=filterProducts; window.switchCotizadorTab=switchCotizadorTab; window.updateCustomQty=updateCustomQty; window.handleCustomInput=handleCustomInput; window.updateProductQty=updateProductQty; window.handleProductInput=handleProductInput; window.handleCartInput=handleCartInput; window.addCustomToCart=addCustomToCart; window.openCart=openCart; window.closeCart=closeCart; window.openCheckout=openCheckout; window.closeCheckout=closeCheckout; window.toggleEntrega=toggleEntrega; window.selectSlot=selectSlot; window.submitOrder=submitOrder; window.closeSuccess=closeSuccess; window.changeQty=changeQty; window.removeItem=removeItem; window.closeMobileMenu=closeMobileMenu;
+</script>
+</body>
+</html>
